@@ -1,0 +1,204 @@
+# config
+config.tfc_decoration.time=TFC Hours it take to turn Wet Mud into Mud.
+
+# mud bricks
+tile.tfc_decoration.mud.bricks.name=Mud Bricks
+
+# granite
+tile.tfc_decoration.mossy_cobble.granite.name=Moss Granite
+tile.tfc_decoration.mossy_brick.granite.name=Mossy Granite Bricks
+tile.tfc_decoration.cracked_brick.granite.name=Cracked Granite Bricks
+tile.tfc_decoration.wet_mud.granite.name=Wet Granite Mud
+tile.tfc_decoration.mud.granite.name=Granite Mud
+# diorite
+tile.tfc_decoration.mossy_cobble.diorite.name=Moss Diorite
+tile.tfc_decoration.mossy_brick.diorite.name=Mossy Diorite Bricks
+tile.tfc_decoration.cracked_brick.diorite.name=Cracked Diorite Bricks
+tile.tfc_decoration.wet_mud.diorite.name=Wet Diorite Mud
+tile.tfc_decoration.mud.diorite.name=Diorite Mud
+# gabbro
+tile.tfc_decoration.mossy_cobble.gabbro.name=Moss Gabbro
+tile.tfc_decoration.mossy_brick.gabbro.name=Mossy Gabbro Bricks
+tile.tfc_decoration.cracked_brick.gabbro.name=Cracked Gabbro Bricks
+tile.tfc_decoration.wet_mud.gabbro.name=Wet Gabbro Mud
+tile.tfc_decoration.mud.gabbro.name=Gabbro Mud
+# shale
+tile.tfc_decoration.mossy_cobble.shale.name=Moss Shale
+tile.tfc_decoration.mossy_brick.shale.name=Mossy Shale Bricks
+tile.tfc_decoration.cracked_brick.shale.name=Cracked Shale Bricks
+tile.tfc_decoration.wet_mud.shale.name=Wet Shale Mud
+tile.tfc_decoration.mud.shale.name=Shale Mud
+# claystone
+tile.tfc_decoration.mossy_cobble.claystone.name=Moss Claystone
+tile.tfc_decoration.mossy_brick.claystone.name=Mossy Claystone Bricks
+tile.tfc_decoration.cracked_brick.claystone.name=Cracked Claystone Bricks
+tile.tfc_decoration.wet_mud.claystone.name=Wet Claystone Mud
+tile.tfc_decoration.mud.claystone.name=Claystone Mud
+# rocksalt
+tile.tfc_decoration.mossy_cobble.rocksalt.name=Moss Rocksalt
+tile.tfc_decoration.mossy_brick.rocksalt.name=Mossy Rocksalt Bricks
+tile.tfc_decoration.cracked_brick.rocksalt.name=Cracked Rocksalt Bricks
+tile.tfc_decoration.wet_mud.rocksalt.name=Wet Rocksalt Mud
+tile.tfc_decoration.mud.rocksalt.name=Rocksalt Mud
+# limestone
+tile.tfc_decoration.mossy_cobble.limestone.name=Moss Limestone
+tile.tfc_decoration.mossy_brick.limestone.name=Mossy Limestone Bricks
+tile.tfc_decoration.cracked_brick.limestone.name=Cracked Limestone Bricks
+tile.tfc_decoration.wet_mud.limestone.name=Wet Limestone Mud
+tile.tfc_decoration.mud.limestone.name=Limestone Mud
+# conglomerate
+tile.tfc_decoration.mossy_cobble.conglomerate.name=Moss Conglomerate
+tile.tfc_decoration.mossy_brick.conglomerate.name=Mossy Conglomerate Bricks
+tile.tfc_decoration.cracked_brick.conglomerate.name=Cracked Conglomerate Bricks
+tile.tfc_decoration.wet_mud.conglomerate.name=Wet Conglomerate Mud
+tile.tfc_decoration.mud.conglomerate.name=Conglomerate Mud
+# dolomite
+tile.tfc_decoration.mossy_cobble.dolomite.name=Moss Dolomite
+tile.tfc_decoration.mossy_brick.dolomite.name=Mossy Dolomite Bricks
+tile.tfc_decoration.cracked_brick.dolomite.name=Cracked Dolomite Bricks
+tile.tfc_decoration.wet_mud.dolomite.name=Wet Dolomite Mud
+tile.tfc_decoration.mud.dolomite.name=Dolomite Mud
+# chert
+tile.tfc_decoration.mossy_cobble.chert.name=Moss Chert
+tile.tfc_decoration.mossy_brick.chert.name=Mossy Chert Bricks
+tile.tfc_decoration.cracked_brick.chert.name=Cracked Chert Bricks
+tile.tfc_decoration.wet_mud.chert.name=Wet Chert Mud
+tile.tfc_decoration.mud.chert.name=Chert Mud
+# chalk
+tile.tfc_decoration.mossy_cobble.chalk.name=Moss Chalk
+tile.tfc_decoration.mossy_brick.chalk.name=Mossy Chalk Bricks
+tile.tfc_decoration.cracked_brick.chalk.name=Cracked Chalk Bricks
+tile.tfc_decoration.wet_mud.chalk.name=Wet Chalk Mud
+tile.tfc_decoration.mud.chalk.name=Chalk Mud
+# rhyolite
+tile.tfc_decoration.mossy_cobble.rhyolite.name=Moss Rhyolite
+tile.tfc_decoration.mossy_brick.rhyolite.name=Mossy Rhyolite Bricks
+tile.tfc_decoration.cracked_brick.rhyolite.name=Cracked Rhyolite Bricks
+tile.tfc_decoration.wet_mud.rhyolite.name=Wet Rhyolite Mud
+tile.tfc_decoration.mud.rhyolite.name=Rhyolite Mud
+# basalt
+tile.tfc_decoration.mossy_cobble.basalt.name=Moss Basalt
+tile.tfc_decoration.mossy_brick.basalt.name=Mossy Basalt Bricks
+tile.tfc_decoration.cracked_brick.basalt.name=Cracked Basalt Bricks
+tile.tfc_decoration.wet_mud.basalt.name=Wet Basalt Mud
+tile.tfc_decoration.mud.basalt.name=Basalt Mud
+# andesite
+tile.tfc_decoration.mossy_cobble.andesite.name=Moss Andesite
+tile.tfc_decoration.mossy_brick.andesite.name=Mossy Andesite Bricks
+tile.tfc_decoration.cracked_brick.andesite.name=Cracked Andesite Bricks
+tile.tfc_decoration.wet_mud.andesite.name=Wet Andesite Mud
+tile.tfc_decoration.mud.andesite.name=Andesite Mud
+# dacite
+tile.tfc_decoration.mossy_cobble.dacite.name=Moss Dacite
+tile.tfc_decoration.mossy_brick.dacite.name=Mossy Dacite Bricks
+tile.tfc_decoration.cracked_brick.dacite.name=Cracked Dacite Bricks
+tile.tfc_decoration.wet_mud.dacite.name=Wet Dacite Mud
+tile.tfc_decoration.mud.dacite.name=Dacite Mud
+# quartzite
+tile.tfc_decoration.mossy_cobble.quartzite.name=Moss Quartzite
+tile.tfc_decoration.mossy_brick.quartzite.name=Mossy Quartzite Bricks
+tile.tfc_decoration.cracked_brick.quartzite.name=Cracked Quartzite Bricks
+tile.tfc_decoration.wet_mud.quartzite.name=Wet Quartzite Mud
+tile.tfc_decoration.mud.quartzite.name=Quartzite Mud
+# slate
+tile.tfc_decoration.mossy_cobble.slate.name=Moss Slate
+tile.tfc_decoration.mossy_brick.slate.name=Mossy Slate Bricks
+tile.tfc_decoration.cracked_brick.slate.name=Cracked Slate Bricks
+tile.tfc_decoration.wet_mud.slate.name=Wet Slate Mud
+tile.tfc_decoration.mud.slate.name=Slate Mud
+# phyllite
+tile.tfc_decoration.mossy_cobble.phyllite.name=Moss Phyllite
+tile.tfc_decoration.mossy_brick.phyllite.name=Mossy Phyllite Bricks
+tile.tfc_decoration.cracked_brick.phyllite.name=Cracked Phyllite Bricks
+tile.tfc_decoration.wet_mud.phyllite.name=Wet Phyllite Mud
+tile.tfc_decoration.mud.phyllite.name=Phyllite Mud
+# schist
+tile.tfc_decoration.mossy_cobble.schist.name=Moss Schist
+tile.tfc_decoration.mossy_brick.schist.name=Mossy Schist Bricks
+tile.tfc_decoration.cracked_brick.schist.name=Cracked Schist Bricks
+tile.tfc_decoration.wet_mud.schist.name=Wet Schist Mud
+tile.tfc_decoration.mud.schist.name=Schist Mud
+# gneiss
+tile.tfc_decoration.mossy_cobble.gneiss.name=Moss Gneiss
+tile.tfc_decoration.mossy_brick.gneiss.name=Mossy Gneiss Bricks
+tile.tfc_decoration.cracked_brick.gneiss.name=Cracked Gneiss Bricks
+tile.tfc_decoration.wet_mud.gneiss.name=Wet Gneiss Mud
+tile.tfc_decoration.mud.gneiss.name=Gneiss Mud
+# marble
+tile.tfc_decoration.mossy_cobble.marble.name=Moss Marble
+tile.tfc_decoration.mossy_brick.marble.name=Mossy Marble Bricks
+tile.tfc_decoration.cracked_brick.marble.name=Cracked Marble Bricks
+tile.tfc_decoration.wet_mud.marble.name=Wet Marble Mud
+tile.tfc_decoration.mud.marble.name=Marble Mud
+# blaimorite
+tile.tfc_decoration.mossy_cobble.blaimorite.name=Moss Blaimorite
+tile.tfc_decoration.mossy_brick.blaimorite.name=Mossy Blaimorite Bricks
+tile.tfc_decoration.cracked_brick.blaimorite.name=Cracked Blaimorite Bricks
+tile.tfc_decoration.wet_mud.blaimorite.name=Wet Blaimorite Mud
+tile.tfc_decoration.mud.blaimorite.name=Blaimorite Mud
+# boninite
+tile.tfc_decoration.mossy_cobble.boninite.name=Moss Boninite
+tile.tfc_decoration.mossy_brick.boninite.name=Mossy Boninite Bricks
+tile.tfc_decoration.cracked_brick.boninite.name=Cracked Boninite Bricks
+tile.tfc_decoration.wet_mud.boninite.name=Wet Boninite Mud
+tile.tfc_decoration.mud.boninite.name=Boninite Mud
+# carbonatite
+tile.tfc_decoration.mossy_cobble.carbonatite.name=Moss Carbonatite
+tile.tfc_decoration.mossy_brick.carbonatite.name=Mossy Carbonatite Bricks
+tile.tfc_decoration.cracked_brick.carbonatite.name=Cracked Carbonatite Bricks
+tile.tfc_decoration.wet_mud.carbonatite.name=Wet Carbonatite Mud
+tile.tfc_decoration.mud.carbonatite.name=Carbonatite Mud
+# foidolite
+tile.tfc_decoration.mossy_cobble.foidolite.name=Moss Foidolite
+tile.tfc_decoration.mossy_brick.foidolite.name=Mossy Foidolite Bricks
+tile.tfc_decoration.cracked_brick.foidolite.name=Cracked Foidolite Bricks
+tile.tfc_decoration.wet_mud.foidolite.name=Wet Foidolite Mud
+tile.tfc_decoration.mud.foidolite.name=Foidolite Mud
+# arkose
+tile.tfc_decoration.mossy_cobble.arkose.name=Moss Arkose
+tile.tfc_decoration.mossy_brick.arkose.name=Mossy Arkose Bricks
+tile.tfc_decoration.cracked_brick.arkose.name=Cracked Arkose Bricks
+tile.tfc_decoration.wet_mud.arkose.name=Wet Arkose Mud
+tile.tfc_decoration.mud.arkose.name=Arkose Mud
+# jaspillite
+tile.tfc_decoration.mossy_cobble.jaspillite.name=Moss Jaspillite
+tile.tfc_decoration.mossy_brick.jaspillite.name=Mossy Jaspillite Bricks
+tile.tfc_decoration.cracked_brick.jaspillite.name=Cracked Jaspillite Bricks
+tile.tfc_decoration.wet_mud.jaspillite.name=Wet Jaspillite Mud
+tile.tfc_decoration.mud.jaspillite.name=Jaspillite Mud
+# travertine
+tile.tfc_decoration.mossy_cobble.travertine.name=Moss Travertine
+tile.tfc_decoration.mossy_brick.travertine.name=Mossy Travertine Bricks
+tile.tfc_decoration.cracked_brick.travertine.name=Cracked Travertine Bricks
+tile.tfc_decoration.wet_mud.travertine.name=Wet Travertine Mud
+tile.tfc_decoration.mud.travertine.name=Travertine Mud
+# wackestone
+tile.tfc_decoration.mossy_cobble.wackestone.name=Moss Wackestone
+tile.tfc_decoration.mossy_brick.wackestone.name=Mossy Wackestone Bricks
+tile.tfc_decoration.cracked_brick.wackestone.name=Cracked Wackestone Bricks
+tile.tfc_decoration.wet_mud.wackestone.name=Wet Wackestone Mud
+tile.tfc_decoration.mud.wackestone.name=Wackestone Mud
+# blueschist
+tile.tfc_decoration.mossy_cobble.blueschist.name=Moss Blueschist
+tile.tfc_decoration.mossy_brick.blueschist.name=Mossy Blueschist Bricks
+tile.tfc_decoration.cracked_brick.blueschist.name=Cracked Blueschist Bricks
+tile.tfc_decoration.wet_mud.blueschist.name=Wet Blueschist Mud
+tile.tfc_decoration.mud.blueschist.name=Blueschist Mud
+# greenschist
+tile.tfc_decoration.mossy_cobble.greenschist.name=Moss Greenschist
+tile.tfc_decoration.mossy_brick.greenschist.name=Mossy Greenschist Bricks
+tile.tfc_decoration.cracked_brick.greenschist.name=Cracked Greenschist Bricks
+tile.tfc_decoration.wet_mud.greenschist.name=Wet Greenschist Mud
+tile.tfc_decoration.mud.greenschist.name=Greenschist Mud
+# cataclasite
+tile.tfc_decoration.mossy_cobble.cataclasite.name=Moss Cataclasite
+tile.tfc_decoration.mossy_brick.cataclasite.name=Mossy Cataclasite Bricks
+tile.tfc_decoration.cracked_brick.cataclasite.name=Cracked Cataclasite Bricks
+tile.tfc_decoration.wet_mud.cataclasite.name=Wet Cataclasite Mud
+tile.tfc_decoration.mud.cataclasite.name=Cataclasite Mud
+# mylonite
+tile.tfc_decoration.mossy_cobble.mylonite.name=Moss Mylonite
+tile.tfc_decoration.mossy_brick.mylonite.name=Mossy Mylonite Bricks
+tile.tfc_decoration.cracked_brick.mylonite.name=Cracked Mylonite Bricks
+tile.tfc_decoration.wet_mud.mylonite.name=Wet Mylonite Mud
+tile.tfc_decoration.mud.mylonite.name=Mylonite Mud

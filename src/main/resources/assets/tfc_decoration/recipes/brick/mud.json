@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XOX",
+    "OXO",
+    "XOX"
+  ],
+  "key": {
+    "O": {
+      "type": "forge:ore_dict",
+      "ore": "mortar"
+    },
+    "X": {
+	  "type": "forge:ore_dict",
+      "ore": "mud"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:mud/bricks",
+    "count": 4
+  }
+}
