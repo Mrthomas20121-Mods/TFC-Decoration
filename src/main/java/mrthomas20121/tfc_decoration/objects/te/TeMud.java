@@ -1,11 +1,9 @@
 package mrthomas20121.tfc_decoration.objects.te;
 
 import mrthomas20121.tfc_decoration.ConfigDec;
-import mrthomas20121.tfc_decoration.TFCDecoration;
 import mrthomas20121.tfc_decoration.objects.blocks.BlockDecoration;
 import mrthomas20121.tfc_decoration.objects.blocks.BlockMudRaw;
 import mrthomas20121.tfc_decoration.types.DecorationType;
-import net.dries007.tfc.objects.te.TEBase;
 import net.dries007.tfc.objects.te.TETickableBase;
 import net.dries007.tfc.util.calendar.CalendarTFC;
 import net.dries007.tfc.util.calendar.ICalendar;
@@ -13,10 +11,8 @@ import net.dries007.tfc.util.calendar.ICalendarTickable;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.ITickable;
 
-public class TeMud extends TETickableBase implements ICalendarTickable
-{
+public class TeMud extends TETickableBase implements ICalendarTickable {
     private long ticks;
     private long startTime;
     private long dryTime;
@@ -42,25 +38,20 @@ public class TeMud extends TETickableBase implements ICalendarTickable
     }
 
     @Override
-    public void onCalendarUpdate(long ticks)
-    {
-        if(isDry)
-        {
+    public void onCalendarUpdate(long ticks) {
+        if(isDry) {
             long tickFinished = startTime + getDuration();
 
-            if(dryTime < tickFinished)
-            {
+            if(dryTime < tickFinished) {
                 IBlockState blockState = world.getBlockState(this.pos);
                 Block block = blockState.getBlock();
-                if(block instanceof BlockMudRaw)
-                {
+                if(block instanceof BlockMudRaw) {
                     BlockMudRaw blockMudRaw = (BlockMudRaw) block;
                     world.setBlockState(this.pos, BlockDecoration.get(blockMudRaw.getRock(), DecorationType.MUD).getDefaultState());
                     this.invalidate();
                 }
             }
-            else if(ICalendar.getTotalHours(dryTime) > 0)
-            {
+            else if(ICalendar.getTotalHours(dryTime) > 0) {
                 dryTime = dryTime+(int)ICalendar.TICKS_IN_MINUTE;
             }
         }
@@ -77,16 +68,13 @@ public class TeMud extends TETickableBase implements ICalendarTickable
     }
 
     @Override
-    public void update()
-    {
+    public void update() {
         super.update();
         checkForCalendarUpdate();
-        if(world.isRemote)
-        {
+        if(world.isRemote) {
             return;
         }
-        else
-        {
+        else {
             this.isDry = canDry();
         }
     }
