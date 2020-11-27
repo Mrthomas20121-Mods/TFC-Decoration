@@ -1,8 +1,8 @@
 package mrthomas20121.tfc_decoration.objects.te;
 
 import mrthomas20121.tfc_decoration.ConfigDec;
-import mrthomas20121.tfc_decoration.objects.blocks.BlockDecoration;
-import mrthomas20121.tfc_decoration.objects.blocks.BlockMudRaw;
+import mrthomas20121.tfc_decoration.objects.blocks.rock.BlockDecoration;
+import mrthomas20121.tfc_decoration.objects.blocks.rock.BlockMudRaw;
 import mrthomas20121.tfc_decoration.types.DecorationType;
 import net.dries007.tfc.objects.te.TETickableBase;
 import net.dries007.tfc.util.calendar.CalendarTFC;

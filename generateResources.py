@@ -47,7 +47,31 @@ FULLBLOCK_TYPES = [
 	'mossy_brick',
 	'cracked_brick',
 	'wet_mud',
-	'mud'
+	'mud',
+    'sadnstone'
+]
+
+WOOD_TYPES = [
+    'ash',
+    'aspen',
+    'birch',
+    'chestnut',
+    'douglas_fir',
+    'hickory',
+    'maple',
+    'oak',
+    'pine',
+    'sequoia',
+    'spruce',
+    'sycamore',
+    'white_cedar',
+    'willow',
+    'kapok',
+    'acacia',
+    'rosewood',
+    'blackwood',
+    'palm',
+    'hevea'
 ]
 
 
@@ -150,3 +174,121 @@ for rock_type in ROCK_TYPES:
         cube_all((block_type, rock_type), 'tfc_decoration:blocks/stonetypes/%s/%s' % (block_type, rock_type))
     # recipe
     recipe(('brick',rock_type, 'cracked'), rock_type)
+
+# WOOD STUFF
+
+for wood_type in WOOD_TYPES:
+    blockstate(('wood', 'fence_log',wood_type), 'tfc_decoration:wood/fence/fence_post', textures={
+        'top':'tfc:blocks/wood/top/%s' % wood_type,
+        'log':'tfc:blocks/wood/log/%s' % wood_type,
+        'planks':'tfc:blocks/wood/planks/%s' % wood_type,
+        'particle':'tfc:blocks/wood/log/%s' % wood_type
+    }, variants= {
+    "normal": [
+      {}
+    ],
+    "inventory": {
+      "model": "tfc_decoration:wood/fence/fence_inventory"
+    },
+    "north": {
+      "true": {
+        "submodel": "tfc_decoration:wood/fence/fence_side"
+      },
+      "false": {}
+    },
+    "east": {
+      "true": {
+        "submodel": "tfc_decoration:wood/fence/fence_side",
+        "y": 90
+      },
+      "false": {}
+    },
+    "south": {
+      "true": {
+        "submodel": "tfc_decoration:wood/fence/fence_side",
+        "y": 180
+      },
+      "false": {}
+    },
+    "west": {
+      "true": {
+        "submodel": "tfc_decoration:wood/fence/fence_side",
+        "y": 270
+      },
+      "false": {}
+    }
+    })
+    blockstate(('wood','fence_gate_log',wood_type), '', textures={
+        'log':'tfc:blocks/wood/log/%s' % wood_type,
+        'planks':'tfc:blocks/wood/planks/%s' % wood_type,
+        'particle':'tfc:blocks/wood/log/%s' % wood_type
+    }, variants= {
+    "normal": [ {} ],
+    "facing=south,in_wall=false,open=false": {
+      "model": "tfc:wood/fence_gate/fence_gate_closed"
+    },
+    "facing=west,in_wall=false,open=false": {
+      "model": "tfc:wood/fence_gate/fence_gate_closed",
+      "y": 90
+    },
+    "facing=north,in_wall=false,open=false": {
+      "model": "tfc:wood/fence_gate/fence_gate_closed",
+      "y": 180
+    },
+    "facing=east,in_wall=false,open=false": {
+      "model": "tfc:wood/fence_gate/fence_gate_closed",
+      "y": 270
+    },
+    "facing=south,in_wall=false,open=true": {
+      "model": "tfc:wood/fence_gate/fence_gate_open"
+    },
+    "facing=west,in_wall=false,open=true": {
+      "model": "tfc:wood/fence_gate/fence_gate_open",
+      "y": 90
+    },
+    "facing=north,in_wall=false,open=true": {
+      "model": "tfc:wood/fence_gate/fence_gate_open",
+      "y": 180
+    },
+    "facing=east,in_wall=false,open=true": {
+      "model": "tfc:wood/fence_gate/fence_gate_open",
+      "y": 270
+    },
+    "facing=south,in_wall=true,open=false": {
+      "model": "tfc:wood/fence_gate/wall_gate_closed"
+    },
+    "facing=west,in_wall=true,open=false": {
+      "model": "tfc:wood/fence_gate/wall_gate_closed",
+      "y": 90
+    },
+    "facing=north,in_wall=true,open=false": {
+      "model": "tfc:wood/fence_gate/wall_gate_closed",
+      "y": 180
+    },
+    "facing=east,in_wall=true,open=false": {
+      "model": "tfc:wood/fence_gate/wall_gate_closed",
+      "y": 270
+    },
+    "facing=south,in_wall=true,open=true": {
+      "model": "tfc:wood/fence_gate/wall_gate_open"
+    },
+    "facing=west,in_wall=true,open=true": {
+      "model": "tfc:wood/fence_gate/wall_gate_open",
+      "y": 90
+    },
+    "facing=north,in_wall=true,open=true": {
+      "model": "tfc:wood/fence_gate/wall_gate_open",
+      "y": 180
+    },
+    "facing=east,in_wall=true,open=true": {
+      "model": "tfc:wood/fence_gate/wall_gate_open",
+      "y": 270
+    }}
+    )
+
+    model(('wood', 'fence_gate_log', wood_type), 
+        'tfc_decoration:block/wood/fence_gate/fence_gate_closed', textures= {
+            "log": "tfc:blocks/wood/log/eucalyptus",
+            "planks": "tfc:blocks/wood/planks/eucalyptus",
+            "particle": "tfc:blocks/wood/log/eucalyptus"
+    })

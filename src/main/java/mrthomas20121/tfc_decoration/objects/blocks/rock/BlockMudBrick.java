@@ -1,4 +1,4 @@
-package mrthomas20121.tfc_decoration.objects.blocks;
+package mrthomas20121.tfc_decoration.objects.blocks.rock;
 
 import net.dries007.tfc.api.capability.size.IItemSize;
 import net.dries007.tfc.api.capability.size.Size;

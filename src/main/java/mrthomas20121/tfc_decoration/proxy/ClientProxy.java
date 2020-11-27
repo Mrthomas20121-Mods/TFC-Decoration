@@ -1,10 +1,13 @@
 package mrthomas20121.tfc_decoration.proxy;
 
 import mrthomas20121.tfc_decoration.RegistryHandler;
-import mrthomas20121.tfc_decoration.objects.blocks.BlockDecoration;
-import net.dries007.tfc.objects.items.ItemTFC;
+import mrthomas20121.tfc_decoration.objects.blocks.rock.BlockDecoration;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockFenceGate;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Mod;
@@ -30,7 +33,14 @@ public class ClientProxy extends CommonProxy {
     }
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
-		for(BlockDecoration block: RegistryHandler.blocks)
+
+        for (Block block : RegistryHandler.getAllFenceGateBlocks())
+            ModelLoader.setCustomStateMapper(block, new StateMap.Builder().ignore(BlockFenceGate.POWERED).build());
+
+        for (ItemBlock item : RegistryHandler.getItemBlocks())
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+
+		for(Block block: RegistryHandler.getBlocks())
         {
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0 , new ModelResourceLocation(block.getRegistryName(), "normal"));
         }

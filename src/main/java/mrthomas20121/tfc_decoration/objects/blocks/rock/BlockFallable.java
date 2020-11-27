@@ -1,4 +1,4 @@
-package mrthomas20121.tfc_decoration.objects.blocks;
+package mrthomas20121.tfc_decoration.objects.blocks.rock;
 
 import mrthomas20121.tfc_decoration.types.DecorationType;
 import net.dries007.tfc.api.types.Rock;

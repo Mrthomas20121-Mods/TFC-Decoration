@@ -1,5 +1,6 @@
 package mrthomas20121.tfc_decoration.proxy;
 
+import mrthomas20121.tfc_decoration.TFCDecoration;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
@@ -16,7 +17,7 @@ import net.minecraftforge.registries.IForgeRegistryModifiable;
 
 import java.io.File;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = TFCDecoration.MODID)
 public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent e) {
@@ -28,4 +29,6 @@ public class CommonProxy {
 
     public void postInit(FMLPostInitializationEvent e) {
     }
+
+
 }

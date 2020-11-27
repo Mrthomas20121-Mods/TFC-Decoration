@@ -1,6 +1,6 @@
 package mrthomas20121.tfc_decoration;
 
-import mrthomas20121.tfc_decoration.objects.blocks.BlockDecoration;
+import mrthomas20121.tfc_decoration.objects.blocks.rock.BlockDecoration;
 import mrthomas20121.tfc_decoration.proxy.CommonProxy;
 import mrthomas20121.tfc_decoration.types.DecorationType;
 import net.dries007.tfc.api.registries.TFCRegistries;

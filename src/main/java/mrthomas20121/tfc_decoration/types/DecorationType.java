@@ -13,14 +13,14 @@ public enum DecorationType {
     private Material material;
     private SoundType soundType;
     private int hardness;
-    private boolean isFallable;
+    private boolean fallable;
 
     DecorationType(Material material, SoundType soundType, int hardness, boolean isFallable)
     {
         this.soundType = soundType;
         this.material = material;
         this.hardness = hardness;
-        this.isFallable = isFallable;
+        this.fallable = isFallable;
     }
 
     public Material getMaterial() {
@@ -32,7 +32,7 @@ public enum DecorationType {
     }
 
     public boolean isFallable() {
-        return isFallable;
+        return fallable;
     }
 
     public int getHardness() {
