@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XBX",
+    "XBX"
+  ],
+  "key": {
+    "X": {
+      "item": "tfc:wood/log/hevea"
+    },
+    "B": {
+      "item": "tfc:wood/lumber/hevea"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:wood/fence_log/hevea",
+    "count": 8
+  }
+}

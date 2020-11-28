@@ -2,7 +2,6 @@ package mrthomas20121.tfc_decoration;
 
 import mrthomas20121.tfc_decoration.objects.blocks.rock.BlockDecoration;
 import mrthomas20121.tfc_decoration.objects.blocks.rock.BlockMudBrick;
-import mrthomas20121.tfc_decoration.objects.blocks.wood.BlockFenceGateLogTFC;
 import mrthomas20121.tfc_decoration.objects.blocks.wood.BlockFenceLogTFC;
 import mrthomas20121.tfc_decoration.objects.te.TeMud;
 import mrthomas20121.tfc_decoration.types.DecorationType;
@@ -22,6 +21,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -34,26 +34,16 @@ import static net.dries007.tfc.objects.fluids.FluidsTFC.*;
 public class RegistryHandler
 {
     public static BlockMudBrick blockMudBrick;
-    private static ArrayList<Block> blocks = new ArrayList<>();
-    private static ArrayList<ItemBlockTFC> itemBlocks = new ArrayList<>();
 
-    private static ArrayList<Block> fencegates = new ArrayList<>();
-    private static ArrayList<Block> fences = new ArrayList<>();
+    private static ArrayList<Block> normalBlocks = new ArrayList<>();
+    private static ArrayList<Block> inventoryBlocks = new ArrayList<>();
 
-    public static ArrayList<Block> getAllFenceGateBlocks() {
-        return fencegates;
+    public static ArrayList<Block> getNormalBlocks() {
+        return normalBlocks;
     }
 
-    public static ArrayList<Block> getALLFenceBlocks() {
-        return fences;
-    }
-
-    public static ArrayList<Block> getBlocks() {
-        return blocks;
-    }
-
-    public static ArrayList<ItemBlockTFC> getItemBlocks() {
-        return itemBlocks;
+    public static ArrayList<Block> getInventoryBlocks() {
+        return inventoryBlocks;
     }
 
     @SubscribeEvent
@@ -61,8 +51,10 @@ public class RegistryHandler
     {
         for(Rock rock : TFCRegistries.ROCKS.getValuesCollection())
         {
-            event.getRegistry().register(
-                    new BarrelRecipe(IIngredient.of(FRESH_WATER.get(), 500), IIngredient.of(BlockRockVariant.get(rock, Rock.Type.GRAVEL)), null, new ItemStack(BlockDecoration.get(rock, DecorationType.WET_MUD), 1), 8* ICalendar.TICKS_IN_HOUR).setRegistryName(TFCDecoration.MODID, "wet_mud_"+rock.getRegistryName().getPath())
+            event.getRegistry().registerAll(
+                    new BarrelRecipe(IIngredient.of(FRESH_WATER.get(), 500), IIngredient.of(BlockRockVariant.get(rock, Rock.Type.GRAVEL)), null, new ItemStack(BlockDecoration.get(rock, DecorationType.WET_MUD), 1), 8* ICalendar.TICKS_IN_HOUR).setRegistryName(TFCDecoration.MODID, "wet_mud_"+rock.getRegistryName().getPath()),
+                    new BarrelRecipe(IIngredient.of(HOT_WATER.get(), 200), IIngredient.of(BlockRockVariant.get(rock, Rock.Type.COBBLE)), new FluidStack(FRESH_WATER.get(), 50), new ItemStack(BlockDecoration.get(rock, DecorationType.MOSSY_COBBLE), 1), 8* ICalendar.TICKS_IN_HOUR).setRegistryName(TFCDecoration.MODID, "mossy_cobble_"+rock.getRegistryName().getPath()),
+                    new BarrelRecipe(IIngredient.of(HOT_WATER.get(), 200), IIngredient.of(BlockRockVariant.get(rock, Rock.Type.BRICKS)), new FluidStack(FRESH_WATER.get(), 50), new ItemStack(BlockDecoration.get(rock, DecorationType.MOSSY_BRICK), 1), 8* ICalendar.TICKS_IN_HOUR).setRegistryName(TFCDecoration.MODID, "mossy_brick"+rock.getRegistryName().getPath())
             );
         }
     }
@@ -83,19 +75,7 @@ public class RegistryHandler
     public static void registerItems(RegistryEvent.Register<Item> event)
     {
         IForgeRegistry<Item> r = event.getRegistry();
-        ArrayList<Block> registedBlocks = new ArrayList<>(fences);
-        registedBlocks.addAll(fencegates);
-
-        for(Block block : registedBlocks)
-        {
-            ItemBlockTFC itemBlockTFC = new ItemBlockTFC(block);
-            itemBlockTFC.setRegistryName(block.getRegistryName());
-            itemBlockTFC.setTranslationKey(block.getTranslationKey());
-            itemBlockTFC.setCreativeTab(block.getCreativeTab());
-            r.register(itemBlockTFC);
-            itemBlocks.add(itemBlockTFC);
-        }
-        for(Block block : blocks)
+        for(Block block : inventoryBlocks)
         {
             ItemBlockTFC itemBlockTFC = new ItemBlockTFC(block);
             itemBlockTFC.setRegistryName(block.getRegistryName());
@@ -103,7 +83,14 @@ public class RegistryHandler
             itemBlockTFC.setCreativeTab(block.getCreativeTab());
             r.register(itemBlockTFC);
         }
-        r.register(new ItemBlockTFC(blockMudBrick).setRegistryName(blockMudBrick.getRegistryName()));
+        for(Block block : normalBlocks)
+        {
+            ItemBlockTFC itemBlockTFC = new ItemBlockTFC(block);
+            itemBlockTFC.setRegistryName(block.getRegistryName());
+            itemBlockTFC.setTranslationKey(block.getTranslationKey());
+            itemBlockTFC.setCreativeTab(block.getCreativeTab());
+            r.register(itemBlockTFC);
+        }
     }
 
     @SubscribeEvent
@@ -115,16 +102,17 @@ public class RegistryHandler
             for(DecorationType type: DecorationType.values())
             {
                 BlockDecoration blockDecoration = registerBlock(r, type.name().toLowerCase()+"/"+rock.getRegistryName().getPath(), rock, type);
+                normalBlocks.add(blockDecoration);
             }
         }
 
         for(Tree tree : TFCRegistries.TREES.getValuesCollection())
         {
-            fencegates.add(registerWoodBlock(r, "fencegate/log/"+tree.getRegistryName().getPath(), new BlockFenceGateLogTFC(tree)));
-            fences.add(registerWoodBlock(r, "fence/log/"+tree.getRegistryName().getPath(), new BlockFenceLogTFC(tree)));
+            inventoryBlocks.add(registerWoodBlock(r, "wood/fence_log/"+tree.getRegistryName().getPath(), new BlockFenceLogTFC(tree)));
         }
 
         blockMudBrick = registerMudBlock(r, new BlockMudBrick(), "mud/bricks");
+        normalBlocks.add(blockMudBrick);
         TileEntity.register("te_mud", TeMud.class);
     }
 
@@ -135,7 +123,6 @@ public class RegistryHandler
         block.setTranslationKey(TFCDecoration.MODID + "." + name.replace('/', '.'));
         block.setCreativeTab(CreativeTabsTFC.CT_ROCK_BLOCKS);
         r.register(block);
-        blocks.add(block);
         return block;
     }
 

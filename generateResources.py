@@ -146,6 +146,30 @@ def item(filename_parts, *layers, parent='item/generated'):
     model(('item', *filename_parts), parent,
           None if len(layers) == 0 else {'layer%d' % i: v for i, v in enumerate(layers)})
 
+def shapedRecipe(filename_parts, wood):
+    p = os.path.join('..\\tfc_decoration/recipes', *filename_parts) + '.json'
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    with open(p, 'w') as file:
+        json.dump(del_none({
+            "type": "minecraft:crafting_shaped",
+              "pattern": [
+                "XBX",
+                "XBX"
+              ],
+              "key": {
+                "X": {
+                  "item": "tfc:wood/log/"+wood
+                },
+                "B": {
+                  "item": "tfc:wood/lumber/"+wood
+                }
+              },
+              "result": {
+                "item": 'tfc_decoration:wood/fence_log/'+wood,
+                "count": 8
+              }
+        }), file, indent=2)
+
 def recipe(filename_parts, rock):
     p = os.path.join('..\\tfc_decoration/recipes', *filename_parts) + '.json'
     os.makedirs(os.path.dirname(p), exist_ok=True)
@@ -218,77 +242,4 @@ for wood_type in WOOD_TYPES:
       "false": {}
     }
     })
-    blockstate(('wood','fence_gate_log',wood_type), '', textures={
-        'log':'tfc:blocks/wood/log/%s' % wood_type,
-        'planks':'tfc:blocks/wood/planks/%s' % wood_type,
-        'particle':'tfc:blocks/wood/log/%s' % wood_type
-    }, variants= {
-    "normal": [ {} ],
-    "facing=south,in_wall=false,open=false": {
-      "model": "tfc:wood/fence_gate/fence_gate_closed"
-    },
-    "facing=west,in_wall=false,open=false": {
-      "model": "tfc:wood/fence_gate/fence_gate_closed",
-      "y": 90
-    },
-    "facing=north,in_wall=false,open=false": {
-      "model": "tfc:wood/fence_gate/fence_gate_closed",
-      "y": 180
-    },
-    "facing=east,in_wall=false,open=false": {
-      "model": "tfc:wood/fence_gate/fence_gate_closed",
-      "y": 270
-    },
-    "facing=south,in_wall=false,open=true": {
-      "model": "tfc:wood/fence_gate/fence_gate_open"
-    },
-    "facing=west,in_wall=false,open=true": {
-      "model": "tfc:wood/fence_gate/fence_gate_open",
-      "y": 90
-    },
-    "facing=north,in_wall=false,open=true": {
-      "model": "tfc:wood/fence_gate/fence_gate_open",
-      "y": 180
-    },
-    "facing=east,in_wall=false,open=true": {
-      "model": "tfc:wood/fence_gate/fence_gate_open",
-      "y": 270
-    },
-    "facing=south,in_wall=true,open=false": {
-      "model": "tfc:wood/fence_gate/wall_gate_closed"
-    },
-    "facing=west,in_wall=true,open=false": {
-      "model": "tfc:wood/fence_gate/wall_gate_closed",
-      "y": 90
-    },
-    "facing=north,in_wall=true,open=false": {
-      "model": "tfc:wood/fence_gate/wall_gate_closed",
-      "y": 180
-    },
-    "facing=east,in_wall=true,open=false": {
-      "model": "tfc:wood/fence_gate/wall_gate_closed",
-      "y": 270
-    },
-    "facing=south,in_wall=true,open=true": {
-      "model": "tfc:wood/fence_gate/wall_gate_open"
-    },
-    "facing=west,in_wall=true,open=true": {
-      "model": "tfc:wood/fence_gate/wall_gate_open",
-      "y": 90
-    },
-    "facing=north,in_wall=true,open=true": {
-      "model": "tfc:wood/fence_gate/wall_gate_open",
-      "y": 180
-    },
-    "facing=east,in_wall=true,open=true": {
-      "model": "tfc:wood/fence_gate/wall_gate_open",
-      "y": 270
-    }}
-    )
-
-    model(('wood', 'fence_gate_log', wood_type), 
-        'tfc_decoration:block/wood/fence_gate/fence_gate_closed', textures= {
-            "log": "tfc:blocks/wood/log/eucalyptus",
-            "planks": "tfc:blocks/wood/planks/eucalyptus",
-            "particle": "tfc:blocks/wood/log/eucalyptus"
-    })
+    shapedRecipe(('wood', wood_type, wood_type+'_fence_log'), wood_type)

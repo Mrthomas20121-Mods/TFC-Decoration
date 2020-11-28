@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import net.minecraft.block.BlockFence;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 
@@ -29,6 +30,7 @@ public class BlockFenceLogTFC extends BlockFence
         setHarvestLevel("axe", 0);
         setHardness(2.0F); // match vanilla
         setResistance(15.0F);
+        setSoundType(SoundType.WOOD);
         Blocks.FIRE.setFireInfo(this, 5, 20);
     }
 }

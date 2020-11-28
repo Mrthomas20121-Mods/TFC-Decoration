@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 let ROCK_TYPES = [
     'granite',
     'diorite',
@@ -42,6 +44,29 @@ let FULLBLOCK_TYPES = [
 	'mud'
 ]
 
+let WOOD_TYPES = [
+    'ash',
+    'aspen',
+    'birch',
+    'chestnut',
+    'douglas_fir',
+    'hickory',
+    'maple',
+    'oak',
+    'pine',
+    'sequoia',
+    'spruce',
+    'sycamore',
+    'white_cedar',
+    'willow',
+    'kapok',
+    'acacia',
+    'rosewood',
+    'blackwood',
+    'palm',
+    'hevea'
+]
+
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
@@ -51,13 +76,31 @@ let output = ""
 for(let type of ROCK_TYPES)
 {
     output+=`# ${type}`
-    output+=`\ntile.tfc_decoration.mossy_cobble.${type}.name=Moss ${capitalizeFirstLetter(type)}`
-    output+=`\ntile.tfc_decoration.mossy_brick.${type}.name=Mossy ${capitalizeFirstLetter(type)} Bricks`
-    output+=`\ntile.tfc_decoration.cracked_brick.${type}.name=Cracked ${capitalizeFirstLetter(type)} Bricks`
-    output+=`\ntile.tfc_decoration.wet_mud.${type}.name=Wet ${capitalizeFirstLetter(type)} Mud`
-    output+=`\ntile.tfc_decoration.mud.${type}.name=${capitalizeFirstLetter(type)} Mud`
+    output+=lang(['tile', 'tfc_decoration', 'mossy_cobble', type, 'name'], ['moss', type])
+    output+=lang(['tile', 'tfc_decoration', 'mossy_brick', type, 'name'], ['mossy', type, 'bricks'])
+    output+=lang(['tile', 'tfc_decoration', 'cracked_brick', type, 'name'], ['cracked', type, 'bricks'])
+    output+=lang(['tile', 'tfc_decoration', 'wet_mud', type, 'name'], ['wet', type, 'mud'])
+    output+=lang(['tile', 'tfc_decoration', 'mud', type, 'name'], [type, 'mud'])
     output+=`\n`
 }
+output+=lang(['tile', 'tfc_decoration', 'mud_bricks'], ['mud', 'bricks'])
+output+=`\n`
 
+for(let type of WOOD_TYPES)
+{
+    output+=lang(['tile', 'tfc_decoration', 'wood', 'fence_log', type, 'name'], [type, 'fence', 'log'])
+}
 
-console.log(output)
+fs.writeFileSync('./en_us.lang', output, 'utf8')
+
+/**
+ * create a lang entry
+ * @param {String[]} parts 
+ * @param {String[]} elements
+ * @returns {String}
+ */
+function lang(parts, elements) {
+    let entry = parts.join('.')
+    elements.forEach((s, index, array) => array[index] = capitalizeFirstLetter(s))
+    return `\n${entry}=${elements.join(' ')}`
+}

@@ -1,9 +1,3 @@
-# config
-config.tfc_decoration.time=TFC Hours it take to turn Wet Mud into Mud.
-
-# mud bricks
-tile.tfc_decoration.mud.bricks.name=Mud Bricks
-
 # granite
 tile.tfc_decoration.mossy_cobble.granite.name=Moss Granite
 tile.tfc_decoration.mossy_brick.granite.name=Mossy Granite Bricks
@@ -202,3 +196,26 @@ tile.tfc_decoration.mossy_brick.mylonite.name=Mossy Mylonite Bricks
 tile.tfc_decoration.cracked_brick.mylonite.name=Cracked Mylonite Bricks
 tile.tfc_decoration.wet_mud.mylonite.name=Wet Mylonite Mud
 tile.tfc_decoration.mud.mylonite.name=Mylonite Mud
+
+tile.tfc_decoration.mud_bricks=Mud Bricks
+
+tile.tfc_decoration.wood.fence_log.ash.name=Ash Fence Log
+tile.tfc_decoration.wood.fence_log.aspen.name=Aspen Fence Log
+tile.tfc_decoration.wood.fence_log.birch.name=Birch Fence Log
+tile.tfc_decoration.wood.fence_log.chestnut.name=Chestnut Fence Log
+tile.tfc_decoration.wood.fence_log.douglas_fir.name=Douglas_fir Fence Log
+tile.tfc_decoration.wood.fence_log.hickory.name=Hickory Fence Log
+tile.tfc_decoration.wood.fence_log.maple.name=Maple Fence Log
+tile.tfc_decoration.wood.fence_log.oak.name=Oak Fence Log
+tile.tfc_decoration.wood.fence_log.pine.name=Pine Fence Log
+tile.tfc_decoration.wood.fence_log.sequoia.name=Sequoia Fence Log
+tile.tfc_decoration.wood.fence_log.spruce.name=Spruce Fence Log
+tile.tfc_decoration.wood.fence_log.sycamore.name=Sycamore Fence Log
+tile.tfc_decoration.wood.fence_log.white_cedar.name=White_cedar Fence Log
+tile.tfc_decoration.wood.fence_log.willow.name=Willow Fence Log
+tile.tfc_decoration.wood.fence_log.kapok.name=Kapok Fence Log
+tile.tfc_decoration.wood.fence_log.acacia.name=Acacia Fence Log
+tile.tfc_decoration.wood.fence_log.rosewood.name=Rosewood Fence Log
+tile.tfc_decoration.wood.fence_log.blackwood.name=Blackwood Fence Log
+tile.tfc_decoration.wood.fence_log.palm.name=Palm Fence Log
+tile.tfc_decoration.wood.fence_log.hevea.name=Hevea Fence Log
