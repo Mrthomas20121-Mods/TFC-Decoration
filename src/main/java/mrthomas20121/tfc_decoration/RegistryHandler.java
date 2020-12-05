@@ -1,9 +1,8 @@
 package mrthomas20121.tfc_decoration;
 
 import mrthomas20121.tfc_decoration.objects.blocks.rock.BlockDecoration;
-import mrthomas20121.tfc_decoration.objects.blocks.rock.BlockMudBrick;
 import mrthomas20121.tfc_decoration.objects.blocks.wood.BlockFenceLogTFC;
-import mrthomas20121.tfc_decoration.objects.te.TeMud;
+import mrthomas20121.tfc_decoration.objects.items.ItemRockBase;
 import mrthomas20121.tfc_decoration.types.DecorationType;
 import net.dries007.tfc.api.recipes.ChiselRecipe;
 import net.dries007.tfc.api.recipes.barrel.BarrelRecipe;
@@ -13,13 +12,14 @@ import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.CreativeTabsTFC;
 import net.dries007.tfc.objects.blocks.stone.BlockRockVariant;
 import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
+import net.dries007.tfc.objects.items.ItemTFC;
 import net.dries007.tfc.objects.items.itemblock.ItemBlockTFC;
 import net.dries007.tfc.util.calendar.ICalendar;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Mod;
@@ -33,10 +33,10 @@ import static net.dries007.tfc.objects.fluids.FluidsTFC.*;
 @Mod.EventBusSubscriber(modid = TFCDecoration.MODID)
 public class RegistryHandler
 {
-    public static BlockMudBrick blockMudBrick;
 
     private static ArrayList<Block> normalBlocks = new ArrayList<>();
     private static ArrayList<Block> inventoryBlocks = new ArrayList<>();
+    private static ArrayList<ItemTFC> items = new ArrayList<>();
 
     public static ArrayList<Block> getNormalBlocks() {
         return normalBlocks;
@@ -46,15 +46,18 @@ public class RegistryHandler
         return inventoryBlocks;
     }
 
+    public static ArrayList<ItemTFC> getItems() {
+        return items;
+    }
+
     @SubscribeEvent
     public static void onRegisterBarrelRecipeEvent(RegistryEvent.Register<BarrelRecipe> event)
     {
         for(Rock rock : TFCRegistries.ROCKS.getValuesCollection())
         {
             event.getRegistry().registerAll(
-                    new BarrelRecipe(IIngredient.of(FRESH_WATER.get(), 500), IIngredient.of(BlockRockVariant.get(rock, Rock.Type.GRAVEL)), null, new ItemStack(BlockDecoration.get(rock, DecorationType.WET_MUD), 1), 8* ICalendar.TICKS_IN_HOUR).setRegistryName(TFCDecoration.MODID, "wet_mud_"+rock.getRegistryName().getPath()),
                     new BarrelRecipe(IIngredient.of(HOT_WATER.get(), 200), IIngredient.of(BlockRockVariant.get(rock, Rock.Type.COBBLE)), new FluidStack(FRESH_WATER.get(), 50), new ItemStack(BlockDecoration.get(rock, DecorationType.MOSSY_COBBLE), 1), 8* ICalendar.TICKS_IN_HOUR).setRegistryName(TFCDecoration.MODID, "mossy_cobble_"+rock.getRegistryName().getPath()),
-                    new BarrelRecipe(IIngredient.of(HOT_WATER.get(), 200), IIngredient.of(BlockRockVariant.get(rock, Rock.Type.BRICKS)), new FluidStack(FRESH_WATER.get(), 50), new ItemStack(BlockDecoration.get(rock, DecorationType.MOSSY_BRICK), 1), 8* ICalendar.TICKS_IN_HOUR).setRegistryName(TFCDecoration.MODID, "mossy_brick"+rock.getRegistryName().getPath())
+                    new BarrelRecipe(IIngredient.of(HOT_WATER.get(), 200), IIngredient.of(BlockRockVariant.get(rock, Rock.Type.BRICKS)), new FluidStack(FRESH_WATER.get(), 50), new ItemStack(BlockDecoration.get(rock, DecorationType.MOSSY_BRICKS), 1), 8* ICalendar.TICKS_IN_HOUR).setRegistryName(TFCDecoration.MODID, "mossy_brick"+rock.getRegistryName().getPath())
             );
         }
     }
@@ -66,7 +69,7 @@ public class RegistryHandler
         for (Rock rock : TFCRegistries.ROCKS.getValuesCollection())
         {
             Block rawRock = BlockRockVariant.get(rock, Rock.Type.BRICKS);
-            IBlockState crackedRock = BlockDecoration.get(rock, DecorationType.CRACKED_BRICK).getDefaultState();
+            IBlockState crackedRock = BlockDecoration.get(rock, DecorationType.CRACKED_BRICKS).getDefaultState();
             event.getRegistry().register(new ChiselRecipe(rawRock, crackedRock).setRegistryName("cracked_" + rock.getRegistryName().getPath()));
         }
     }
@@ -75,6 +78,15 @@ public class RegistryHandler
     public static void registerItems(RegistryEvent.Register<Item> event)
     {
         IForgeRegistry<Item> r = event.getRegistry();
+
+        for(Rock rock: TFCRegistries.ROCKS.getValuesCollection())
+        {
+            for(ItemRockBase.ItemType type : ItemRockBase.ItemType.values())
+            {
+                items.add(register(r, new ItemRockBase(rock, type), type.name().toLowerCase()+"/"+rock.getRegistryName().getPath().toLowerCase(), CreativeTabsTFC.CT_ROCK_ITEMS));
+            }
+        }
+
         for(Block block : inventoryBlocks)
         {
             ItemBlockTFC itemBlockTFC = new ItemBlockTFC(block);
@@ -110,10 +122,6 @@ public class RegistryHandler
         {
             inventoryBlocks.add(registerWoodBlock(r, "wood/fence_log/"+tree.getRegistryName().getPath(), new BlockFenceLogTFC(tree)));
         }
-
-        blockMudBrick = registerMudBlock(r, new BlockMudBrick(), "mud/bricks");
-        normalBlocks.add(blockMudBrick);
-        TileEntity.register("te_mud", TeMud.class);
     }
 
     public static BlockDecoration registerBlock(IForgeRegistry<Block> r, String name, Rock rock, DecorationType decorationType)
@@ -135,12 +143,12 @@ public class RegistryHandler
         return block;
     }
 
-    public static BlockMudBrick registerMudBlock(IForgeRegistry<Block> r, BlockMudBrick block, String name)
+    public static ItemTFC register(IForgeRegistry<Item> r, ItemTFC item, String name, CreativeTabs tabs)
     {
-        block.setRegistryName(TFCDecoration.MODID, name);
-        block.setTranslationKey(TFCDecoration.MODID + "." + name.replace('/', '.'));
-        block.setCreativeTab(CreativeTabsTFC.CT_ROCK_BLOCKS);
-        r.register(block);
-        return block;
+        item.setRegistryName(TFCDecoration.MODID, name);
+        item.setTranslationKey(TFCDecoration.MODID + "." + name.replace('/', '.'));
+        item.setCreativeTab(tabs);
+        r.register(item);
+        return item;
     }
 }

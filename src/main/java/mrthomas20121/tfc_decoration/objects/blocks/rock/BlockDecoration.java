@@ -17,7 +17,6 @@ public class BlockDecoration extends Block implements IItemSize
     public DecorationType type;
     public static HashMap<Rock, EnumMap<DecorationType, BlockDecoration>> table = new HashMap<>();
 
-    private DecorationType decorationType;
 
     public static BlockDecoration get(Rock rock, DecorationType decorationType)
     {
@@ -27,7 +26,6 @@ public class BlockDecoration extends Block implements IItemSize
     public static BlockDecoration create(Rock rock, DecorationType decorationType)
     {
         if(decorationType.isFallable()) return new BlockFallable(rock, decorationType);
-        if(decorationType == DecorationType.WET_MUD) return new BlockMudRaw(rock, decorationType);
         return new BlockDecoration(rock, decorationType);
     }
 

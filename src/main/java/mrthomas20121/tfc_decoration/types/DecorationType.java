@@ -5,10 +5,10 @@ import net.minecraft.block.material.Material;
 
 public enum DecorationType {
     MOSSY_COBBLE(Material.ROCK, SoundType.STONE, 5, true),
-    MOSSY_BRICK(Material.ROCK, SoundType.STONE, 5, false),
-    CRACKED_BRICK(Material.ROCK, SoundType.STONE, 5, false),
-    WET_MUD(Material.CLAY, SoundType.SAND, 3, false),
-    MUD(Material.CLAY, SoundType.SAND, 2, true);
+    MOSSY_BRICKS(Material.ROCK, SoundType.STONE, 5, false),
+    CRACKED_BRICKS(Material.ROCK, SoundType.STONE, 5, false),
+    SANDSTONE(Material.ROCK, SoundType.STONE, 1, false),
+    MUD_BRICKS(Material.ROCK, SoundType.STONE, 3, false);
 
     private Material material;
     private SoundType soundType;

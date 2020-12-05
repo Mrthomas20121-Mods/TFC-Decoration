@@ -1,10 +1,9 @@
 package mrthomas20121.tfc_decoration.proxy;
 
 import mrthomas20121.tfc_decoration.RegistryHandler;
+import net.dries007.tfc.objects.items.ItemTFC;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFenceGate;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -20,9 +19,7 @@ public class ClientProxy extends CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
         super.preInit(e);
     }
-	
-	
-	
+
     @Override
     public void postInit(FMLPostInitializationEvent e) {
     
@@ -33,11 +30,15 @@ public class ClientProxy extends CommonProxy {
         for(Block block : RegistryHandler.getNormalBlocks())
         {
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "normal"));
-            if(block instanceof BlockFenceGateLogTFC) ModelLoader.setCustomStateMapper(block, new StateMap.Builder().ignore(BlockFenceGate.POWERED).build());
         }
         for(Block block : RegistryHandler.getInventoryBlocks())
         {
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+        }
+
+        for(ItemTFC item: RegistryHandler.getItems())
+        {
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
         }
 
     }
