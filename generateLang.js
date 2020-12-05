@@ -40,8 +40,7 @@ let FULLBLOCK_TYPES = [
     'mossy_cobble',
 	'mossy_brick',
 	'cracked_brick',
-	'wet_mud',
-	'mud'
+	'mud_brick'
 ]
 
 let WOOD_TYPES = [
@@ -77,13 +76,16 @@ for(let type of ROCK_TYPES)
 {
     output+=`# ${type}`
     output+=lang(['tile', 'tfc_decoration', 'mossy_cobble', type, 'name'], ['moss', type])
-    output+=lang(['tile', 'tfc_decoration', 'mossy_brick', type, 'name'], ['mossy', type, 'bricks'])
-    output+=lang(['tile', 'tfc_decoration', 'cracked_brick', type, 'name'], ['cracked', type, 'bricks'])
-    output+=lang(['tile', 'tfc_decoration', 'wet_mud', type, 'name'], ['wet', type, 'mud'])
-    output+=lang(['tile', 'tfc_decoration', 'mud', type, 'name'], [type, 'mud'])
+    output+=lang(['tile', 'tfc_decoration', 'mossy_bricks', type, 'name'], ['mossy', type, 'bricks'])
+    output+=lang(['tile', 'tfc_decoration', 'cracked_bricks', type, 'name'], ['cracked', type, 'bricks'])
+    output+=lang(['tile', 'tfc_decoration', 'mud_bricks', type, 'name'], [type, 'mud_bricks'])
+    output+=lang(['tile', 'tfc_decoration', 'sandstone', type, 'name'], [type, 'sandstone'])
+    output+=`\n`
+    // items
+    output+=lang(['item', 'tfc_decoration', 'mud_brick', type, 'name'], [type, 'mud_brick'])
+    output+=lang(['item', 'tfc_decoration', 'mud_ball', type, 'name'], [type, 'mud_ball'])
     output+=`\n`
 }
-output+=lang(['tile', 'tfc_decoration', 'mud_bricks'], ['mud', 'bricks'])
 output+=`\n`
 
 for(let type of WOOD_TYPES)
@@ -101,6 +103,15 @@ fs.writeFileSync('./en_us.lang', output, 'utf8')
  */
 function lang(parts, elements) {
     let entry = parts.join('.')
-    elements.forEach((s, index, array) => array[index] = capitalizeFirstLetter(s))
+    elements.forEach((value, index, array) => {
+        if(value.includes('_'))
+        {
+            let arr = value.split('_')
+            arr.forEach((val, index, array) => array[index] = capitalizeFirstLetter(val))
+            //console.log(arr)
+            array[index] = arr.join(' ')
+        }
+        else array[index] = capitalizeFirstLetter(value)
+    })
     return `\n${entry}=${elements.join(' ')}`
 }
