@@ -43,7 +43,7 @@ repositories {
     }
 }
 
-version = "1.0.4"
+version = "1.0.6"
 group= "mrthomas20121.tfc_decoration"
 archivesBaseName = "tfc_decoration"
 

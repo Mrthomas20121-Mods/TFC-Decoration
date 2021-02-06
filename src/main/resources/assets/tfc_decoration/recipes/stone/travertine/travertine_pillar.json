@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "tfc:raw/travertine"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:pillar/travertine",
+    "count": 1
+  }
+}

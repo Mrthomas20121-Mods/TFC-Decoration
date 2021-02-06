@@ -40,7 +40,9 @@ let FULLBLOCK_TYPES = [
     'mossy_cobble',
 	'mossy_brick',
 	'cracked_brick',
-	'mud_brick'
+	'mud_brick',
+	'sandstone',
+	'pillar',
 ]
 
 let WOOD_TYPES = [
@@ -78,8 +80,11 @@ for(let type of ROCK_TYPES)
     output+=lang(['tile', 'tfc_decoration', 'mossy_cobble', type, 'name'], ['moss', type])
     output+=lang(['tile', 'tfc_decoration', 'mossy_bricks', type, 'name'], ['mossy', type, 'bricks'])
     output+=lang(['tile', 'tfc_decoration', 'cracked_bricks', type, 'name'], ['cracked', type, 'bricks'])
+	output+=lang(['tile', 'tfc_decoration', 'raw_mud', type, 'name'], [type, 'raw_mud'])
     output+=lang(['tile', 'tfc_decoration', 'mud_bricks', type, 'name'], [type, 'mud_bricks'])
     output+=lang(['tile', 'tfc_decoration', 'sandstone', type, 'name'], [type, 'sandstone'])
+	output+=lang(['tile', 'tfc_decoration', 'pillar', type, 'name'], [type, 'pillar'])
+	output+=lang(['tile', 'tfc_decoration', 'sandstone_pillar', type, 'name'], [type, 'sandstone_pillar'])
     output+=`\n`
     // items
     output+=lang(['item', 'tfc_decoration', 'mud_brick', type, 'name'], [type, 'mud_brick'])

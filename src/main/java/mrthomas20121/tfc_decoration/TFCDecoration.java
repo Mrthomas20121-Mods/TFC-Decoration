@@ -1,11 +1,13 @@
 package mrthomas20121.tfc_decoration;
 
 import mrthomas20121.tfc_decoration.proxy.CommonProxy;
+import mrthomas20121.tfc_decoration.worldgen.WorldgenMud;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.fml.common.SidedProxy;
 
@@ -18,7 +20,7 @@ public class TFCDecoration
     public static TFCDecoration instance;
     public static final String MODID = "tfc_decoration";
     public static final String NAME = "TFC Decoration";
-    public static final String VERSION = "1.0.4";
+    public static final String VERSION = "1.0.6";
 
     public static Logger logger;
 
@@ -37,6 +39,7 @@ public class TFCDecoration
     public void init(FMLInitializationEvent event)
     {
         proxy.init(event);
+        GameRegistry.registerWorldGenerator(new WorldgenMud(), 100);
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)

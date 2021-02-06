@@ -54,4 +54,8 @@ public class BlockDecoration extends Block implements IItemSize
     public Weight getWeight(@Nonnull ItemStack itemStack) {
         return Weight.LIGHT;
     }
+
+    public DecorationType getType() {
+        return type;
+    }
 }

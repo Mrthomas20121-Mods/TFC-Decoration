@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "tfc:raw/chert"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:pillar/chert",
+    "count": 1
+  }
+}

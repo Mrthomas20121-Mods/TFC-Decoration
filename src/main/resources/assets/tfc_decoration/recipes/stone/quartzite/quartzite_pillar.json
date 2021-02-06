@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "tfc:raw/quartzite"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:pillar/quartzite",
+    "count": 1
+  }
+}
