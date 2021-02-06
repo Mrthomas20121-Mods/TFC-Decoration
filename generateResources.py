@@ -299,7 +299,7 @@ for rock_type in ROCK_TYPES:
     chisel_recipe(('stone',rock_type, rock_type+'_mud_brick'), 'tfc_decoration:mud_ball/'+rock_type, 'tfc_decoration:mud_brick/'+rock_type)
     pillar_recipe(('stone',rock_type, rock_type+'_pillar'), rock_type)
     sandstone_pillar_recipe(('stone',rock_type, rock_type+'_sandstone_pillar'), rock_type)
-    shapeless_recipe(('stone',rock_type, rock_type+'_raw_mud'), [{ 'item':'tfc_decoration:mud_raw/'+rock_type }], { 'item':'tfc_decoration:mud_ball/'+rock_type, 'count':4 })
+    shapeless_recipe(('stone',rock_type, rock_type+'_raw_mud'), [{ 'item':'tfc_decoration:raw_mud/'+rock_type }], { 'item':'tfc_decoration:mud_ball/'+rock_type, 'count':4 })
 
 # WOOD STUFF
 

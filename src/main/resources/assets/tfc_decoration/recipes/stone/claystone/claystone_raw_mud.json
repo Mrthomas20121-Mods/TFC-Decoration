@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc_decoration:mud_raw/claystone"
+      "item": "tfc_decoration:raw_mud/claystone"
     }
   ],
   "result": {

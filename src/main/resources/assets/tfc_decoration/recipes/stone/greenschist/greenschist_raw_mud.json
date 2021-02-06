@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc_decoration:mud_raw/greenschist"
+      "item": "tfc_decoration:raw_mud/greenschist"
     }
   ],
   "result": {
