@@ -35,7 +35,12 @@ public class BlockDecoration extends Block implements IItemSize
         this.type = decorationType;
         this.setSoundType(decorationType.getSoundType());
         this.setHardness(decorationType.getHardness());
-        this.setHarvestLevel("pickaxe", 1);
+        if(decorationType.equals(DecorationType.RAW_MUD)) {
+            this.setHarvestLevel("pickaxe", 0);
+        }
+        else {
+            this.setHarvestLevel("pickaxe", 1);
+        }
         if(!table.containsKey(rock))
         {
             table.put(rock, new EnumMap<>(DecorationType.class));

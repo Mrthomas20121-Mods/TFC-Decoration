@@ -8,10 +8,11 @@ public enum DecorationType {
     MOSSY_BRICKS(Material.ROCK, SoundType.STONE, 5, false),
     CRACKED_BRICKS(Material.ROCK, SoundType.STONE, 5, false),
     SANDSTONE(Material.ROCK, SoundType.STONE, 1, false),
-    RAW_MUD(Material.ROCK, SoundType.STONE, 3, false),
-    MUD_BRICKS(Material.ROCK, SoundType.STONE, 3, false),
-	PILLAR(Material.ROCK, SoundType.STONE, 3, false),
-	SANDSTONE_PILLAR(Material.ROCK, SoundType.STONE, 2, false);
+    RAW_MUD(Material.ROCK, SoundType.STONE, 4, false),
+    MUD_BRICKS(Material.ROCK, SoundType.STONE, 4, false),
+    MUD_PILLAR(Material.ROCK, SoundType.STONE, 5, false),
+	PILLAR(Material.ROCK, SoundType.STONE, 5, false),
+	SANDSTONE_PILLAR(Material.ROCK, SoundType.STONE, 5, false);
 
     private Material material;
     private SoundType soundType;

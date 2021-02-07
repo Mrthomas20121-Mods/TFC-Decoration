@@ -77,6 +77,7 @@ let output = ""
 for(let type of ROCK_TYPES)
 {
     output+=`# ${type}`
+    output+=lang(['config', 'tfc_decoration', 'worldgen'], ['Enable/Disable Worldgen'])
     output+=lang(['tile', 'tfc_decoration', 'mossy_cobble', type, 'name'], ['moss', type])
     output+=lang(['tile', 'tfc_decoration', 'mossy_bricks', type, 'name'], ['mossy', type, 'bricks'])
     output+=lang(['tile', 'tfc_decoration', 'cracked_bricks', type, 'name'], ['cracked', type, 'bricks'])

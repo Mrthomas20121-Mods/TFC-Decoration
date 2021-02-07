@@ -39,7 +39,7 @@ public class TFCDecoration
     public void init(FMLInitializationEvent event)
     {
         proxy.init(event);
-        GameRegistry.registerWorldGenerator(new WorldgenMud(), 100);
+        if(ConfigDecoration.ConfigGeneral.worldgen) GameRegistry.registerWorldGenerator(new WorldgenMud(), 100);
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)

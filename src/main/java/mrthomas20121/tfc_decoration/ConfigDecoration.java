@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber(modid = TFCDecoration.MODID)
-public class ConfigDec {
+public class ConfigDecoration {
 
     @SubscribeEvent
     public static void onConfigChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
@@ -21,10 +21,9 @@ public class ConfigDec {
     @Config(modid = TFCDecoration.MODID, name = "TFC Decoration")
     public static class ConfigGeneral {
 
-        @Config.RangeInt(min = 2, max = 100)
-        @Config.Comment("TFC Hours it take to turn Wet Mud into Mud")
-        @Config.LangKey("config."+TFCDecoration.MODID+".time")
+        @Config.Comment("Enable/Disable Worldgen")
+        @Config.LangKey("config."+TFCDecoration.MODID+".worldgen")
         @Config.RequiresMcRestart
-        public static int time = 12;
+        public static boolean worldgen = true;
     }
 }
