@@ -47,6 +47,7 @@ FULLBLOCK_TYPES = [
 	'cracked_bricks',
 	'mud_bricks',
     'sandstone',
+    'mud_pillar',
     'pillar',
     'sandstone_pillar',
     'raw_mud'
@@ -74,8 +75,6 @@ WOOD_TYPES = [
     'palm',
     'hevea'
 ]
-
-
 
 def del_none(d):
     """
@@ -174,47 +173,32 @@ def shapedRecipe(filename_parts, wood):
               }
         }), file, indent=2)
 
+def pillar_recipe_base(filename_parts, inputs, output):
+    p = os.path.join('..\\tfc_decoration/recipes', *filename_parts) + '.json'
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    with open(p, 'w') as file:
+        json.dump(del_none({
+            "type": "minecraft:crafting_shaped",
+              "pattern": [
+                "X",
+                "X"
+              ],
+              "key": {
+                "X": {
+                  "item": inputs
+                }
+              },
+              "result": {
+                "item": output,
+                "count": 1
+              }
+        }), file, indent=2)
 def pillar_recipe(filename_parts, stone_type):
-    p = os.path.join('..\\tfc_decoration/recipes', *filename_parts) + '.json'
-    os.makedirs(os.path.dirname(p), exist_ok=True)
-    with open(p, 'w') as file:
-        json.dump(del_none({
-            "type": "minecraft:crafting_shaped",
-              "pattern": [
-                "X",
-                "X"
-              ],
-              "key": {
-                "X": {
-                  "item": "tfc:raw/"+stone_type
-                }
-              },
-              "result": {
-                "item": 'tfc_decoration:pillar/'+stone_type,
-                "count": 1
-              }
-        }), file, indent=2)
+    pillar_recipe_base(filename_parts, "tfc:raw/"+stone_type, 'tfc_decoration:pillar/'+stone_type)
 def sandstone_pillar_recipe(filename_parts, stone_type):
-    p = os.path.join('..\\tfc_decoration/recipes', *filename_parts) + '.json'
-    os.makedirs(os.path.dirname(p), exist_ok=True)
-    with open(p, 'w') as file:
-        json.dump(del_none({
-            "type": "minecraft:crafting_shaped",
-              "pattern": [
-                "X",
-                "X"
-              ],
-              "key": {
-                "X": {
-                  "item": "tfc_decoration:sandstone/"+stone_type
-                }
-              },
-              "result": {
-                "item": 'tfc_decoration:sandstone_pillar/'+stone_type,
-                "count": 1
-              }
-        }), file, indent=2)
-
+    pillar_recipe_base(filename_parts, "tfc_decoration:sandstone/"+stone_type, "tfc_decoration:sandstone_pillar/"+stone_type)
+def mud_pillar_recipe(filename_parts, stone_type):
+    pillar_recipe_base(filename_parts, "tfc_decoration:mud/"+stone_type, "tfc_decoration:mud/"+stone_type)
 def chisel_recipe(filename_parts, input, output):
     p = os.path.join('..\\tfc_decoration/recipes', *filename_parts) + '.json'
     os.makedirs(os.path.dirname(p), exist_ok=True)
@@ -282,16 +266,15 @@ for rock_type in ROCK_TYPES:
     for block_type in FULLBLOCK_TYPES:
         if block_type == 'sandstone' :
           cube_bottom_top((block_type, rock_type), ['tfc_decoration:blocks/stonetypes/%s/side/%s' % (block_type, rock_type), 'tfc_decoration:blocks/stonetypes/%s/bottom/%s' % (block_type, rock_type), 'tfc_decoration:blocks/stonetypes/%s/top/%s' % (block_type, rock_type)])
-        elif block_type == 'pillar' or block_type == 'sandstone_pillar' :
+        elif block_type == 'pillar' or block_type == 'sandstone_pillar' or block_type == 'mud_pillar' :
             cube_column((block_type, rock_type), ['tfc_decoration:blocks/stonetypes/%s/normal/%s' % (block_type, rock_type), 'tfc_decoration:blocks/stonetypes/%s/top/%s' % (block_type, rock_type)])
         else :
           cube_all((block_type, rock_type), 'tfc_decoration:blocks/stonetypes/%s/%s' % (block_type, rock_type))
 
     for item_type in ['mud_ball', 'mud_brick'] :
         item((item_type,rock_type), 'tfc_decoration:items/stonetypes/%s/%s' % (item_type, rock_type))
+    
     # recipe
-
-    # bricks to cracked bricks
     chisel_recipe(('stone',rock_type, 'cracked_'+rock_type), 'tfc:bricks/'+rock_type, 'tfc_decoration:cracked_bricks/'+rock_type)
     brick_recipe(('stone', rock_type, 'mud_bricks'), 'tfc_decoration:mud_brick/'+rock_type, 'tfc_decoration:mud_bricks/'+rock_type)
     sandstone_recipe(('stone', rock_type, 'sandstone'), rock_type)
@@ -299,6 +282,7 @@ for rock_type in ROCK_TYPES:
     chisel_recipe(('stone',rock_type, rock_type+'_mud_brick'), 'tfc_decoration:mud_ball/'+rock_type, 'tfc_decoration:mud_brick/'+rock_type)
     pillar_recipe(('stone',rock_type, rock_type+'_pillar'), rock_type)
     sandstone_pillar_recipe(('stone',rock_type, rock_type+'_sandstone_pillar'), rock_type)
+    sandstone_pillar_recipe(('stone',rock_type, rock_type+'_mud_pillar'), rock_type)
     shapeless_recipe(('stone',rock_type, rock_type+'_raw_mud'), [{ 'item':'tfc_decoration:raw_mud/'+rock_type }], { 'item':'tfc_decoration:mud_ball/'+rock_type, 'count':4 })
 
 # WOOD STUFF

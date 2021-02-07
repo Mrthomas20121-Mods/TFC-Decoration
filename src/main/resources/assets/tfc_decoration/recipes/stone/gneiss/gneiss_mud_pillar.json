@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "tfc_decoration:sandstone/gneiss"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:sandstone_pillar/gneiss",
+    "count": 1
+  }
+}
