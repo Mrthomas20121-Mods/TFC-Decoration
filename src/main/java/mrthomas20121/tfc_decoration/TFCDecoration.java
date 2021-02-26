@@ -13,14 +13,14 @@ import net.minecraftforge.fml.common.SidedProxy;
 
 @Mod(modid = TFCDecoration.MODID, name = TFCDecoration.NAME, version = TFCDecoration.VERSION,
         dependencies = "required-after:forge@[14.23.5.2847,);"
-        + "required-after:tfc@[1.4.0.149,);")
+        + "required-after:tfc@[1.7.13.171,);")
 public class TFCDecoration
 {
     @Mod.Instance
     public static TFCDecoration instance;
     public static final String MODID = "tfc_decoration";
     public static final String NAME = "TFC Decoration";
-    public static final String VERSION = "1.0.6";
+    public static final String VERSION = "1.0.7";
 
     public static Logger logger;
 

@@ -43,7 +43,7 @@ repositories {
     }
 }
 
-version = "1.0.6"
+version = "1.0.7"
 group= "mrthomas20121.tfc_decoration"
 archivesBaseName = "tfc_decoration"
 
@@ -54,11 +54,6 @@ minecraft {
     version = "1.12.2-14.23.5.2847"
     runDir = "run"
 
-    // the mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   snapshot are built nightly.
-    // stable_#            stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
     mappings = "stable_39"
     //useDepAts = true
 }
