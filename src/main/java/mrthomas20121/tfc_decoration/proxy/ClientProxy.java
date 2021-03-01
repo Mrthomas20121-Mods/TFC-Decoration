@@ -36,7 +36,7 @@ public class ClientProxy extends CommonProxy {
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
         }
 
-        for(ItemTFC item: RegistryHandler.getItems())
+        for(Item item: RegistryHandler.getItems())
         {
             ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
         }

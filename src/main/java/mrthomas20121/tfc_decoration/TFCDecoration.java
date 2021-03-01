@@ -1,5 +1,6 @@
 package mrthomas20121.tfc_decoration;
 
+import mrthomas20121.tfc_decoration.objects.items.ItemsDec;
 import mrthomas20121.tfc_decoration.proxy.CommonProxy;
 import mrthomas20121.tfc_decoration.worldgen.WorldgenMud;
 import net.minecraftforge.common.MinecraftForge;
@@ -8,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.fml.common.SidedProxy;
 
@@ -40,6 +42,9 @@ public class TFCDecoration
     {
         proxy.init(event);
         if(ConfigDecoration.ConfigGeneral.worldgen) GameRegistry.registerWorldGenerator(new WorldgenMud(), 100);
+
+        OreDictionary.registerOre("categoryFruit", ItemsDec.pineapple);
+        OreDictionary.registerOre("leather", ItemsDec.pineapple_leather);
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)

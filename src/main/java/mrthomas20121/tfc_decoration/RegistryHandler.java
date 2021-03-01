@@ -2,18 +2,25 @@ package mrthomas20121.tfc_decoration;
 
 import mrthomas20121.tfc_decoration.objects.blocks.rock.BlockDecoration;
 import mrthomas20121.tfc_decoration.objects.blocks.wood.BlockFenceLogTFC;
+import mrthomas20121.tfc_decoration.objects.items.ItemFoodDec;
+import mrthomas20121.tfc_decoration.objects.items.ItemLeatherDec;
 import mrthomas20121.tfc_decoration.objects.items.ItemRockBase;
 import mrthomas20121.tfc_decoration.types.DecorationType;
+import mrthomas20121.tfc_decoration.util.fruit.BerryBushDec;
+import net.dries007.tfc.api.capability.food.FoodData;
 import net.dries007.tfc.api.recipes.ChiselRecipe;
 import net.dries007.tfc.api.recipes.barrel.BarrelRecipe;
 import net.dries007.tfc.api.registries.TFCRegistries;
 import net.dries007.tfc.api.types.Rock;
 import net.dries007.tfc.api.types.Tree;
 import net.dries007.tfc.objects.CreativeTabsTFC;
+import net.dries007.tfc.objects.blocks.agriculture.BlockBerryBush;
 import net.dries007.tfc.objects.blocks.stone.BlockRockVariant;
 import net.dries007.tfc.objects.inventory.ingredient.IIngredient;
 import net.dries007.tfc.objects.items.ItemTFC;
+import net.dries007.tfc.objects.items.food.ItemFoodTFC;
 import net.dries007.tfc.objects.items.itemblock.ItemBlockTFC;
+import net.dries007.tfc.util.agriculture.Food;
 import net.dries007.tfc.util.calendar.ICalendar;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -36,7 +43,8 @@ public class RegistryHandler
 
     private static ArrayList<Block> normalBlocks = new ArrayList<>();
     private static ArrayList<Block> inventoryBlocks = new ArrayList<>();
-    private static ArrayList<ItemTFC> items = new ArrayList<>();
+    private static ArrayList<Item> items = new ArrayList<>();
+    private static FoodData pineapple = new FoodData(4, 0.5F, 5.0F, 0.0F, 0.0F, 0.75F, 0.0F, 0.0F, 4.9F);
 
     public static ArrayList<Block> getNormalBlocks() {
         return normalBlocks;
@@ -46,7 +54,7 @@ public class RegistryHandler
         return inventoryBlocks;
     }
 
-    public static ArrayList<ItemTFC> getItems() {
+    public static ArrayList<Item> getItems() {
         return items;
     }
 
@@ -103,6 +111,9 @@ public class RegistryHandler
             itemBlockTFC.setCreativeTab(block.getCreativeTab());
             r.register(itemBlockTFC);
         }
+
+        items.add(register(r, new ItemFoodDec(pineapple),"food/pineapple", CreativeTabsTFC.CT_FOOD));
+        items.add(register(r, new ItemLeatherDec(),"leather/pineapple", CreativeTabsTFC.CT_FOOD));
     }
 
     @SubscribeEvent
@@ -122,6 +133,10 @@ public class RegistryHandler
         {
             inventoryBlocks.add(registerWoodBlock(r, "wood/fence_log/"+tree.getRegistryName().getPath(), new BlockFenceLogTFC(tree)));
         }
+
+        for(BerryBushDec bush : BerryBushDec.values()) {
+            inventoryBlocks.add(register(r, new BlockBerryBush(bush), "berry_bush/"+bush.name().toLowerCase()));
+        }
     }
 
     public static BlockDecoration registerBlock(IForgeRegistry<Block> r, String name, Rock rock, DecorationType decorationType)
@@ -130,6 +145,15 @@ public class RegistryHandler
         block.setRegistryName(TFCDecoration.MODID, name);
         block.setTranslationKey(TFCDecoration.MODID + "." + name.replace('/', '.'));
         block.setCreativeTab(CreativeTabsTFC.CT_ROCK_BLOCKS);
+        r.register(block);
+        return block;
+    }
+
+    public static Block register(IForgeRegistry<Block> r, Block block, String name)
+    {
+        block.setRegistryName(TFCDecoration.MODID, name);
+        block.setTranslationKey(TFCDecoration.MODID + "." + name.replace('/', '.'));
+        block.setCreativeTab(CreativeTabsTFC.CT_FLORA);
         r.register(block);
         return block;
     }
@@ -144,6 +168,15 @@ public class RegistryHandler
     }
 
     public static ItemTFC register(IForgeRegistry<Item> r, ItemTFC item, String name, CreativeTabs tabs)
+    {
+        item.setRegistryName(TFCDecoration.MODID, name);
+        item.setTranslationKey(TFCDecoration.MODID + "." + name.replace('/', '.'));
+        item.setCreativeTab(tabs);
+        r.register(item);
+        return item;
+    }
+
+    public static Item register(IForgeRegistry<Item> r, Item item, String name, CreativeTabs tabs)
     {
         item.setRegistryName(TFCDecoration.MODID, name);
         item.setTranslationKey(TFCDecoration.MODID + "." + name.replace('/', '.'));
