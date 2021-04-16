@@ -1,7 +1,5 @@
 config.tfc_decoration.worldgen=Enable/Disable Worldgen
 
-tile.tfc_decoration.berry_bush.pineapple.name=Pineapple Bush
-
 # granite
 tile.tfc_decoration.mossy_cobble.granite.name=Moss Granite
 tile.tfc_decoration.mossy_bricks.granite.name=Mossy Granite Bricks
