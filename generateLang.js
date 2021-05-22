@@ -76,7 +76,6 @@ let output = ""
 
 for(let type of ROCK_TYPES)
 {
-    output+=lang(['config', 'tfc_decoration', 'worldgen'], ['Enable/Disable Worldgen'])
     output+='\n'
     output+=`# ${type}`
     output+=lang(['tile', 'tfc_decoration', 'mossy_cobble', type, 'name'], ['moss', type])
@@ -101,7 +100,7 @@ for(let type of WOOD_TYPES)
     output+=lang(['tile', 'tfc_decoration', 'wood', 'fence_log', type, 'name'], [type, 'fence', 'log'])
 }
 
-fs.writeFileSync('./en_us.lang', output, 'utf8')
+fs.writeFileSync('./src/main/resources/assets/tfc_decoration/lang/en_us.lang', output, 'utf8')
 
 /**
  * create a lang entry
