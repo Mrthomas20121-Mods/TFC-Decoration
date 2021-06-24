@@ -3,8 +3,11 @@ buildscript {
         jcenter()
         maven {
             name = "forge"
-            url = "http://maven.minecraftforge.net/maven"
+            url = "http://maven.minecraftforge.net/"
         }
+		maven {
+			url = "https://sizableshrimp.me/maven/"
+		}
         maven {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
@@ -37,7 +40,6 @@ repositories {
         name 'tterrag maven'
         url "http://maven.tterrag.com/"
     }
-	removeIf { it instanceof MavenArtifactRepository && it.url.host == 'files.minecraftforge.net' }
     maven {
         name = "CoFH Maven"
         url = "http://maven.covers1624.net"

@@ -34,13 +34,13 @@ public class TFCDecoration
         MinecraftForge.EVENT_BUS.register(this);
         logger = event.getModLog();
         proxy.preInit(event);
+        if(ConfigDecoration.ConfigGeneral.worldgen) MinecraftForge.EVENT_BUS.register(WorldgenMud.class);
    }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
         proxy.init(event);
-        if(ConfigDecoration.ConfigGeneral.worldgen) GameRegistry.registerWorldGenerator(new WorldgenMud(), 100);
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)

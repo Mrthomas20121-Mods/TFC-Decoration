@@ -2,35 +2,44 @@ package mrthomas20121.tfc_decoration.worldgen;
 
 import mrthomas20121.tfc_decoration.objects.blocks.rock.BlockDecoration;
 import mrthomas20121.tfc_decoration.types.DecorationType;
+import net.dries007.tfc.Constants;
 import net.dries007.tfc.api.types.Rock;
 import net.dries007.tfc.objects.blocks.BlocksTFC;
-import net.dries007.tfc.objects.blocks.stone.BlockRockVariant;
 import net.dries007.tfc.world.classic.ChunkGenTFC;
 import net.dries007.tfc.world.classic.chunkdata.ChunkDataTFC;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraft.world.gen.feature.WorldGenMinable;
-import net.minecraftforge.fml.common.IWorldGenerator;
+import net.minecraftforge.event.terraingen.PopulateChunkEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import java.util.Random;
+public class WorldgenMud {
 
-public class WorldgenMud implements IWorldGenerator {
+    @SubscribeEvent
+    public static void onPopulateChunkPost(PopulateChunkEvent.Post event) {
+        if(event.getGenerator() instanceof ChunkGenTFC) {
+            final BlockPos chunkBlockPos = new BlockPos(event.getChunkX() << 4, 0, event.getChunkZ() << 4);
+            BlockPos start = event.getWorld().getTopSolidOrLiquidBlock(chunkBlockPos.add(8 + Constants.RNG.nextInt(16), 0, 8 + Constants.RNG.nextInt(16))).add(0, -1, 0);
+            genFromPoint(event.getWorld(), start);
+        }
+    }
 
-    @Override
-    public void generate(Random rng, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider)
+    private static void genFromPoint(World world, BlockPos start)
     {
-        if(chunkGenerator instanceof ChunkGenTFC && world.provider.getDimension() == 0) {
-            final BlockPos chunkBlockPos = new BlockPos(chunkX << 4, 150, chunkZ << 4);
-            BlockPos start = world.getTopSolidOrLiquidBlock(chunkBlockPos.add(8 + rng.nextInt(16), 0, 8 + rng.nextInt(16))).add(0, -1, 0);
-            if (start.getY() > 155 && !BlocksTFC.isSoil(world.getBlockState(start))) return;
-
-            int y = 1;
-            Rock rock = ChunkDataTFC.getRockHeight(world, start);
-            WorldGenMinable generator = new WorldGenMinable(BlockDecoration.get(rock, DecorationType.RAW_MUD).getDefaultState(), 20, state -> state.equals(BlockRockVariant.get(rock, Rock.Type.GRAVEL).getDefaultState()) || state.equals(BlockRockVariant.get(rock, Rock.Type.SAND).getDefaultState()));
-
-            generator.generate(world, rng, start.add((rng.nextInt(2) + 1) * (rng.nextBoolean() ? 1 : -1), y + (rng.nextInt(2) + 1) * (rng.nextBoolean() ? 1 : -1), (rng.nextInt(2) + 1) * (rng.nextBoolean() ? 1 : -1)));
+        Rock rock = ChunkDataTFC.getRockHeight(world, start);
+        final int size = Constants.RNG.nextInt(10) == 0 ? 4 : 3;
+        for (int x = -size; x <= size; x++)
+        {
+            for (int z = -size; z <= size; z++)
+            {
+                for (int y = -2; y <= 2; y++)
+                {
+                    if (x * x + z * z + y * y > size * size) continue;
+                    BlockPos now = start.add(x, y, z);
+                    if(BlocksTFC.isSand(world.getBlockState(now))) {
+                        world.setBlockState(now, BlockDecoration.get(rock, DecorationType.RAW_MUD).getDefaultState());
+                    }
+                }
+            }
         }
     }
 }

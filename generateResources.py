@@ -50,7 +50,8 @@ FULLBLOCK_TYPES = [
     'mud_pillar',
     'pillar',
     'sandstone_pillar',
-    'raw_mud'
+    'raw_mud',
+    'rockwool'
 ]
 
 WOOD_TYPES = [
