@@ -1,2 +1,2 @@
 # TFC Decoration
-TFC Decoration is an addon for tfc adding new decorative blocks.
+Add new decoration blocks to Terrafirmacraft
