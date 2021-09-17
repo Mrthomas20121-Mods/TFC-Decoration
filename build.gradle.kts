@@ -69,6 +69,9 @@ dependencies {
     // tfc
     implementation(fg.deobf(curse(mod = "tfcraft", projectId = 302973L, fileId = 3406948L)))
 
+    // tfc rocks+
+    implementation(fg.deobf(curse(mod = "tfc_rocksplus", projectId = 376298L, fileId = 3260513L)))
+
     // rocksalt version 1.0.4b
     implementation(fg.deobf(curse(mod = "rocksalt", projectId = 398969L, fileId = 3419071L)))
 }
