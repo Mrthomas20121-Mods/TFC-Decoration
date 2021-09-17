@@ -3,6 +3,7 @@ package mrthomas20121.tfc_decoration.objects.blocks.wood;
 import java.util.HashMap;
 import java.util.Map;
 
+import mrthomas20121.tfc_decoration.api.ModTypes;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -22,15 +23,17 @@ public class BlockFenceLogTFC extends BlockFence
 
     public final Tree wood;
 
-    public BlockFenceLogTFC(Tree wood)
+    public BlockFenceLogTFC(Tree wood, ModTypes.WoodType woodType)
     {
         super(Material.WOOD, Material.WOOD.getMaterialMapColor());
-        if (MAP.put(wood, this) != null) throw new IllegalStateException("There can only be one.");
         this.wood = wood;
         setHarvestLevel("axe", 0);
         setHardness(2.0F); // match vanilla
         setResistance(15.0F);
         setSoundType(SoundType.WOOD);
         Blocks.FIRE.setFireInfo(this, 5, 20);
+
+        // add the wood to the list
+        ModTypes.addWood(wood, woodType, this);
     }
 }

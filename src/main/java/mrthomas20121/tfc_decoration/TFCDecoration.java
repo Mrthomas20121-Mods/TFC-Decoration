@@ -1,5 +1,6 @@
 package mrthomas20121.tfc_decoration;
 
+import mrthomas20121.tfc_decoration.api.ModTypes;
 import mrthomas20121.tfc_decoration.proxy.CommonProxy;
 import mrthomas20121.tfc_decoration.worldgen.WorldgenMud;
 import net.minecraftforge.common.MinecraftForge;
@@ -7,8 +8,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.fml.common.SidedProxy;
 
@@ -34,6 +33,7 @@ public class TFCDecoration
         MinecraftForge.EVENT_BUS.register(this);
         logger = event.getModLog();
         proxy.preInit(event);
+        ModTypes.init();
         if(ConfigDecoration.ConfigGeneral.worldgen) MinecraftForge.EVENT_BUS.register(WorldgenMud.class);
    }
 

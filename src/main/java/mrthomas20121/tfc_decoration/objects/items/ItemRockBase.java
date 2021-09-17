@@ -1,5 +1,6 @@
 package mrthomas20121.tfc_decoration.objects.items;
 
+import mrthomas20121.tfc_decoration.api.ModTypes;
 import net.dries007.tfc.api.capability.size.Size;
 import net.dries007.tfc.api.capability.size.Weight;
 import net.dries007.tfc.api.types.Rock;
@@ -13,26 +14,21 @@ import java.util.Map;
 
 public class ItemRockBase extends ItemTFC {
 
-    private Rock rock;
+    private final Rock rock;
 
-    private static Map<Rock, EnumMap<ItemType, ItemRockBase>> table = new HashMap<>();
-
-    public static ItemRockBase get(Rock rock, ItemType type)
-    {
-        return table.get(rock).get(type);
+    public static ItemRockBase create(Rock rock, ModTypes.ItemRockType rockType) {
+        return new ItemRockBase(rock, rockType);
     }
 
-    public ItemRockBase(Rock rock, ItemType type)
+    public ItemRockBase(Rock rock, ModTypes.ItemRockType type)
     {
         this.rock = rock;
-
-        if(!table.containsKey(rock))
-        {
-            table.put(rock, new EnumMap<>(ItemType.class));
-        }
-        table.get(rock).put(type, this);
+        ModTypes.addItemRock(rock, type, this);
     }
 
+    public Rock getRock() {
+        return rock;
+    }
 
     @Nonnull
     @Override
@@ -44,10 +40,5 @@ public class ItemRockBase extends ItemTFC {
     @Override
     public Size getSize(@Nonnull ItemStack itemStack) {
         return Size.SMALL;
-    }
-
-    public enum ItemType {
-        MUD_BRICK,
-        MUD_BALL
     }
 }
