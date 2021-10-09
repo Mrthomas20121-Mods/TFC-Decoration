@@ -68,7 +68,7 @@ public class ModTypes {
         RAW_MUD = addRockType("raw_mud", SoundType.STONE, 4, false);
         MUD_BRICKS = addRockType("mud_bricks", SoundType.STONE, 4, false);
         MUD_PILLAR = addRockType("mud_pillar", SoundType.STONE, 5, false);
-        ROCKWOOL = addRockType("rockwool", SoundType.STONE, 5, false);
+        ROCKWOOL = addRockType("rockwool", SoundType.CLOTH, 5, false);
 
         MUD_BALL = addItemRockType("mud_ball");
         MUD_BRICK = addItemRockType("mud_brick");
