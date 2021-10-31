@@ -13,6 +13,7 @@
     }
   },
   "result": {
-    "item": "tfc_decoration:wood/ladder/willow"
+    "item": "tfc_decoration:wood/ladder/willow",
+    "count": 3
   }
 }

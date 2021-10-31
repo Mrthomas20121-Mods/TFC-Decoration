@@ -13,6 +13,7 @@
     }
   },
   "result": {
-    "item": "tfc_decoration:wood/ladder/sequoia"
+    "item": "tfc_decoration:wood/ladder/sequoia",
+    "count": 3
   }
 }

@@ -13,6 +13,7 @@
     }
   },
   "result": {
-    "item": "tfc_decoration:wood/ladder/hevea"
+    "item": "tfc_decoration:wood/ladder/hevea",
+    "count": 3
   }
 }

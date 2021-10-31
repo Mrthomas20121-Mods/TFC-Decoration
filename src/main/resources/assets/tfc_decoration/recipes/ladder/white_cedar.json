@@ -13,6 +13,7 @@
     }
   },
   "result": {
-    "item": "tfc_decoration:wood/ladder/white_cedar"
+    "item": "tfc_decoration:wood/ladder/white_cedar",
+    "count": 3
   }
 }

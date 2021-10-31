@@ -92,5 +92,5 @@ for(let rock_type of rock_types) {
 for(let wood_type of wood_types) {
     resources.shapedRecipe(tfc_decoration_path, `ladder/${wood_type}.json`, ['XXX', ' X ', 'XXX'], {
         'X': resources.item(`tfc:wood/lumber/${wood_type}`)
-    }, `tfc_decoration:wood/ladder/${wood_type}`)
+    }, `tfc_decoration:wood/ladder/${wood_type}`, 3)
 }
