@@ -20,7 +20,7 @@ public class TFCDecoration
     public static TFCDecoration instance;
     public static final String MODID = "tfc_decoration";
     public static final String NAME = "TFC Decoration";
-    public static final String VERSION = "1.0.7";
+    public static final String VERSION = "1.0.9";
 
     public static Logger logger;
 
