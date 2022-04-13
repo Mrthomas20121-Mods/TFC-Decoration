@@ -1,7 +1,6 @@
 {
     "pack": {
-        "description": "Tinkerfirmacraft resources",
-        "pack_format": 3,
-        "_comment": ""
+        "description": "TFC Decoration resources",
+        "pack_format": 7
     }
 }

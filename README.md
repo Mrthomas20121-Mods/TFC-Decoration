@@ -1,2 +1,2 @@
 # TFC Decoration
-Add new decoration blocks to Terrafirmacraft
+Add new decorative blocks to Terrafirmacraft

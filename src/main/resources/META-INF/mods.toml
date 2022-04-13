@@ -1,0 +1,21 @@
+modLoader="javafml"
+loaderVersion="[39,)"
+license="MIT"
+issueTrackerURL="https://github.com/Mrthomas20121/TFC-Decoration/issues"
+
+[[mods]]
+modId="tfc_decoration"
+version="0.0.1"
+displayName="Natures Aura Tweaker"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/tfc_decoration"
+authors="Mrthomas20121"
+description='''
+Add new decorative blocks to TFC.
+'''
+
+[[dependencies.tfc_decoration]]
+	modId = "tfc"
+    mandatory = true
+    versionRange = "[2.0.15,)"
+    ordering = "NONE"
+    side = "BOTH"

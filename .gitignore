@@ -1,51 +1,29 @@
-#ant stuff
-/bin/
-/download/
-
-#Remove OS generated garbage
-*/.DS_Store
-.DS_Store
-.DS_Store?
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
-
-#gradle stuff
-/.gradle
-/build/
-/sources/
-/run*/
-/ui/
+# eclipse
+bin
 *.launch
-gradle-app.setting
+.settings
+.metadata
+.classpath
+.project
 
-#IDEA files from Gradle
-.idea/
-/*.iml
-/*.ipr
-/*.iws
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
 
-#Vim backups
-*~
+# gradle
+build
+.gradle
 
-#manual version override
-version.properties
+# other
+eclipse
+run
 
-#eclipse stuffs
-/.classpath
-/.project
-/.settings/
-/eclipse/
-/debug/
-*.lock
-/.metadata/
-/config/
-/logs/
-options.txt
-/saves/
-/out
-/src_old
-/resources_old
-/design
+# Files from Forge MDK
+forge*changelog.txt
+
+lombok.config
+
+src/generated/resources/.cache/
