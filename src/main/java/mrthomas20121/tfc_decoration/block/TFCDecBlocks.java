@@ -2,6 +2,7 @@ package mrthomas20121.tfc_decoration.block;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
 import mrthomas20121.tfc_decoration.item.TFCDecItems;
+import net.dries007.tfc.common.TFCItemGroup;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.world.item.BlockItem;
@@ -25,7 +26,7 @@ public class TFCDecBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TFCDecoration.mod_id);
 
-    public static final Map<Rock, RegistryObject<Block>> PILLARS = Helpers.mapOfKeys(Rock.class, rock -> register("pillar/" + rock.name(), () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE).strength(0.5f))));
+    public static final Map<Rock, RegistryObject<Block>> PILLARS = Helpers.mapOfKeys(Rock.class, rock -> register("pillar/" + rock.name(), () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE).strength(0.5f)), TFCItemGroup.DECORATIONS));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> blockSupplier)
     {
