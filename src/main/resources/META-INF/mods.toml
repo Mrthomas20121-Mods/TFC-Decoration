@@ -6,9 +6,17 @@ issueTrackerURL="https://github.com/Mrthomas20121/TFC-Decoration/issues"
 [[mods]]
 modId="tfc_decoration"
 version="0.0.1"
-displayName="Natures Aura Tweaker"
+displayName="TFC Decoration"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/tfc_decoration"
 authors="Mrthomas20121"
 description='''
 Add new decorative blocks to TFC.
 '''
+
+[[dependencies.tfc_decoration]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[39,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    side="BOTH"

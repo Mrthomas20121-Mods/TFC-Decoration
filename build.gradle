@@ -110,6 +110,10 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+
+    flatDir {
+        dir 'libs'
+    }
 }
 
 dependencies {
@@ -117,7 +121,7 @@ dependencies {
 
     minecraft mcDep
 
-    implementation fileTree(include: ["*.jar"], dir: "libs")
+    implementation fg.deobf("tfc:TerraFirmaCraft-Forge-1.18.2:2.0.15-alpha")
 
     compileOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.5.174:api")
     runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.5.174")
