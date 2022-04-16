@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "tfc_decoration:rockwool/andesite",
+    "tfc_decoration:rockwool/basalt",
+    "tfc_decoration:rockwool/chalk",
+    "tfc_decoration:rockwool/chert",
+    "tfc_decoration:rockwool/claystone",
+    "tfc_decoration:rockwool/conglomerate",
+    "tfc_decoration:rockwool/dacite",
+    "tfc_decoration:rockwool/diorite",
+    "tfc_decoration:rockwool/dolomite",
+    "tfc_decoration:rockwool/gabbro",
+    "tfc_decoration:rockwool/gneiss",
+    "tfc_decoration:rockwool/granite",
+    "tfc_decoration:rockwool/limestone",
+    "tfc_decoration:rockwool/marble",
+    "tfc_decoration:rockwool/phylite",
+    "tfc_decoration:rockwool/quartzite",
+    "tfc_decoration:rockwool/rhyolite",
+    "tfc_decoration:rockwool/schist",
+    "tfc_decoration:rockwool/shale",
+    "tfc_decoration:rockwool/slate"
+  ]
+}

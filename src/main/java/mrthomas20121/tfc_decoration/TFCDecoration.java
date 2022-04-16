@@ -13,7 +13,7 @@ public class TFCDecoration {
 
 	public TFCDecoration() {
 		final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		bus.register(TFCDecBlocks.BLOCKS);
-		bus.register(TFCDecItems.ITEMS);
+		TFCDecBlocks.BLOCKS.register(bus);
+		TFCDecItems.ITEMS.register(bus);
 	}
 }

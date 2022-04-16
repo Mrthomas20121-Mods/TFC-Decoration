@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "tfc_decoration:block/pillar/rhyolite"
+  }
+}
