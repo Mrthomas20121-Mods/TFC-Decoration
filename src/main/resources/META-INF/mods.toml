@@ -12,10 +12,3 @@ authors="Mrthomas20121"
 description='''
 Add new decorative blocks to TFC.
 '''
-
-[[dependencies.tfc_decoration]]
-	modId = "tfc"
-    mandatory = true
-    versionRange = "[2.0.15,)"
-    ordering = "NONE"
-    side = "BOTH"
