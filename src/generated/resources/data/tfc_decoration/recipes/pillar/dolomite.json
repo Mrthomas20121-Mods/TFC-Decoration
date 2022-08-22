@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pillar",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc:rock/raw/dolomite"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:pillar/dolomite",
+    "count": 2
+  }
+}

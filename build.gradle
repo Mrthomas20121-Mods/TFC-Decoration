@@ -110,29 +110,18 @@ repositories {
             includeGroup "curse.maven"
         }
     }
-
-    flatDir {
-        dir 'libs'
-    }
 }
 
 dependencies {
-    def mcDep = 'net.minecraftforge:forge:1.18.2-40.0.36'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.1.73'
 
-    minecraft mcDep
+    implementation fg.deobf("curse.maven:terrafirmacraft-302973:3943694")
 
-    implementation fg.deobf("tfc:TerraFirmaCraft-Forge-1.18.2:2.0.15-alpha")
+    compileOnly fg.deobf("mezz.jei:jei-1.18.2:9.7.1.232:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.7.1.232")
 
-    compileOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.5.174:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.5.174")
-
-    if (System.getProperty("idea.sync.active") != "true") {
-        annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
-    }
-
-    annotationProcessor 'com.google.code.gson:gson:2.8.6'
-    annotationProcessor 'org.reflections:reflections:0.9.10'
-    annotationProcessor mcDep
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 }
 
 jar {

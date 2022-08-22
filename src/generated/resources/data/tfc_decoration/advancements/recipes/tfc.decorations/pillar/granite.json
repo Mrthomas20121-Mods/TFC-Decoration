@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:pillar/granite"
+    ]
+  },
+  "criteria": {
+    "has_pillar/granite_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc:rock/raw/granite"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tfc_decoration:pillar/granite"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pillar/granite_block",
+      "has_the_recipe"
+    ]
+  ]
+}

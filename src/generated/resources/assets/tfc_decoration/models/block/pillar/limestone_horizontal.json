@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "side": "tfc_decoration:block/pillar/side/limestone",
+    "end": "tfc_decoration:block/pillar/top/limestone"
+  }
+}

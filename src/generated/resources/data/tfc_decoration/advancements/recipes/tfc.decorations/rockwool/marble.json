@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:rockwool/marble"
+    ]
+  },
+  "criteria": {
+    "has_pillar/marble_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc:rock/raw/marble"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tfc_decoration:rockwool/marble"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pillar/marble_block",
+      "has_the_recipe"
+    ]
+  ]
+}

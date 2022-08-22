@@ -16,4 +16,8 @@ public class TFCDecoration {
 		TFCDecBlocks.BLOCKS.register(bus);
 		TFCDecItems.ITEMS.register(bus);
 	}
+
+	public void clientStuff() {
+
+	}
 }

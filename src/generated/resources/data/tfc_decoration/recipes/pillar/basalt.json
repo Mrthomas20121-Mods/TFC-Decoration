@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pillar",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc:rock/raw/basalt"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:pillar/basalt",
+    "count": 2
+  }
+}

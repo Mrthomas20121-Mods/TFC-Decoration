@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "tfc_decoration:block/pillar/conglomerate_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "tfc_decoration:block/pillar/conglomerate"
+    },
+    "axis=z": {
+      "model": "tfc_decoration:block/pillar/conglomerate_horizontal",
+      "x": 90
+    }
+  }
+}

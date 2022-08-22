@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pillar",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc:rock/raw/granite"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:pillar/granite",
+    "count": 2
+  }
+}

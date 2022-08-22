@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "tfc_decoration:block/pillar/side/schist",
+    "end": "tfc_decoration:block/pillar/top/schist"
+  }
+}
