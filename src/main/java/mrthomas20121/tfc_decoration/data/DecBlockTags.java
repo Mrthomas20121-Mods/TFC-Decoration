@@ -20,19 +20,19 @@ public class DecBlockTags extends BlockTagsProvider {
 
     @Override
     protected void addTags() {
-        TagAppender<Block> pickaxe = tag(BlockTags.MINEABLE_WITH_PICKAXE);
-        TagAppender<Block> toughness = tag(TFCTags.Blocks.TOUGHNESS_2);
+        TagAppender<Block> pickaxe = tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TFCDecBlocks.POLISHED_FIRE_CLAY.get());
+        TagAppender<Block> toughness = tag(TFCTags.Blocks.TOUGHNESS_2).add(TFCDecBlocks.POLISHED_FIRE_CLAY.get());
         TagAppender<Block> needTools = tag(TFCTags.Blocks.NEEDS_COPPER_TOOL);
+        tag(TFCTags.Blocks.NEEDS_BRONZE_TOOL).add(TFCDecBlocks.POLISHED_FIRE_CLAY.get());
         TagAppender<Block> forgeInsulation = tag(TFCTags.Blocks.FORGE_INSULATION);
         TagAppender<Block> bloomeryInsulation = tag(TFCTags.Blocks.BLOOMERY_INSULATION);
-        TagAppender<Block> blastFurnaceInsulation = tag(TFCTags.Blocks.BLAST_FURNACE_INSULATION);
+        tag(TFCTags.Blocks.BLAST_FURNACE_INSULATION).add(TFCDecBlocks.POLISHED_FIRE_CLAY.get());
         Arrays.stream(Rock.values()).forEach(rock -> {
             pickaxe.add(TFCDecBlocks.PILLARS.get(rock).get(), TFCDecBlocks.ROCKWOOL.get(rock).get());
             toughness.add(TFCDecBlocks.PILLARS.get(rock).get(), TFCDecBlocks.ROCKWOOL.get(rock).get());
             needTools.add(TFCDecBlocks.PILLARS.get(rock).get(), TFCDecBlocks.ROCKWOOL.get(rock).get());
             forgeInsulation.add(TFCDecBlocks.PILLARS.get(rock).get(), TFCDecBlocks.ROCKWOOL.get(rock).get());
             bloomeryInsulation.add(TFCDecBlocks.PILLARS.get(rock).get(), TFCDecBlocks.ROCKWOOL.get(rock).get());
-            blastFurnaceInsulation.add(TFCDecBlocks.PILLARS.get(rock).get(), TFCDecBlocks.ROCKWOOL.get(rock).get());
         });
     }
 }

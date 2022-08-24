@@ -30,6 +30,7 @@ public class DecRecipeProvider extends RecipeProvider {
             Block PILLAR = TFCDecBlocks.PILLARS.get(rock).get();
             Block rockwool = TFCDecBlocks.ROCKWOOL.get(rock).get();
             Block raw = TFCBlocks.ROCK_BLOCKS.get(rock).get(Rock.BlockType.RAW).get();
+            Block chiseled = TFCBlocks.ROCK_BLOCKS.get(rock).get(Rock.BlockType.CHISELED).get();
             ShapedRecipeBuilder.shaped(PILLAR, 2)
                     .define('#', raw)
                     .pattern("#")
@@ -47,6 +48,16 @@ public class DecRecipeProvider extends RecipeProvider {
                     .unlockedBy("has_%s_block".formatted(PILLAR.getRegistryName().getPath()), has(raw))
                     .group("rockwool")
                     .save(consumer, new ResourceLocation(TFCDecoration.mod_id, "rockwool/"+rock.name().toLowerCase()));
+
+            ShapedRecipeBuilder.shaped(TFCDecBlocks.POLISHED_FIRE_CLAY.get(), 8)
+                    .define('#', TFCItems.FIRE_CLAY.get())
+                    .define('!', chiseled)
+                    .pattern("###")
+                    .pattern("#!#")
+                    .pattern("###")
+                    .unlockedBy("has_polished_fire_clay_block", has(chiseled))
+                    .group("rockwool")
+                    .save(consumer, new ResourceLocation(TFCDecoration.mod_id, "polished_fire_clay/"+rock.name().toLowerCase()));
         });
     }
 }

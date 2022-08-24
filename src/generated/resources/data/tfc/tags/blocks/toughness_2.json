@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "tfc_decoration:polished_fire_clay",
     "tfc_decoration:pillar/granite",
     "tfc_decoration:rockwool/granite",
     "tfc_decoration:pillar/diorite",

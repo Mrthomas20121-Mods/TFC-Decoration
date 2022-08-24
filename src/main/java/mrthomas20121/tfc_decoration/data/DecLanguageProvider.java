@@ -23,6 +23,8 @@ public class DecLanguageProvider extends LanguageProvider {
             add(TFCDecBlocks.PILLARS.get(rock).get(), capitalize(rock.getSerializedName())+" Pillar");
             add(TFCDecBlocks.ROCKWOOL.get(rock).get(), capitalize(rock.getSerializedName())+" Rockwool");
         });
+
+        add(TFCDecBlocks.POLISHED_FIRE_CLAY.get(), "Polished Fire Clay");
     }
 
     public String capitalize(String input) {

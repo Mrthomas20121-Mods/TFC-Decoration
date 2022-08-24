@@ -24,6 +24,8 @@ public class BlockstateGen extends BlockStateProvider {
             axisBlock(TFCDecBlocks.PILLARS.get(rock).get(), new ResourceLocation(TFCDecoration.mod_id, "block/pillar/side/"+rock.name().toLowerCase()), new ResourceLocation(TFCDecoration.mod_id, "block/pillar/top/"+rock.name().toLowerCase()));
             simpleBlock(TFCDecBlocks.ROCKWOOL.get(rock).get());
         });
+
+        simpleBlock(TFCDecBlocks.POLISHED_FIRE_CLAY.get());
     }
 
     // replace axisBlock(RotatedPillarBlock block, ResourceLocation side, ResourceLocation end) with our own because it doesn't work properly
