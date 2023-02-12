@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:polished_fire_clay_wall"
+    ]
+  },
+  "criteria": {
+    "has_polished_fire_clay": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:polished_fire_clay"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tfc_decoration:polished_fire_clay_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_fire_clay",
+      "has_the_recipe"
+    ]
+  ]
+}

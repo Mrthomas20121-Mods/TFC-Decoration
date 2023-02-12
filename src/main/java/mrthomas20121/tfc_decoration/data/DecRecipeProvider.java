@@ -10,6 +10,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -58,6 +59,14 @@ public class DecRecipeProvider extends RecipeProvider {
                     .unlockedBy("has_polished_fire_clay_block", has(chiseled))
                     .group("rockwool")
                     .save(consumer, new ResourceLocation(TFCDecoration.mod_id, "polished_fire_clay/"+rock.name().toLowerCase()));
+
+            slab(consumer, TFCDecBlocks.ROCKWOOL_DECORATIONS.get(rock).slab().get(), rockwool);
+            stairBuilder(TFCDecBlocks.ROCKWOOL_DECORATIONS.get(rock).stair().get(), Ingredient.of(rockwool)).unlockedBy("has_%s_rockwool_block".formatted(rock.getSerializedName()), has(TFCDecBlocks.ROCKWOOL.get(rock).get())).save(consumer);
+            wall(consumer, TFCDecBlocks.ROCKWOOL_DECORATIONS.get(rock).wall().get(), rockwool);
         });
+
+        slab(consumer, TFCDecBlocks.POLISHED_FIRE_CLAY_DECORATIONS.slab().get(), TFCDecBlocks.POLISHED_FIRE_CLAY.get());
+        stairBuilder(TFCDecBlocks.POLISHED_FIRE_CLAY_DECORATIONS.stair().get(), Ingredient.of(TFCDecBlocks.POLISHED_FIRE_CLAY.get())).unlockedBy("has_polished_fire_clay_block", has(TFCDecBlocks.POLISHED_FIRE_CLAY.get())).save(consumer);
+        wall(consumer, TFCDecBlocks.POLISHED_FIRE_CLAY_DECORATIONS.wall().get(), TFCDecBlocks.POLISHED_FIRE_CLAY.get());
     }
 }

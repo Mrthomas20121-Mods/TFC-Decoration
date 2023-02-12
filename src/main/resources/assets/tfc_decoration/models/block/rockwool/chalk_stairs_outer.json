@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "tfc_decoration:block/rockwool/chalk",
+    "top": "tfc_decoration:block/rockwool/chalk",
+    "side": "tfc_decoration:block/rockwool/chalk"
+  }
+}

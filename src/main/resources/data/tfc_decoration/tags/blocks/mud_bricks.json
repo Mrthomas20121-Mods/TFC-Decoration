@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "tfc_decoration:mud_bricks/loam",
-    "tfc_decoration:mud_bricks/silt",
-    "tfc_decoration:mud_bricks/sandy_loam",
-    "tfc_decoration:mud_bricks/silty_loam"
-  ]
-}

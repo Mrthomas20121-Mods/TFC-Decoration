@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "tfc_decoration:polished_fire_clay"
+    "tfc_decoration:polished_fire_clay",
+    "tfc_decoration:polished_fire_clay_slab",
+    "tfc_decoration:polished_fire_clay_stairs",
+    "tfc_decoration:polished_fire_clay_wall"
   ]
 }

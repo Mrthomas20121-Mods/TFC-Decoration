@@ -3,12 +3,12 @@ package mrthomas20121.tfc_decoration.block;
 import mrthomas20121.tfc_decoration.TFCDecoration;
 import mrthomas20121.tfc_decoration.item.TFCDecItems;
 import net.dries007.tfc.common.TFCItemGroup;
+import net.dries007.tfc.common.blocks.DecorationBlockRegistryObject;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,10 +25,23 @@ public class TFCDecBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TFCDecoration.mod_id);
 
-    public static final Map<Rock, RegistryObject<RotatedPillarBlock>> PILLARS = Helpers.mapOfKeys(Rock.class, rock -> register("pillar/" + rock.name(), () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE).strength(0.5f))));
-    public static final Map<Rock, RegistryObject<Block>> ROCKWOOL = Helpers.mapOfKeys(Rock.class, rock -> register("rockwool/" + rock.name(), () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(0.4f))));
+    public static final Map<Rock, RegistryObject<RotatedPillarBlock>> PILLARS = Helpers.mapOfKeys(Rock.class, rock -> register("pillar/" + rock.name(), () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.STONE).strength(2f))));
 
-    public static RegistryObject<Block> POLISHED_FIRE_CLAY = register("polished_fire_clay", 0.3f);
+    public static final Map<Rock, RegistryObject<Block>> ROCKWOOL = Helpers.mapOfKeys(Rock.class, rock -> register("rockwool/" + rock.name(), () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(2f))));
+
+    public static final Map<Rock, DecorationBlockRegistryObject> ROCKWOOL_DECORATIONS = Helpers.mapOfKeys(Rock.class, rock -> new DecorationBlockRegistryObject(
+            register(("rockwool/" + rock.name() + "_slab"), () -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).strength(2f))),
+            register(("rockwool/" + rock.name() + "_stairs"), () -> new StairBlock(() -> ROCKWOOL.get(rock).get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).strength(2f))),
+            register(("rockwool/" + rock.name() + "_wall"), () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE).strength(2f)))
+    ));
+
+    public static RegistryObject<Block> POLISHED_FIRE_CLAY = register("polished_fire_clay", 2f);
+
+    public static final DecorationBlockRegistryObject POLISHED_FIRE_CLAY_DECORATIONS = new DecorationBlockRegistryObject(
+            register(("polished_fire_clay_slab"), () -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE).strength(2f))),
+            register(("polished_fire_clay_stairs"), () -> new StairBlock(() -> POLISHED_FIRE_CLAY.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).strength(2f))),
+            register(("polished_fire_clay_wall"), () -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE).strength(2f)))
+    );
 
     private static RegistryObject<Block> register(String name, float strength)
     {

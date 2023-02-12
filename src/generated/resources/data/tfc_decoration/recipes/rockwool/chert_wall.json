@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool/chert"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:rockwool/chert_wall",
+    "count": 6
+  }
+}

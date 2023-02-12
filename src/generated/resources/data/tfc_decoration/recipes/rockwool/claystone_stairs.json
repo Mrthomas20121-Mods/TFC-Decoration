@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool/claystone"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:rockwool/claystone_stairs",
+    "count": 4
+  }
+}

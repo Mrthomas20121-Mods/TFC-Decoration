@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/polished_fire_clay_slab"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/polished_fire_clay_slab_top"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/polished_fire_clay"
+    }
+  }
+}

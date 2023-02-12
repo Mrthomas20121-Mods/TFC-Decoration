@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "tfc_decoration:block/pillar/top/quartzite",
+    "side": "tfc_decoration:block/pillar/side/quartzite"
+  }
+}

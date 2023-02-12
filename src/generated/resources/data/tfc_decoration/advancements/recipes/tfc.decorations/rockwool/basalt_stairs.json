@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:rockwool/basalt_stairs"
+    ]
+  },
+  "criteria": {
+    "has_basalt_rockwool_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:rockwool/basalt"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tfc_decoration:rockwool/basalt_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_basalt_rockwool_block",
+      "has_the_recipe"
+    ]
+  ]
+}

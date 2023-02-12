@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool/andesite"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:rockwool/andesite_slab",
+    "count": 6
+  }
+}

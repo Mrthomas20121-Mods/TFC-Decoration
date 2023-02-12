@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "tfc_decoration:polished_fire_clay_wall",
+    "tfc_decoration:rockwool/granite_wall",
+    "tfc_decoration:rockwool/diorite_wall",
+    "tfc_decoration:rockwool/gabbro_wall",
+    "tfc_decoration:rockwool/shale_wall",
+    "tfc_decoration:rockwool/claystone_wall",
+    "tfc_decoration:rockwool/limestone_wall",
+    "tfc_decoration:rockwool/conglomerate_wall",
+    "tfc_decoration:rockwool/dolomite_wall",
+    "tfc_decoration:rockwool/chert_wall",
+    "tfc_decoration:rockwool/chalk_wall",
+    "tfc_decoration:rockwool/rhyolite_wall",
+    "tfc_decoration:rockwool/basalt_wall",
+    "tfc_decoration:rockwool/andesite_wall",
+    "tfc_decoration:rockwool/dacite_wall",
+    "tfc_decoration:rockwool/quartzite_wall",
+    "tfc_decoration:rockwool/slate_wall",
+    "tfc_decoration:rockwool/phyllite_wall",
+    "tfc_decoration:rockwool/schist_wall",
+    "tfc_decoration:rockwool/gneiss_wall",
+    "tfc_decoration:rockwool/marble_wall"
+  ]
+}

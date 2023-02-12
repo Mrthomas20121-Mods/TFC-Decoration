@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab_top",
+  "textures": {
+    "bottom": "tfc_decoration:block/rockwool/limestone",
+    "top": "tfc_decoration:block/rockwool/limestone",
+    "side": "tfc_decoration:block/rockwool/limestone"
+  }
+}

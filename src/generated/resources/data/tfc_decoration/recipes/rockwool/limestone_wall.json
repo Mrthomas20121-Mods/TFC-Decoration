@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool/limestone"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:rockwool/limestone_wall",
+    "count": 6
+  }
+}

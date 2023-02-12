@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:rockwool/dacite_stairs"
+    ]
+  },
+  "criteria": {
+    "has_dacite_rockwool_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:rockwool/dacite"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tfc_decoration:rockwool/dacite_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dacite_rockwool_block",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -23,13 +23,12 @@ public class Generators {
     }
 
     public static void registerClientGen(DataGenerator generator, ExistingFileHelper fileHelper) {
-        generator.addProvider(new BlockstateGen(generator, fileHelper));
-        generator.addProvider(new DecLanguageProvider(generator));
         //generator.addProvider(new ItemModelGen(generator, fileHelper));
     }
 
     public static void registerServerGen(DataGenerator generator, ExistingFileHelper fileHelper) {
         generator.addProvider(new DecRecipeProvider(generator));
         generator.addProvider(new DecBlockTags(generator, fileHelper));
+        generator.addProvider(new DecLootProvider(generator));
     }
 }

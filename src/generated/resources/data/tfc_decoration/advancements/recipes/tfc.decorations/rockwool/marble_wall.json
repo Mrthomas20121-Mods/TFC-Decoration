@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:rockwool/marble_wall"
+    ]
+  },
+  "criteria": {
+    "has_rockwool/marble": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:rockwool/marble"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "tfc_decoration:rockwool/marble_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rockwool/marble",
+      "has_the_recipe"
+    ]
+  ]
+}
