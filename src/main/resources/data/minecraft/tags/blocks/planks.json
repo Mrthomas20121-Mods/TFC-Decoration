@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "tfc_decoration:wood/black_planks",
+    "tfc_decoration:wood/blue_planks",
+    "tfc_decoration:wood/cyan_planks",
+    "tfc_decoration:wood/gray_planks",
+    "tfc_decoration:wood/green_planks",
+    "tfc_decoration:wood/light_blue_planks",
+    "tfc_decoration:wood/light_gray_planks",
+    "tfc_decoration:wood/lime_planks",
+    "tfc_decoration:wood/magenta_planks",
+    "tfc_decoration:wood/orange_planks",
+    "tfc_decoration:wood/pink_planks",
+    "tfc_decoration:wood/purple_planks",
+    "tfc_decoration:wood/white_planks",
+    "tfc_decoration:wood/yellow_planks"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "tfc_decoration:block/wood/light_blue_terracotta_planks"
+  }
+}

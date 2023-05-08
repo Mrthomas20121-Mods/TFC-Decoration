@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "tfc_decoration:block/wood/white_planks",
+    "top": "tfc_decoration:block/wood/white_planks",
+    "side": "tfc_decoration:block/wood/white_planks"
+  }
+}

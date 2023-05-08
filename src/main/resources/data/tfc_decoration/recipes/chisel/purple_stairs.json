@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:wood/purple_planks",
+  "result": "tfc_decoration:wood/purple_stairs",
+  "mode": "stair"
+}

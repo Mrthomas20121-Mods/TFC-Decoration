@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:wood/cyan_planks",
+  "result": "tfc_decoration:wood/cyan_stairs",
+  "mode": "stair"
+}

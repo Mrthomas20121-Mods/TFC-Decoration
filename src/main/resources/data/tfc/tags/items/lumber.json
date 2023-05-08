@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "tfc_decoration:wood/black_lumber",
+    "tfc_decoration:wood/black_terracotta_lumber",
+    "tfc_decoration:wood/blue_lumber",
+    "tfc_decoration:wood/blue_terracotta_lumber",
+    "tfc_decoration:wood/cyan_lumber",
+    "tfc_decoration:wood/cyan_terracotta_lumber",
+    "tfc_decoration:wood/gray_lumber",
+    "tfc_decoration:wood/gray_terracotta_lumber",
+    "tfc_decoration:wood/green_lumber",
+    "tfc_decoration:wood/green_terracotta_lumber",
+    "tfc_decoration:wood/light_blue_lumber",
+    "tfc_decoration:wood/light_blue_terracotta_lumber",
+    "tfc_decoration:wood/light_gray_lumber",
+    "tfc_decoration:wood/light_gray_terracotta_lumber",
+    "tfc_decoration:wood/lime_lumber",
+    "tfc_decoration:wood/lime_terracotta_lumber",
+    "tfc_decoration:wood/magenta_lumber",
+    "tfc_decoration:wood/magenta_terracotta_lumber",
+    "tfc_decoration:wood/orange_lumber",
+    "tfc_decoration:wood/orange_terracotta_lumber",
+    "tfc_decoration:wood/pink_lumber",
+    "tfc_decoration:wood/pink_terracotta_lumber",
+    "tfc_decoration:wood/purple_lumber",
+    "tfc_decoration:wood/purple_terracotta_lumber",
+    "tfc_decoration:wood/white_lumber",
+    "tfc_decoration:wood/white_terracotta_lumber",
+    "tfc_decoration:wood/yellow_lumber",
+    "tfc_decoration:wood/yellow_terracotta_lumber"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/green_slab"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/green_slab_top"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/green_planks"
+    }
+  }
+}

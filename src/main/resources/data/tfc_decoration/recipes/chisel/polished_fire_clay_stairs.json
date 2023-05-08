@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:polished_fire_clay",
+  "result": "tfc_decoration:polished_fire_clay_stairs",
+  "mode": "stair"
+}

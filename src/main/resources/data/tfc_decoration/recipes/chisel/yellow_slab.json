@@ -1,0 +1,9 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:wood/yellow_planks",
+  "result": "tfc_decoration:wood/yellow_slab",
+  "mode": "slab",
+  "extra_drop": {
+    "item": "tfc_decoration:wood/yellow_slab"
+  }
+}
