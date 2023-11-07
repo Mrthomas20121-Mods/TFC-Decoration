@@ -9,6 +9,7 @@
     }
   },
   "result": {
-    "item": "tfc_decoration:wood/white_terracotta_slab"
+    "item": "tfc_decoration:wood/white_terracotta_slab",
+    "count": 3
   }
 }

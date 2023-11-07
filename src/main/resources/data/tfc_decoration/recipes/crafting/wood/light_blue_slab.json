@@ -9,6 +9,7 @@
     }
   },
   "result": {
-    "item": "tfc_decoration:wood/light_blue_slab"
+    "item": "tfc_decoration:wood/light_blue_slab",
+    "count": 3
   }
 }

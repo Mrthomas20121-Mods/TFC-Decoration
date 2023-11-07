@@ -9,6 +9,7 @@
     }
   },
   "result": {
-    "item": "tfc_decoration:wood/cyan_slab"
+    "item": "tfc_decoration:wood/cyan_slab",
+    "count": 3
   }
 }
