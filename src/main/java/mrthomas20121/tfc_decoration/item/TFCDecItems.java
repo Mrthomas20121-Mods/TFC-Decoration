@@ -2,7 +2,6 @@ package mrthomas20121.tfc_decoration.item;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
 import mrthomas20121.tfc_decoration.block.DecoWood;
-import net.dries007.tfc.common.TFCItemGroup;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.common.blocks.soil.SoilBlockType;
 import net.dries007.tfc.util.Helpers;
@@ -16,17 +15,15 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import static net.dries007.tfc.common.TFCItemGroup.ROCK_STUFFS;
-
 public class TFCDecItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TFCDecoration.mod_id);
 
-    public static final Map<DecoWood, RegistryObject<Item>> WOOD_LUMBERS = Helpers.mapOfKeys(DecoWood.class, wood -> register("wood/%s_lumber".formatted(wood.name()), TFCItemGroup.WOOD));
+    public static final Map<DecoWood, RegistryObject<Item>> WOOD_LUMBERS = Helpers.mapOfKeys(DecoWood.class, wood -> register("wood/%s_lumber".formatted(wood.name())));
 
-    private static RegistryObject<Item> register(String name, CreativeModeTab group)
+    private static RegistryObject<Item> register(String name)
     {
-        return register(name, () -> new Item(new Item.Properties().tab(group)));
+        return register(name, () -> new Item(new Item.Properties()));
     }
 
     private static <T extends Item> RegistryObject<T> register(String name, Supplier<T> item)

@@ -15,6 +15,7 @@ public class TFCDecoration {
 		final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		TFCDecBlocks.BLOCKS.register(bus);
 		TFCDecItems.ITEMS.register(bus);
+		CreativeTabRegistry.CREATIVE_TABS.register(bus);
 	}
 
 	public void clientStuff() {
