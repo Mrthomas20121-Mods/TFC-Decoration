@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool/gneiss",
+  "result": "tfc_decoration:rockwool/gneiss_stairs",
+  "mode": "stair"
+}

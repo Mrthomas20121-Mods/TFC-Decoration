@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rockwool",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:cut_rockwool/chert"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:cut_rockwool/chert_slab",
+    "count": 6
+  }
+}

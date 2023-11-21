@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool_bricks/dacite",
+  "result": "tfc_decoration:rockwool_bricks/dacite_stairs",
+  "mode": "stair"
+}

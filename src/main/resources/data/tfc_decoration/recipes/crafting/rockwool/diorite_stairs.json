@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rockwool",
+  "pattern": [
+    "  #",
+    " ##",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool/diorite"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:rockwool/diorite_stairs",
+    "count": 4
+  }
+}

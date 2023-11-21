@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rockwool",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool/phyllite"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:cut_rockwool/phyllite",
+    "count": 2
+  }
+}

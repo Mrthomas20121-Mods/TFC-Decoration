@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rockwool",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool/gneiss"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:rockwool/gneiss_slab",
+    "count": 6
+  }
+}

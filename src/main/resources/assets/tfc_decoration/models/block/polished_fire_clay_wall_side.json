@@ -1,6 +1,0 @@
-{
-  "parent": "block/template_wall_side",
-  "textures": {
-    "wall": "tfc_decoration:block/polished_fire_clay"
-  }
-}

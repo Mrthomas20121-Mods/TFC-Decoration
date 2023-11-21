@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool_bricks/conglomerate",
+  "result": "tfc_decoration:rockwool_bricks/conglomerate_stairs",
+  "mode": "stair"
+}

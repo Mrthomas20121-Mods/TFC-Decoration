@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:cut_rockwool/chalk",
+  "result": "tfc_decoration:cut_rockwool/chalk_stairs",
+  "mode": "stair"
+}

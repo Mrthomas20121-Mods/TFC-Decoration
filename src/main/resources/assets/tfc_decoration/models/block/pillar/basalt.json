@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "tfc_decoration:block/pillar/top/basalt",
-    "side": "tfc_decoration:block/pillar/side/basalt"
+    "side": "tfc_decoration:block/pillar/side/basalt",
+    "end": "tfc_decoration:block/pillar/top/basalt"
   }
 }

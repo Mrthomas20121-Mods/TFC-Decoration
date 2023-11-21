@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:cut_rockwool/andesite",
+  "result": "tfc_decoration:cut_rockwool/andesite_stairs",
+  "mode": "stair"
+}

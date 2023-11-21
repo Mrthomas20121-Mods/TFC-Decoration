@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "tfc_decoration:block/rockwool_bricks/granite",
+    "top": "tfc_decoration:block/rockwool_bricks/granite",
+    "side": "tfc_decoration:block/rockwool_bricks/granite"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool/conglomerate",
+  "result": "tfc_decoration:rockwool/conglomerate_slab",
+  "mode": "slab",
+  "extra_drop": {
+    "item": "tfc_decoration:rockwool/conglomerate_slab"
+  }
+}

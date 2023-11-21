@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool/rhyolite",
+  "result": "tfc_decoration:rockwool/rhyolite_stairs",
+  "mode": "stair"
+}

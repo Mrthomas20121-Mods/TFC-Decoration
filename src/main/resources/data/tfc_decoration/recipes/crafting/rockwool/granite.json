@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rockwool",
+  "pattern": [
+    "###",
+    "#!#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc:rock/hardened/granite"
+    },
+    "!": {
+      "item": "tfc:burlap_cloth"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:rockwool/granite",
+    "count": 8
+  }
+}

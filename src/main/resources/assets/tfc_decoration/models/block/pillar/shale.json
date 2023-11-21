@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "tfc_decoration:block/pillar/top/shale",
-    "side": "tfc_decoration:block/pillar/side/shale"
+    "side": "tfc_decoration:block/pillar/side/shale",
+    "end": "tfc_decoration:block/pillar/top/shale"
   }
 }

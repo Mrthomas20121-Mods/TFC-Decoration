@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "tfc_decoration:block/cut_rockwool/dacite"
+  }
+}

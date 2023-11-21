@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rockwool",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool/claystone"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:cut_rockwool/claystone",
+    "count": 2
+  }
+}

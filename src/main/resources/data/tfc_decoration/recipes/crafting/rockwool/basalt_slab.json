@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rockwool",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool/basalt"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:rockwool/basalt_slab",
+    "count": 6
+  }
+}

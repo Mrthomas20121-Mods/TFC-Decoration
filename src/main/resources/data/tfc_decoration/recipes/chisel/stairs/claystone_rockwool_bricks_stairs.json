@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool_bricks/claystone",
+  "result": "tfc_decoration:rockwool_bricks/claystone_stairs",
+  "mode": "stair"
+}

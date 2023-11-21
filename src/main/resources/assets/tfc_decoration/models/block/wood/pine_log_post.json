@@ -1,0 +1,77 @@
+{
+  "textures": {
+    "0": "tfc:block/wood/log/pine",
+    "particle": "tfc:block/wood/log/pine"
+  },
+  "elements": [
+    {
+      "name": "log",
+      "from": [
+        4,
+        0,
+        4
+      ],
+      "to": [
+        12,
+        16,
+        12
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            12,
+            16
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            0,
+            12,
+            16
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            12,
+            16
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            0,
+            12,
+            16
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            8,
+            16,
+            16
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            8,
+            16
+          ],
+          "texture": "#0"
+        }
+      }
+    }
+  ]
+}

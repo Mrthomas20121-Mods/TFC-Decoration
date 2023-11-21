@@ -1,0 +1,18 @@
+{
+  "type": "tfc:damage_inputs_shapeless_crafting",
+  "recipe": {
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "tfc_decoration:rockwool/basalt"
+      },
+      {
+        "tag": "tfc:hammers"
+      }
+    ],
+    "result": {
+      "item": "tfc_decoration:rockwool_brick/basalt",
+      "count": 8
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
-    "end": "tfc_decoration:block/pillar/top/dacite",
-    "side": "tfc_decoration:block/pillar/side/dacite"
+    "side": "tfc_decoration:block/pillar/side/dacite",
+    "end": "tfc_decoration:block/pillar/top/dacite"
   }
 }

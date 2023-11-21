@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
-    "end": "tfc_decoration:block/pillar/top/conglomerate",
-    "side": "tfc_decoration:block/pillar/side/conglomerate"
+    "side": "tfc_decoration:block/pillar/side/conglomerate",
+    "end": "tfc_decoration:block/pillar/top/conglomerate"
   }
 }

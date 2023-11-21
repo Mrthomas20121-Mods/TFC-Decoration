@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rockwool",
+  "pattern": [
+    "  #",
+    " ##",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:cut_rockwool/granite"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:cut_rockwool/granite_stairs",
+    "count": 4
+  }
+}

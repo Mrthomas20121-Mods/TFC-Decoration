@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool_bricks/diorite",
+  "result": "tfc_decoration:rockwool_bricks/diorite_stairs",
+  "mode": "stair"
+}

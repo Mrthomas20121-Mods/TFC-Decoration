@@ -1,0 +1,9 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool/limestone",
+  "result": "tfc_decoration:rockwool/limestone_slab",
+  "mode": "slab",
+  "extra_drop": {
+    "item": "tfc_decoration:rockwool/limestone_slab"
+  }
+}

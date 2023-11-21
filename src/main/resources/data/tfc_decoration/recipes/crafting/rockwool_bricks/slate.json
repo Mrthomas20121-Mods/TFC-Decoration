@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rockwool",
+  "pattern": [
+    "#!#",
+    "!#!",
+    "#!#"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool_brick/slate"
+    },
+    "!": {
+      "item": "tfc:mortar"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:rockwool_bricks/slate",
+    "count": 4
+  }
+}

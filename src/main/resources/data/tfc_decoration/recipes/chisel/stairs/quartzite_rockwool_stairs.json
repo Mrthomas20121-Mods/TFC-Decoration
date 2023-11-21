@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool/quartzite",
+  "result": "tfc_decoration:rockwool/quartzite_stairs",
+  "mode": "stair"
+}

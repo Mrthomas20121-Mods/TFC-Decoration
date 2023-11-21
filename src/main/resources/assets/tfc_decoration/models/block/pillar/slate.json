@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "tfc_decoration:block/pillar/top/slate",
-    "side": "tfc_decoration:block/pillar/side/slate"
+    "side": "tfc_decoration:block/pillar/side/slate",
+    "end": "tfc_decoration:block/pillar/top/slate"
   }
 }

@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool/slate",
+  "result": "tfc_decoration:rockwool/slate_stairs",
+  "mode": "stair"
+}

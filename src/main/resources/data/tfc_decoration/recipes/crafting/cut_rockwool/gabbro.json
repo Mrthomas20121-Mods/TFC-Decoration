@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rockwool",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool/gabbro"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:cut_rockwool/gabbro",
+    "count": 2
+  }
+}

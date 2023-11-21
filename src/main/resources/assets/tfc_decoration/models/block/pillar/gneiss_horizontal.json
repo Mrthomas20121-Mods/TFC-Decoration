@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
-    "end": "tfc_decoration:block/pillar/top/gneiss",
-    "side": "tfc_decoration:block/pillar/side/gneiss"
+    "side": "tfc_decoration:block/pillar/side/gneiss",
+    "end": "tfc_decoration:block/pillar/top/gneiss"
   }
 }

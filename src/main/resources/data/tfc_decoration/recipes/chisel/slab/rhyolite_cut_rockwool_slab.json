@@ -1,0 +1,9 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:cut_rockwool/rhyolite",
+  "result": "tfc_decoration:cut_rockwool/rhyolite_slab",
+  "mode": "slab",
+  "extra_drop": {
+    "item": "tfc_decoration:cut_rockwool/rhyolite_slab"
+  }
+}

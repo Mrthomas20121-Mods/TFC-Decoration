@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool_bricks/chert",
+  "result": "tfc_decoration:rockwool_bricks/chert_stairs",
+  "mode": "stair"
+}

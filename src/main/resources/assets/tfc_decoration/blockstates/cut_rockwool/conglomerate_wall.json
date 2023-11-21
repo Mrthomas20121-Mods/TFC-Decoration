@@ -1,0 +1,90 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "tfc_decoration:block/cut_rockwool/conglomerate_wall_post"
+      }
+    },
+    {
+      "when": {
+        "north": "low"
+      },
+      "apply": {
+        "model": "tfc_decoration:block/cut_rockwool/conglomerate_wall_post",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "east": "low"
+      },
+      "apply": {
+        "model": "tfc_decoration:block/cut_rockwool/conglomerate_wall_post",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "south": "low"
+      },
+      "apply": {
+        "model": "tfc_decoration:block/cut_rockwool/conglomerate_wall_post",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "west": "low"
+      },
+      "apply": {
+        "model": "tfc_decoration:block/cut_rockwool/conglomerate_wall_post",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "north": "tall"
+      },
+      "apply": {
+        "model": "tfc_decoration:block/cut_rockwool/conglomerate_wall_side_tall",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "east": "tall"
+      },
+      "apply": {
+        "model": "tfc_decoration:block/cut_rockwool/conglomerate_wall_side_tall",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "south": "tall"
+      },
+      "apply": {
+        "model": "tfc_decoration:block/cut_rockwool/conglomerate_wall_side_tall",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "west": "tall"
+      },
+      "apply": {
+        "model": "tfc_decoration:block/cut_rockwool/conglomerate_wall_side_tall",
+        "y": 270,
+        "uvlock": true
+      }
+    }
+  ]
+}

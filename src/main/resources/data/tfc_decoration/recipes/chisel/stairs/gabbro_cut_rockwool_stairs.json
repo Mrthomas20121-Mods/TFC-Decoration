@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:cut_rockwool/gabbro",
+  "result": "tfc_decoration:cut_rockwool/gabbro_stairs",
+  "mode": "stair"
+}

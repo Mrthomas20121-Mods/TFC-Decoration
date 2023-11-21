@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/polished_fire_clay",
-    "top": "tfc_decoration:block/polished_fire_clay",
-    "side": "tfc_decoration:block/polished_fire_clay"
-  }
-}

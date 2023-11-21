@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool_bricks/phyllite",
+  "result": "tfc_decoration:rockwool_bricks/phyllite_stairs",
+  "mode": "stair"
+}

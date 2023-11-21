@@ -1,0 +1,9 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool_bricks/marble",
+  "result": "tfc_decoration:rockwool_bricks/marble_slab",
+  "mode": "slab",
+  "extra_drop": {
+    "item": "tfc_decoration:rockwool_bricks/marble_slab"
+  }
+}

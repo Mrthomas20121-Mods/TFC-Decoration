@@ -1,0 +1,6 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:cut_rockwool/schist",
+  "result": "tfc_decoration:cut_rockwool/schist_stairs",
+  "mode": "stair"
+}

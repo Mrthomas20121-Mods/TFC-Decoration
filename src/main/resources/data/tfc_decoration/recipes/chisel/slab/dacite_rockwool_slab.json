@@ -1,0 +1,9 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": "tfc_decoration:rockwool/dacite",
+  "result": "tfc_decoration:rockwool/dacite_slab",
+  "mode": "slab",
+  "extra_drop": {
+    "item": "tfc_decoration:rockwool/dacite_slab"
+  }
+}

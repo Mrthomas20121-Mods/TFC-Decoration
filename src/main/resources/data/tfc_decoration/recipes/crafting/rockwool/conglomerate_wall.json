@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rockwool",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rockwool/conglomerate"
+    }
+  },
+  "result": {
+    "item": "tfc_decoration:rockwool/conglomerate_wall",
+    "count": 6
+  }
+}
