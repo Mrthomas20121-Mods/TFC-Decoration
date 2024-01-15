@@ -1,0 +1,24 @@
+{
+  "values": [
+    "tfc_decoration:wood/acacia_log_wall",
+    "tfc_decoration:wood/ash_log_wall",
+    "tfc_decoration:wood/aspen_log_wall",
+    "tfc_decoration:wood/birch_log_wall",
+    "tfc_decoration:wood/blackwood_log_wall",
+    "tfc_decoration:wood/chestnut_log_wall",
+    "tfc_decoration:wood/douglas_fir_log_wall",
+    "tfc_decoration:wood/hickory_log_wall",
+    "tfc_decoration:wood/kapok_log_wall",
+    "tfc_decoration:wood/mangrove_log_wall",
+    "tfc_decoration:wood/maple_log_wall",
+    "tfc_decoration:wood/oak_log_wall",
+    "tfc_decoration:wood/palm_log_wall",
+    "tfc_decoration:wood/pine_log_wall",
+    "tfc_decoration:wood/rosewood_log_wall",
+    "tfc_decoration:wood/sequoia_log_wall",
+    "tfc_decoration:wood/spruce_log_wall",
+    "tfc_decoration:wood/sycamore_log_wall",
+    "tfc_decoration:wood/white_cedar_log_wall",
+    "tfc_decoration:wood/willow_log_wall"
+  ]
+}

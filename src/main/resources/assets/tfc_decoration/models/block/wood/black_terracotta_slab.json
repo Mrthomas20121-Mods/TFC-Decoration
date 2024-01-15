@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "tfc_decoration:block/wood/black_terracotta_planks",
-    "top": "tfc_decoration:block/wood/black_terracotta_planks",
-    "side": "tfc_decoration:block/wood/black_terracotta_planks"
-  }
-}

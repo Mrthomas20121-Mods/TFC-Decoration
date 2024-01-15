@@ -1,7 +1,6 @@
 package mrthomas20121.tfc_decoration.block;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.fluid.DecoFluids;
 import mrthomas20121.tfc_decoration.item.DecoItems;
 import net.dries007.tfc.common.blocks.DecorationBlockRegistryObject;
 import net.dries007.tfc.common.blocks.ExtendedBlock;
@@ -58,7 +57,7 @@ public class DecoBlocks {
 
     public static final Map<DecoWood, RegistryObject<Block>> WOOD_PLANKS = Helpers.mapOfKeys(DecoWood.class, decoWood -> register("wood/%s_planks".formatted(decoWood), () -> new ExtendedBlock(ExtendedProperties.of().mapColor(decoWood.getColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f))));
 
-    public static final Map<Wood, RegistryObject<Block>> LOG_POSTS = Helpers.mapOfKeys(Wood.class, decoWood -> register("wood/%s_log_post".formatted(decoWood), () -> new ExtendedBlock(ExtendedProperties.of().mapColor(decoWood.barkColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f))));
+    public static final Map<Wood, RegistryObject<TFCWallBlock>> LOG_WALLS = Helpers.mapOfKeys(Wood.class, decoWood -> register("wood/%s_log_wall".formatted(decoWood), () -> new TFCWallBlock(ExtendedProperties.of().mapColor(decoWood.barkColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f))));
 
     public static final Map<DecoWood, WoodBlockRegistryObject> WOOD_DECORATIONS = Helpers.mapOfKeys(DecoWood.class, wood -> new WoodBlockRegistryObject(
             register(("wood/" + wood.name() + "_slab"), () -> new TFCSlabBlock(ExtendedProperties.of().mapColor(wood.getColor()).flammableLikePlanks().sound(SoundType.WOOD).strength(1.5f, 3.0f))),

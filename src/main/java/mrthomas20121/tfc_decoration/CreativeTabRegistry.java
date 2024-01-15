@@ -42,7 +42,7 @@ public class CreativeTabRegistry {
     private static void fillDecorationTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
 
         for(Wood wood: Wood.values()) {
-            out.accept(DecoBlocks.LOG_POSTS.get(wood).get());
+            out.accept(DecoBlocks.LOG_WALLS.get(wood).get());
         }
 
         for(DecoWood wood: DecoWood.values()) {

@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/wood/magenta_planks",
-    "top": "tfc_decoration:block/wood/magenta_planks",
-    "side": "tfc_decoration:block/wood/magenta_planks"
-  }
-}

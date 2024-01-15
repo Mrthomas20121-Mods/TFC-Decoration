@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/wood/cyan_terracotta_planks",
-    "top": "tfc_decoration:block/wood/cyan_terracotta_planks",
-    "side": "tfc_decoration:block/wood/cyan_terracotta_planks"
-  }
-}

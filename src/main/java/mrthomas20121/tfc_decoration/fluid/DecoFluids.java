@@ -9,10 +9,12 @@ import net.dries007.tfc.common.fluids.MoltenFluid;
 import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -59,10 +61,36 @@ public class DecoFluids {
 
     private static <F extends FlowingFluid> FluidRegistryObject<F> register(String name, Consumer<ForgeFlowingFluid.Properties> builder, FluidType.Properties typeProperties, Function<ForgeFlowingFluid.Properties, F> sourceFactory, Function<ForgeFlowingFluid.Properties, F> flowingFactory)
     {
-        // Names `metal/foo` to `metal/flowing_foo`
-        final int index = name.lastIndexOf('/');
-        final String flowingName = index == -1 ? "flowing_" + name : name.substring(0, index) + "/flowing_" + name.substring(index + 1);
+        final String flowingName = name + "/flowing";
 
-        return RegistrationHelpers.registerFluid(FLUID_TYPES, FLUIDS, name, name, flowingName, builder, () -> new FluidType(typeProperties), sourceFactory, flowingFactory);
+        return RegistrationHelpers.registerFluid(FLUID_TYPES, FLUIDS, name, name, flowingName, builder, () -> new FluidType(typeProperties) {
+            @Override
+            public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
+
+                consumer.accept(new ClientFluidTypeExtensions(new ResourceLocation(TFCDecoration.mod_id, "block/"+name+"/still"), new ResourceLocation(TFCDecoration.mod_id, "block/"+flowingName)));
+            }
+        }, sourceFactory, flowingFactory);
+    }
+
+    public static class ClientFluidTypeExtensions implements IClientFluidTypeExtensions {
+
+        private final ResourceLocation still;
+        private final ResourceLocation flow;
+
+        public ClientFluidTypeExtensions(ResourceLocation still, ResourceLocation flow) {
+
+            this.still = still;
+            this.flow = flow;
+        }
+
+        @Override
+        public ResourceLocation getStillTexture() {
+            return this.still;
+        }
+
+        @Override
+        public ResourceLocation getFlowingTexture() {
+            return this.flow;
+        }
     }
 }

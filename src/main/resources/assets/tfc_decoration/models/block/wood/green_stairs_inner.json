@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/wood/green_planks",
-    "top": "tfc_decoration:block/wood/green_planks",
-    "side": "tfc_decoration:block/wood/green_planks"
-  }
-}
