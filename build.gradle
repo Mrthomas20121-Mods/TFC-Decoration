@@ -1,26 +1,8 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-        maven {
-            url "https://repo.spongepowered.org/repository/maven-public/"
-            content { includeGroup "org.spongepowered" }
-        }
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-    }
+plugins {
+    id 'net.neoforged.gradle' version '[6.0.18,6.2)'
 }
-apply plugin: 'net.minecraftforge.gradle'
 
-version = mod_version
+version = "${mc_version} ${mod_version}"
 group = 'mrthomas20121.tfc_decoration'
 archivesBaseName = "TFC Decoration ${mc_version}"
 
@@ -105,12 +87,19 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
+    minecraft "net.neoforged:forge:${mc_version}-${neoforge_version}"
 
-    implementation fg.deobf("curse.maven:terrafirmacraft-${tfc_id}:${tfc_version}")
+    implementation fg.deobf("maven.modrinth:terrafirmacraft:${tfc_version}")
 
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
