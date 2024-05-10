@@ -1,6 +1,0 @@
-{
-  "type": "tfc:chisel",
-  "ingredient": "tfc_decoration:cut_rockwool/conglomerate",
-  "result": "tfc_decoration:cut_rockwool/conglomerate_stairs",
-  "mode": "stair"
-}

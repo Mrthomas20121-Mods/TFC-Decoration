@@ -1,8 +1,13 @@
 package mrthomas20121.tfc_decoration.block;
 
+import net.dries007.tfc.common.blocks.wood.Wood;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.material.MapColor;
+import org.jetbrains.annotations.NotNull;
 
-public enum DecoWood {
+import java.util.Locale;
+
+public enum DecoWood implements StringRepresentable {
 
     black(MapColor.COLOR_BLACK),
     blue(MapColor.COLOR_BLUE),
@@ -33,6 +38,8 @@ public enum DecoWood {
     white_terracotta(MapColor.TERRACOTTA_WHITE),
     yellow_terracotta(MapColor.TERRACOTTA_YELLOW);
 
+    public static final DecoWood[] VALUES = values();
+
     private final MapColor color;
 
     DecoWood(MapColor color) {
@@ -41,5 +48,10 @@ public enum DecoWood {
 
     public MapColor getColor() {
         return color;
+    }
+
+    @Override
+    public @NotNull String getSerializedName() {
+        return this.name().toLowerCase(Locale.ROOT);
     }
 }

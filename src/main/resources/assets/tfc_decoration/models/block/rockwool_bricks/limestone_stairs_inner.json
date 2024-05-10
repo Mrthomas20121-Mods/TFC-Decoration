@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/rockwool_bricks/limestone",
-    "top": "tfc_decoration:block/rockwool_bricks/limestone",
-    "side": "tfc_decoration:block/rockwool_bricks/limestone"
-  }
-}

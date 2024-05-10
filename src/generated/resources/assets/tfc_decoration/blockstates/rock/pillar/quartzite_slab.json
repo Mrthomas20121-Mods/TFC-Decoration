@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:rock/pillar/quartzite_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:rock/pillar/quartzite"
+    },
+    "type=top": {
+      "model": "tfc_decoration:rock/pillar/quartzite_slab_top"
+    }
+  }
+}

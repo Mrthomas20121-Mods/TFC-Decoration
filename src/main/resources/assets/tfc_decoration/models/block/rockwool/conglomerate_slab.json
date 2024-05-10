@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "tfc_decoration:block/rockwool/conglomerate",
-    "top": "tfc_decoration:block/rockwool/conglomerate",
-    "side": "tfc_decoration:block/rockwool/conglomerate"
-  }
-}

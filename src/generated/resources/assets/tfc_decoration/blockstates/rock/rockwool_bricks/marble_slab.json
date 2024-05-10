@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:rock/rockwool_bricks/marble_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/rock/rockwool_bricks/marble"
+    },
+    "type=top": {
+      "model": "tfc_decoration:rock/rockwool_bricks/marble_slab_top"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:rock/polished_rockwool/andesite_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/rock/polished_rockwool/andesite"
+    },
+    "type=top": {
+      "model": "tfc_decoration:rock/polished_rockwool/andesite_slab_top"
+    }
+  }
+}

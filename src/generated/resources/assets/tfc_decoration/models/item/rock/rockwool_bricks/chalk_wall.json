@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "tfc_decoration:block/rock/rockwool_bricks/chalk"
+  }
+}

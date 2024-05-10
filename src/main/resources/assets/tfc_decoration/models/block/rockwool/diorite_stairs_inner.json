@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/rockwool/diorite",
-    "top": "tfc_decoration:block/rockwool/diorite",
-    "side": "tfc_decoration:block/rockwool/diorite"
-  }
-}

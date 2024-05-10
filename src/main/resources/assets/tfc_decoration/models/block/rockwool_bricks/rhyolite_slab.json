@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "tfc_decoration:block/rockwool_bricks/rhyolite",
-    "top": "tfc_decoration:block/rockwool_bricks/rhyolite",
-    "side": "tfc_decoration:block/rockwool_bricks/rhyolite"
-  }
-}

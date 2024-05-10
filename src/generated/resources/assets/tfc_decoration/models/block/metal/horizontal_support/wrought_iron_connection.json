@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/wood/support/connection",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "tfc:block/metal/block/wrought_iron",
+    "texture": "tfc:block/metal/block/wrought_iron"
+  }
+}

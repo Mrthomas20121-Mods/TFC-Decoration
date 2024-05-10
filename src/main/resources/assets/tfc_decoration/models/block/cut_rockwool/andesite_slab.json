@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "tfc_decoration:block/cut_rockwool/andesite",
-    "top": "tfc_decoration:block/cut_rockwool/andesite",
-    "side": "tfc_decoration:block/cut_rockwool/andesite"
-  }
-}

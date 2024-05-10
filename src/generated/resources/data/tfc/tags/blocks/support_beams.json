@@ -1,0 +1,14 @@
+{
+  "values": [
+    "tfc_decoration:metal/vertical_support/wrought_iron",
+    "tfc_decoration:metal/horizontal_support/wrought_iron",
+    "tfc_decoration:metal/vertical_support/steel",
+    "tfc_decoration:metal/horizontal_support/steel",
+    "tfc_decoration:metal/vertical_support/black_steel",
+    "tfc_decoration:metal/horizontal_support/black_steel",
+    "tfc_decoration:metal/vertical_support/red_steel",
+    "tfc_decoration:metal/horizontal_support/red_steel",
+    "tfc_decoration:metal/vertical_support/blue_steel",
+    "tfc_decoration:metal/horizontal_support/blue_steel"
+  ]
+}

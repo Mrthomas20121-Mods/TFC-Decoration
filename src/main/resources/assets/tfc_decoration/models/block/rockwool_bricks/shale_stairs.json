@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/rockwool_bricks/shale",
-    "top": "tfc_decoration:block/rockwool_bricks/shale",
-    "side": "tfc_decoration:block/rockwool_bricks/shale"
-  }
-}

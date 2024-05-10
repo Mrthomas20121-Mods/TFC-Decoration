@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "tfc_decoration:block/cut_rockwool/chalk",
-    "top": "tfc_decoration:block/cut_rockwool/chalk",
-    "side": "tfc_decoration:block/cut_rockwool/chalk"
-  }
-}

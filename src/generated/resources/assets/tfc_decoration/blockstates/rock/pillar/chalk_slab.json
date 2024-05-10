@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:rock/pillar/chalk_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:rock/pillar/chalk"
+    },
+    "type=top": {
+      "model": "tfc_decoration:rock/pillar/chalk_slab_top"
+    }
+  }
+}

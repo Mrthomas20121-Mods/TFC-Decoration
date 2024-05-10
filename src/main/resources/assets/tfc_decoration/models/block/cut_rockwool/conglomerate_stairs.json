@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/cut_rockwool/conglomerate",
-    "top": "tfc_decoration:block/cut_rockwool/conglomerate",
-    "side": "tfc_decoration:block/cut_rockwool/conglomerate"
-  }
-}

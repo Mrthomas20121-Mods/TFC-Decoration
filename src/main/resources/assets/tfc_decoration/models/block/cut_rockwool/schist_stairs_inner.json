@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/cut_rockwool/schist",
-    "top": "tfc_decoration:block/cut_rockwool/schist",
-    "side": "tfc_decoration:block/cut_rockwool/schist"
-  }
-}

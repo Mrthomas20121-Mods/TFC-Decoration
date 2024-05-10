@@ -1,10 +1,10 @@
 package mrthomas20121.tfc_decoration;
 
 import mrthomas20121.tfc_decoration.block.DecoBlocks;
-import mrthomas20121.tfc_decoration.datagen.DecoBlockStateProvider;
-import mrthomas20121.tfc_decoration.datagen.DecoBlockTagProvider;
-import mrthomas20121.tfc_decoration.datagen.DecoModelProvider;
-import mrthomas20121.tfc_decoration.fluid.DecoFluids;
+import mrthomas20121.tfc_decoration.datagen.TFCDecoBlockStateProvider;
+import mrthomas20121.tfc_decoration.datagen.TFCDecoBlockTagProvider;
+import mrthomas20121.tfc_decoration.datagen.TFCDecoItemModelProvider;
+import mrthomas20121.tfc_decoration.datagen.TFCDecoLangProvider;
 import mrthomas20121.tfc_decoration.item.DecoItems;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,8 +18,6 @@ public class TFCDecoration {
 
 	public TFCDecoration() {
 		final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		DecoFluids.FLUID_TYPES.register(bus);
-		DecoFluids.FLUIDS.register(bus);
 		DecoBlocks.BLOCKS.register(bus);
 		DecoItems.ITEMS.register(bus);
 		CreativeTabRegistry.CREATIVE_TABS.register(bus);
@@ -28,9 +26,10 @@ public class TFCDecoration {
 	}
 
 	private void datagen(GatherDataEvent event) {
-		event.getGenerator().addProvider(event.includeClient(), new DecoBlockStateProvider(event.getGenerator().getPackOutput(), event.getExistingFileHelper()));
-		event.getGenerator().addProvider(event.includeClient(), new DecoModelProvider(event.getGenerator().getPackOutput(), event.getExistingFileHelper()));
+		event.getGenerator().addProvider(event.includeClient(), new TFCDecoBlockStateProvider(event.getGenerator().getPackOutput(), event.getExistingFileHelper()));
+		event.getGenerator().addProvider(event.includeClient(), new TFCDecoItemModelProvider(event.getGenerator().getPackOutput(), event.getExistingFileHelper()));
+		event.getGenerator().addProvider(event.includeClient(), new TFCDecoLangProvider(event.getGenerator().getPackOutput()));
 
-		event.getGenerator().addProvider(event.includeServer(), new DecoBlockTagProvider(event.getGenerator().getPackOutput(), event.getLookupProvider(), event.getExistingFileHelper()));
+		event.getGenerator().addProvider(event.includeServer(), new TFCDecoBlockTagProvider(event.getGenerator().getPackOutput(), event.getLookupProvider(), event.getExistingFileHelper()));
 	}
 }

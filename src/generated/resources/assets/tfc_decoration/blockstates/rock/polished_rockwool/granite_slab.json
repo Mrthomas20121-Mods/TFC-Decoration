@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:rock/polished_rockwool/granite_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/rock/polished_rockwool/granite"
+    },
+    "type=top": {
+      "model": "tfc_decoration:rock/polished_rockwool/granite_slab_top"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:rock/pillar/marble_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:rock/pillar/marble"
+    },
+    "type=top": {
+      "model": "tfc_decoration:rock/pillar/marble_slab_top"
+    }
+  }
+}

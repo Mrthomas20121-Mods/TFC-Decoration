@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/rockwool_bricks/claystone",
-    "top": "tfc_decoration:block/rockwool_bricks/claystone",
-    "side": "tfc_decoration:block/rockwool_bricks/claystone"
-  }
-}

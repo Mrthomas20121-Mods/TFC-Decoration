@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:rock/pillar/dacite_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:rock/pillar/dacite"
+    },
+    "type=top": {
+      "model": "tfc_decoration:rock/pillar/dacite_slab_top"
+    }
+  }
+}

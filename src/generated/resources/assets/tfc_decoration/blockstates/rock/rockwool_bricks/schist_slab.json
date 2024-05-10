@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:rock/rockwool_bricks/schist_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/rock/rockwool_bricks/schist"
+    },
+    "type=top": {
+      "model": "tfc_decoration:rock/rockwool_bricks/schist_slab_top"
+    }
+  }
+}

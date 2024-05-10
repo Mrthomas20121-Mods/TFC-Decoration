@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:rock/pillar/dolomite_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:rock/pillar/dolomite"
+    },
+    "type=top": {
+      "model": "tfc_decoration:rock/pillar/dolomite_slab_top"
+    }
+  }
+}

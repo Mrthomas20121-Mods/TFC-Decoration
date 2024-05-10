@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/rockwool/gneiss",
-    "top": "tfc_decoration:block/rockwool/gneiss",
-    "side": "tfc_decoration:block/rockwool/gneiss"
-  }
-}

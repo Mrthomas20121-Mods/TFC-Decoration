@@ -1,0 +1,7 @@
+{
+  "parent": "tfc:block/wood/support/inventory",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "texture": "tfc:block/metal/block/steel"
+  }
+}

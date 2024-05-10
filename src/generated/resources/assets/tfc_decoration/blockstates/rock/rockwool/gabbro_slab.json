@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:rock/rockwool/gabbro_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/rock/rockwool/gabbro"
+    },
+    "type=top": {
+      "model": "tfc_decoration:rock/rockwool/gabbro_slab_top"
+    }
+  }
+}
