@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rock/rockwool/rhyolite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:rock/rockwool/rhyolite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/wall/rock/rockwool/rhyolite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rock/rockwool/rhyolite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/wall/rock/rockwool/rhyolite"
+    ]
+  },
+  "sends_telemetry_event": false
+}

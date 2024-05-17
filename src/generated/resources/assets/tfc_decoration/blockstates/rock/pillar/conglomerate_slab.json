@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tfc_decoration:rock/pillar/conglomerate_slab"
+      "model": "tfc_decoration:block/rock/pillar/conglomerate_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:rock/pillar/conglomerate"
+      "model": "tfc_decoration:block/rock/pillar/conglomerate"
     },
     "type=top": {
-      "model": "tfc_decoration:rock/pillar/conglomerate_slab_top"
+      "model": "tfc_decoration:block/rock/pillar/conglomerate_slab_top"
     }
   }
 }

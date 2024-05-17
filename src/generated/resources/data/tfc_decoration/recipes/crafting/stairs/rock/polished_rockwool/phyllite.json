@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rock/polished_rockwool/phyllite"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "tfc_decoration:rock/polished_rockwool/phyllite_stairs"
+  },
+  "show_notification": true
+}

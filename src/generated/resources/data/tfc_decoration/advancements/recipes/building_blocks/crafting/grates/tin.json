@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_metal/double_sheet/tin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc:metal/double_sheet/tin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/grates/tin"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_metal/double_sheet/tin",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/grates/tin"
+    ]
+  },
+  "sends_telemetry_event": false
+}

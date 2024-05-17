@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tfc_decoration:rock/pillar/rhyolite_slab"
+      "model": "tfc_decoration:block/rock/pillar/rhyolite_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:rock/pillar/rhyolite"
+      "model": "tfc_decoration:block/rock/pillar/rhyolite"
     },
     "type=top": {
-      "model": "tfc_decoration:rock/pillar/rhyolite_slab_top"
+      "model": "tfc_decoration:block/rock/pillar/rhyolite_slab_top"
     }
   }
 }

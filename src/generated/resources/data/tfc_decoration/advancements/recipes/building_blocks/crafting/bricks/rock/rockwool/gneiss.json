@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rock/rockwool/gneiss": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:rock/rockwool/gneiss"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/bricks/rock/rockwool/gneiss"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rock/rockwool/gneiss",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/bricks/rock/rockwool/gneiss"
+    ]
+  },
+  "sends_telemetry_event": false
+}

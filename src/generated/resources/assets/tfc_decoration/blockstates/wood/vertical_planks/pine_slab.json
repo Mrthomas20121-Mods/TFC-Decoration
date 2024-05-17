@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/vertical_planks/pine_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/vertical_planks/pine"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/vertical_planks/pine_slab_top"
+    }
+  }
+}

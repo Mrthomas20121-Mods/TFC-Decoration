@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tfc_decoration:rock/pillar/chert_slab"
+      "model": "tfc_decoration:block/rock/pillar/chert_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:rock/pillar/chert"
+      "model": "tfc_decoration:block/rock/pillar/chert"
     },
     "type=top": {
-      "model": "tfc_decoration:rock/pillar/chert_slab_top"
+      "model": "tfc_decoration:block/rock/pillar/chert_slab_top"
     }
   }
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/vertical_planks/acacia_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/vertical_planks/acacia"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/vertical_planks/acacia_slab_top"
+    }
+  }
+}

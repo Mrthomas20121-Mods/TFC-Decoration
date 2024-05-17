@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "tfc_decoration:rock/cut_rockwool/rhyolite"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "tfc_decoration:rock/cut_rockwool/rhyolite_wall"
+  },
+  "show_notification": true
+}

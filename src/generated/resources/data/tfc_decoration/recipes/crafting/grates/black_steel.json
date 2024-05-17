@@ -1,0 +1,27 @@
+{
+  "type": "tfc:damage_inputs_shaped_crafting",
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+      "a": {
+        "tag": "tfc:saws"
+      },
+      "s": {
+        "item": "tfc:metal/double_sheet/black_steel"
+      },
+      "t": {
+        "tag": "tfc:hammers"
+      }
+    },
+    "pattern": [
+      "tsa",
+      "s s",
+      " s "
+    ],
+    "result": {
+      "item": "tfc_decoration:metal/grate/black_steel"
+    },
+    "show_notification": true
+  }
+}

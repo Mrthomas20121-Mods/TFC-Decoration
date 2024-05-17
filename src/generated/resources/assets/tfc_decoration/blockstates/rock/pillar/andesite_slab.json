@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tfc_decoration:rock/pillar/andesite_slab"
+      "model": "tfc_decoration:block/rock/pillar/andesite_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:rock/pillar/andesite"
+      "model": "tfc_decoration:block/rock/pillar/andesite"
     },
     "type=top": {
-      "model": "tfc_decoration:rock/pillar/andesite_slab_top"
+      "model": "tfc_decoration:block/rock/pillar/andesite_slab_top"
     }
   }
 }

@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tfc_decoration:rock/rockwool/shale_slab"
+      "model": "tfc_decoration:block/rock/rockwool/shale_slab"
     },
     "type=double": {
       "model": "tfc_decoration:block/rock/rockwool/shale"
     },
     "type=top": {
-      "model": "tfc_decoration:rock/rockwool/shale_slab_top"
+      "model": "tfc_decoration:block/rock/rockwool/shale_slab_top"
     }
   }
 }

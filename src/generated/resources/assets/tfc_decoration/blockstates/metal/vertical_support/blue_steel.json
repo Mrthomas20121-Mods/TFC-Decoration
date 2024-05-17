@@ -2,12 +2,12 @@
   "multipart": [
     {
       "apply": {
-        "model": "tfc_decoration:block/metal/vertical_support/blue_steel"
+        "model": "tfc_decoration:block/block/metal/vertical_support/blue_steel"
       }
     },
     {
       "apply": {
-        "model": "tfc_decoration:block/metal/vertical_support/blue_steel_connection"
+        "model": "tfc_decoration:block/block/metal/vertical_support/blue_steel_connection"
       },
       "when": {
         "north": "true"
@@ -15,7 +15,7 @@
     },
     {
       "apply": {
-        "model": "tfc_decoration:block/metal/vertical_support/blue_steel_connection"
+        "model": "tfc_decoration:block/block/metal/vertical_support/blue_steel_connection"
       },
       "when": {
         "east": "true"
@@ -23,7 +23,7 @@
     },
     {
       "apply": {
-        "model": "tfc_decoration:block/metal/vertical_support/blue_steel_connection"
+        "model": "tfc_decoration:block/block/metal/vertical_support/blue_steel_connection"
       },
       "when": {
         "west": "true"
@@ -31,7 +31,7 @@
     },
     {
       "apply": {
-        "model": "tfc_decoration:block/metal/vertical_support/blue_steel_connection"
+        "model": "tfc_decoration:block/block/metal/vertical_support/blue_steel_connection"
       },
       "when": {
         "south": "true"

@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "tfc_decoration:rock/pillar/basalt_horizontal",
+      "model": "tfc_decoration:block/rock/pillar/basalt_horizontal",
       "x": 90,
       "y": 90
     },
     "axis=y": {
-      "model": "tfc_decoration:rock/pillar/basalt"
+      "model": "tfc_decoration:block/rock/pillar/basalt"
     },
     "axis=z": {
-      "model": "tfc_decoration:rock/pillar/basalt_horizontal",
+      "model": "tfc_decoration:block/rock/pillar/basalt_horizontal",
       "x": 90
     }
   }

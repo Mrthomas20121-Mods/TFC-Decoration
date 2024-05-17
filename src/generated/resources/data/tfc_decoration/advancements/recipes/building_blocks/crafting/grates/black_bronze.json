@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_metal/double_sheet/black_bronze": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc:metal/double_sheet/black_bronze"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/grates/black_bronze"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_metal/double_sheet/black_bronze",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/grates/black_bronze"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tfc_decoration:rock/rockwool/slate_slab"
+      "model": "tfc_decoration:block/rock/rockwool/slate_slab"
     },
     "type=double": {
       "model": "tfc_decoration:block/rock/rockwool/slate"
     },
     "type=top": {
-      "model": "tfc_decoration:rock/rockwool/slate_slab_top"
+      "model": "tfc_decoration:block/rock/rockwool/slate_slab_top"
     }
   }
 }

@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tfc_decoration:rock/pillar/phyllite_slab"
+      "model": "tfc_decoration:block/rock/pillar/phyllite_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:rock/pillar/phyllite"
+      "model": "tfc_decoration:block/rock/pillar/phyllite"
     },
     "type=top": {
-      "model": "tfc_decoration:rock/pillar/phyllite_slab_top"
+      "model": "tfc_decoration:block/rock/pillar/phyllite_slab_top"
     }
   }
 }

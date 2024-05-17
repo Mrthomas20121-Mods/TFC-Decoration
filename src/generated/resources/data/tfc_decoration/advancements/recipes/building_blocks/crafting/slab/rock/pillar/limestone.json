@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rock/pillar/limestone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:rock/pillar/limestone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/slab/rock/pillar/limestone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rock/pillar/limestone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/slab/rock/pillar/limestone"
+    ]
+  },
+  "sends_telemetry_event": false
+}

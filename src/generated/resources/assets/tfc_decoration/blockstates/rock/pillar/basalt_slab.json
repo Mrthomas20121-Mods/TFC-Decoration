@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tfc_decoration:rock/pillar/basalt_slab"
+      "model": "tfc_decoration:block/rock/pillar/basalt_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:rock/pillar/basalt"
+      "model": "tfc_decoration:block/rock/pillar/basalt"
     },
     "type=top": {
-      "model": "tfc_decoration:rock/pillar/basalt_slab_top"
+      "model": "tfc_decoration:block/rock/pillar/basalt_slab_top"
     }
   }
 }

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rock/cut_rockwool/gabbro": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:rock/cut_rockwool/gabbro"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/wall/rock/cut_rockwool/gabbro"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rock/cut_rockwool/gabbro",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/wall/rock/cut_rockwool/gabbro"
+    ]
+  },
+  "sends_telemetry_event": false
+}

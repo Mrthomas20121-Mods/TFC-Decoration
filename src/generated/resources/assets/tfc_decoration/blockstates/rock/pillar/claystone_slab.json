@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tfc_decoration:rock/pillar/claystone_slab"
+      "model": "tfc_decoration:block/rock/pillar/claystone_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:rock/pillar/claystone"
+      "model": "tfc_decoration:block/rock/pillar/claystone"
     },
     "type=top": {
-      "model": "tfc_decoration:rock/pillar/claystone_slab_top"
+      "model": "tfc_decoration:block/rock/pillar/claystone_slab_top"
     }
   }
 }

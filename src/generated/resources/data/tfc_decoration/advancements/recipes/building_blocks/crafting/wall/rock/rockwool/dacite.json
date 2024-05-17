@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rock/rockwool/dacite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:rock/rockwool/dacite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/wall/rock/rockwool/dacite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rock/rockwool/dacite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/wall/rock/rockwool/dacite"
+    ]
+  },
+  "sends_telemetry_event": false
+}

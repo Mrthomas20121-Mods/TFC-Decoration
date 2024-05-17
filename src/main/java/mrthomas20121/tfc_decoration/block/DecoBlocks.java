@@ -10,6 +10,7 @@ import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.common.blocks.wood.*;
 import net.dries007.tfc.util.Helpers;
+import net.dries007.tfc.util.Metal;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -58,8 +59,10 @@ public class DecoBlocks {
             register(("wood/vertical_planks/" + wood.name() + "_stairs"), () -> new TFCStairBlock(() -> VERTICAL_TFC_WOOD_PLANKS.get(wood).get().defaultBlockState(), ExtendedProperties.of().mapColor(wood.woodColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f)))
     ));
 
-    public static final Map<SupportMetal, RegistryObject<VerticalSupportBlock>> VERTICAL_SUPPORT = Helpers.mapOfKeys(SupportMetal.class, metal -> register("metal/vertical_support/"+metal.name(), () -> new VerticalSupportBlock(ExtendedProperties.of().mapColor(metal.color).strength(2.0f, 4.0f).sound(SoundType.METAL))));
-    public static final Map<SupportMetal, RegistryObject<HorizontalSupportBlock>> HORIZONTAL_SUPPORT = Helpers.mapOfKeys(SupportMetal.class, metal -> register("metal/horizontal_support/"+metal.name(), () -> new HorizontalSupportBlock(ExtendedProperties.of().mapColor(metal.color).strength(2.0f, 4.0f).sound(SoundType.METAL))));
+    public static final Map<Metal.Default, RegistryObject<GrateBlock>> GRATES = Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasParts, metal -> register("metal/grate/" + metal.getSerializedName(), () -> new GrateBlock(BlockBehaviour.Properties.of().noOcclusion().mapColor(metal.mapColor()).strength(2.0f, 1.0f).sound(SoundType.METAL))));
+
+    public static final Map<SupportMetal, RegistryObject<VerticalSupportBlock>> VERTICAL_SUPPORT = Helpers.mapOfKeys(SupportMetal.class, metal -> register("metal/vertical_support/"+metal.getSerializedName(), () -> new VerticalSupportBlock(ExtendedProperties.of().mapColor(metal.color).strength(2.0f, 4.0f).sound(SoundType.METAL))));
+    public static final Map<SupportMetal, RegistryObject<HorizontalSupportBlock>> HORIZONTAL_SUPPORT = Helpers.mapOfKeys(SupportMetal.class, metal -> register("metal/horizontal_support/"+metal.getSerializedName(), () -> new HorizontalSupportBlock(ExtendedProperties.of().mapColor(metal.color).strength(2.0f, 4.0f).sound(SoundType.METAL))));
 
     private static RegistryObject<Block> register(String name, float strength)
     {

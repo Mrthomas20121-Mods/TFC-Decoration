@@ -1,11 +1,9 @@
 package mrthomas20121.tfc_decoration;
 
 import mrthomas20121.tfc_decoration.block.DecoBlocks;
-import mrthomas20121.tfc_decoration.datagen.TFCDecoBlockStateProvider;
-import mrthomas20121.tfc_decoration.datagen.TFCDecoBlockTagProvider;
-import mrthomas20121.tfc_decoration.datagen.TFCDecoItemModelProvider;
-import mrthomas20121.tfc_decoration.datagen.TFCDecoLangProvider;
+import mrthomas20121.tfc_decoration.datagen.*;
 import mrthomas20121.tfc_decoration.item.DecoItems;
+import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -26,10 +24,14 @@ public class TFCDecoration {
 	}
 
 	private void datagen(GatherDataEvent event) {
-		event.getGenerator().addProvider(event.includeClient(), new TFCDecoBlockStateProvider(event.getGenerator().getPackOutput(), event.getExistingFileHelper()));
-		event.getGenerator().addProvider(event.includeClient(), new TFCDecoItemModelProvider(event.getGenerator().getPackOutput(), event.getExistingFileHelper()));
-		event.getGenerator().addProvider(event.includeClient(), new TFCDecoLangProvider(event.getGenerator().getPackOutput()));
+		DataGenerator dataGenerator = event.getGenerator();
+		dataGenerator.addProvider(event.includeClient(), new TFCDecoBlockStateProvider(dataGenerator.getPackOutput(), event.getExistingFileHelper()));
+		dataGenerator.addProvider(event.includeClient(), new TFCDecoItemModelProvider(dataGenerator.getPackOutput(), event.getExistingFileHelper()));
+		dataGenerator.addProvider(event.includeClient(), new TFCDecoLangProvider(dataGenerator.getPackOutput()));
 
-		event.getGenerator().addProvider(event.includeServer(), new TFCDecoBlockTagProvider(event.getGenerator().getPackOutput(), event.getLookupProvider(), event.getExistingFileHelper()));
+		TFCDecoBlockTagProvider blockTagProvider = new TFCDecoBlockTagProvider(dataGenerator.getPackOutput(), event.getLookupProvider(), event.getExistingFileHelper());
+		dataGenerator.addProvider(event.includeServer(), blockTagProvider);
+		dataGenerator.addProvider(event.includeServer(), new TFCDecoItemTagProvider(dataGenerator.getPackOutput(), event.getLookupProvider(), blockTagProvider.contentsGetter(), event.getExistingFileHelper()));
+		dataGenerator.addProvider(event.includeServer(), new TFCDecoRecipeProvider(dataGenerator.getPackOutput()));
 	}
 }

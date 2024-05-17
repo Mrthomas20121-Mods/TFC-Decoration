@@ -9,6 +9,7 @@ import mrthomas20121.tfc_decoration.block.TFCWallBlock;
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.util.Metal;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -72,6 +73,16 @@ public class TFCDecoBlockTagProvider extends BlockTagsProvider {
                     .add(DecoBlocks.VERTICAL_WOOD_PLANKS.get(decoWood).get())
                     .add(DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(decoWood).slab().get())
                     .add(DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(decoWood).stair().get());
+        }
+
+        for(Metal.Default metal: Metal.Default.values()) {
+            if(metal.hasParts()) {
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(DecoBlocks.GRATES.get(metal).get());
+
+                if(metal.metalTier().ordinal() < Metal.Tier.TIER_III.ordinal()) {
+                    tag(TFCTags.Blocks.CAN_TRIGGER_COLLAPSE).add(DecoBlocks.GRATES.get(metal).get());
+                }
+            }
         }
 
         for(SupportMetal metal: SupportMetal.VALUES) {

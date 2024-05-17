@@ -1,0 +1,23 @@
+{
+  "values": [
+    "tfc_decoration:metal/grate/bismuth",
+    "tfc_decoration:metal/grate/bismuth_bronze",
+    "tfc_decoration:metal/grate/black_bronze",
+    "tfc_decoration:metal/grate/bronze",
+    "tfc_decoration:metal/grate/brass",
+    "tfc_decoration:metal/grate/copper",
+    "tfc_decoration:metal/grate/gold",
+    "tfc_decoration:metal/grate/nickel",
+    "tfc_decoration:metal/grate/rose_gold",
+    "tfc_decoration:metal/grate/silver",
+    "tfc_decoration:metal/grate/tin",
+    "tfc_decoration:metal/grate/zinc",
+    "tfc_decoration:metal/grate/sterling_silver",
+    "tfc_decoration:metal/grate/wrought_iron",
+    "tfc_decoration:metal/grate/cast_iron",
+    "tfc_decoration:metal/grate/steel",
+    "tfc_decoration:metal/grate/black_steel",
+    "tfc_decoration:metal/grate/blue_steel",
+    "tfc_decoration:metal/grate/red_steel"
+  ]
+}

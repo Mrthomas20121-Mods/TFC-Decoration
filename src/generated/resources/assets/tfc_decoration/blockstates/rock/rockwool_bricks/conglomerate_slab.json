@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tfc_decoration:rock/rockwool_bricks/conglomerate_slab"
+      "model": "tfc_decoration:block/rock/rockwool_bricks/conglomerate_slab"
     },
     "type=double": {
       "model": "tfc_decoration:block/rock/rockwool_bricks/conglomerate"
     },
     "type=top": {
-      "model": "tfc_decoration:rock/rockwool_bricks/conglomerate_slab_top"
+      "model": "tfc_decoration:block/rock/rockwool_bricks/conglomerate_slab_top"
     }
   }
 }

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rock/pillar/gabbro": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:rock/pillar/gabbro"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/slab/rock/pillar/gabbro"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rock/pillar/gabbro",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/slab/rock/pillar/gabbro"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rock/polished_rockwool/granite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:rock/polished_rockwool/granite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/slab/rock/polished_rockwool/granite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rock/polished_rockwool/granite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/slab/rock/polished_rockwool/granite"
+    ]
+  },
+  "sends_telemetry_event": false
+}

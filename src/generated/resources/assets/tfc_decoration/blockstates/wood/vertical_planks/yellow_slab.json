@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/vertical_planks/yellow_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/vertical_planks/yellow"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/vertical_planks/yellow_slab_top"
+    }
+  }
+}

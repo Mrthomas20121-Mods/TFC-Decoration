@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/planks/white_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/planks/white"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/planks/white_slab_top"
+    }
+  }
+}

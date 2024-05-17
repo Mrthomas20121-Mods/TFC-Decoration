@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "tfc_decoration:rock/cut_rockwool/quartzite_slab"
+      "model": "tfc_decoration:block/rock/cut_rockwool/quartzite_slab"
     },
     "type=double": {
       "model": "tfc_decoration:block/rock/cut_rockwool/quartzite"
     },
     "type=top": {
-      "model": "tfc_decoration:rock/cut_rockwool/quartzite_slab_top"
+      "model": "tfc_decoration:block/rock/cut_rockwool/quartzite_slab_top"
     }
   }
 }
