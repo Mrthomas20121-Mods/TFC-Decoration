@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/willow_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:block/wood/vertical_planks/willow"
+      "model": "tfc:block/wood/planks/willow"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/willow_slab_top"

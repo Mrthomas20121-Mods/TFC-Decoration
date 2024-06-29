@@ -1,13 +1,16 @@
 package mrthomas20121.tfc_decoration.datagen;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.RockBlockType;
+import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
+import mrthomas20121.tfc_decoration.api.Util;
+import mrthomas20121.tfc_decoration.api.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
 import mrthomas20121.tfc_decoration.block.DecoBlocks;
-import mrthomas20121.tfc_decoration.block.DecoWood;
 import mrthomas20121.tfc_decoration.item.DecoItems;
 import net.dries007.tfc.common.blocks.rock.Rock;
-import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -24,25 +27,34 @@ public class TFCDecoLangProvider extends LanguageProvider {
         add("creative_tab.tfc_decoration.wood_decorative_blocks", "TFC Decoration: Wood Blocks");
         add("creative_tab.tfc_decoration.rock_decorative_blocks", "TFC Decoration: Rock Blocks");
         add("creative_tab.tfc_decoration.metal_decorative_blocks", "TFC Decoration: Metal Blocks");
+        add("creative_tab.tfc_decoration.dye_decorative_blocks", "TFC Decoration: Colored Blocks");
         add("creative_tab.tfc_decoration.decorative_items", "TFC Decoration: Decorative Items");
 
-        for(DecoWood wood: DecoWood.VALUES) {
-            addBlock(DecoBlocks.VERTICAL_WOOD_PLANKS.get(wood), capitalize(wood.getSerializedName() +" Vertical Planks"));
-            addBlock(DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(wood).slab(), capitalize(wood.getSerializedName() +" Vertical Planks Slab"));
-            addBlock(DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(wood).stair(), capitalize(wood.getSerializedName() +" Vertical Planks Stairs"));
-            addBlock(DecoBlocks.WOOD_PLANKS.get(wood), capitalize(wood.getSerializedName() +" Planks"));
-            addBlock(DecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).slab(), capitalize(wood.getSerializedName() +" Planks Slab"));
-            addBlock(DecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).stair(), capitalize(wood.getSerializedName() +" Planks Stairs"));
-        }
-        for(Wood wood: Wood.VALUES) {
-            addBlock(DecoBlocks.LOG_WALLS.get(wood), capitalize(wood.getSerializedName()+" Log Wall"));
-            addBlock(DecoBlocks.VERTICAL_TFC_WOOD_PLANKS.get(wood), capitalize(wood.getSerializedName() +" Vertical Planks"));
-            addBlock(DecoBlocks.VERTICAl_TFC_WOOD_PLANKS_DECORATIONS.get(wood).slab(), capitalize(wood.getSerializedName() +" Vertical Planks Slab"));
-            addBlock(DecoBlocks.VERTICAl_TFC_WOOD_PLANKS_DECORATIONS.get(wood).stair(), capitalize(wood.getSerializedName() +" Vertical Planks Stairs"));
+        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+            String s = capitalize(dyeColor.getSerializedName());
+            addBlock(DecoBlocks.WOOLS.get(dyeColor), s +" Wool");
+            addBlock(DecoBlocks.WOOL_CARPETS.get(dyeColor), s +" Carpet");
+            addBlock(DecoBlocks.RAW_ALABASTER.get(dyeColor), s + " Raw Alabaster");
+            addBlock(DecoBlocks.POLISHED_ALABASTER.get(dyeColor), s + " Polished Alabaster");
+            addBlock(DecoBlocks.ALABASTER_BRICKS.get(dyeColor), s + " Alabaster Bricks");
+            addItem(DecoItems.DYES.get(dyeColor), s + " Dye");
         }
 
-        for(DecoWood wood: DecoWood.VALUES) {
-            addItem(DecoItems.WOOD_LUMBERS.get(wood), capitalize(wood.getSerializedName()+" Lumber"));
+        for(BasicWood wood: Util.getALLWoodTypes()) {
+            String serializedName = wood.getSerializedName();
+            if(wood.shouldGetPlanks()) {
+                addItem(DecoItems.WOOD_LUMBERS.get(wood), capitalize(serializedName +" Lumber"));
+            }
+            if(wood.isExtended()) {
+                addBlock(DecoBlocks.LOG_WALLS.get((ExtendedWood) wood), capitalize(serializedName +" Log Wall"));
+            }
+
+            for(WoodBlockType blockType: WoodBlockType.VALUES) {
+                String blockName = blockType.getSerializedName();
+                addBlock(DecoBlocks.WOODS.get(wood).get(blockType), "%s %s".formatted(capitalize(serializedName), capitalize(blockName)));
+                addBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab(), "%s %s Slab".formatted(capitalize(serializedName), capitalize(blockName)));
+                addBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair(), "%s %s Stairs".formatted(capitalize(serializedName), capitalize(blockName)));
+            }
         }
 
         for(Rock rock: Rock.VALUES) {

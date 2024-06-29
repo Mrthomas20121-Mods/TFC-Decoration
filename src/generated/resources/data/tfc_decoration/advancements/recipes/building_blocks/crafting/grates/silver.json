@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_metal/double_sheet/silver": {
+    "has_metal/sheet/silver": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tfc:metal/double_sheet/silver"
+              "tfc:metal/sheet/silver"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_metal/double_sheet/silver",
+      "has_metal/sheet/silver",
       "has_the_recipe"
     ]
   ],

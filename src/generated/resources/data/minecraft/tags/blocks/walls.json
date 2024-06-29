@@ -19,6 +19,46 @@
     "tfc_decoration:wood/spruce_log_wall",
     "tfc_decoration:wood/sycamore_log_wall",
     "tfc_decoration:wood/white_cedar_log_wall",
-    "tfc_decoration:wood/willow_log_wall"
+    "tfc_decoration:wood/willow_log_wall",
+    {
+      "id": "tfc_decoration:wood/baobab_log_wall",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/eucalyptus_log_wall",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/mahogany_log_wall",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/hevea_log_wall",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/tualang_log_wall",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/teak_log_wall",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/cypress_log_wall",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/fig_log_wall",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/ironwood_log_wall",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/ipe_log_wall",
+      "required": false
+    }
   ]
 }

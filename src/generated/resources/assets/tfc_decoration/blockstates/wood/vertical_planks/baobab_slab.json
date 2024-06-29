@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/vertical_planks/baobab_slab"
+    },
+    "type=double": {
+      "model": "afc:block/wood/planks/baobab"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/vertical_planks/baobab_slab_top"
+    }
+  }
+}

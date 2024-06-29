@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/wood_beam/white"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wood/white_lumber": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:wood/white_lumber"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wood/white_lumber",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/wood_beam/white"
+    ]
+  },
+  "sends_telemetry_event": false
+}

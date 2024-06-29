@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/wood_beam/palm_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/wood_beam/palm"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/wood_beam/palm_slab_top"
+    }
+  }
+}

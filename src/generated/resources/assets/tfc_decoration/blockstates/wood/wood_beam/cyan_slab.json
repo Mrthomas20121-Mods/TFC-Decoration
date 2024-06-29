@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/wood_beam/cyan_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/wood_beam/cyan"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/wood_beam/cyan_slab_top"
+    }
+  }
+}

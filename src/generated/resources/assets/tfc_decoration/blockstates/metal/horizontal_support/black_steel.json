@@ -2,12 +2,13 @@
   "multipart": [
     {
       "apply": {
-        "model": "tfc_decoration:block/block/metal/horizontal_support/black_steel"
+        "model": "tfc_decoration:block/metal/horizontal_support/black_steel"
       }
     },
     {
       "apply": {
-        "model": "tfc_decoration:block/block/metal/horizontal_support/black_steel_connection"
+        "model": "tfc_decoration:block/metal/horizontal_support/black_steel_connection",
+        "y": 270
       },
       "when": {
         "north": "true"
@@ -15,7 +16,7 @@
     },
     {
       "apply": {
-        "model": "tfc_decoration:block/block/metal/horizontal_support/black_steel_connection"
+        "model": "tfc_decoration:block/metal/horizontal_support/black_steel_connection"
       },
       "when": {
         "east": "true"
@@ -23,18 +24,20 @@
     },
     {
       "apply": {
-        "model": "tfc_decoration:block/block/metal/horizontal_support/black_steel_connection"
+        "model": "tfc_decoration:block/metal/horizontal_support/black_steel_connection",
+        "y": 90
       },
       "when": {
-        "west": "true"
+        "south": "true"
       }
     },
     {
       "apply": {
-        "model": "tfc_decoration:block/block/metal/horizontal_support/black_steel_connection"
+        "model": "tfc_decoration:block/metal/horizontal_support/black_steel_connection",
+        "y": 180
       },
       "when": {
-        "south": "true"
+        "west": "true"
       }
     }
   ]

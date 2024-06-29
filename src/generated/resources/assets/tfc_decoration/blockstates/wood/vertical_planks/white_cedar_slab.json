@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/white_cedar_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:block/wood/vertical_planks/white_cedar"
+      "model": "tfc:block/wood/planks/white_cedar"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/white_cedar_slab_top"

@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/slab",
   "textures": {
-    "bottom": "tfc_decoration:block/wood/vertical_planks/white_cedar",
-    "side": "tfc_decoration:block/wood/vertical_planks/white_cedar",
-    "top": "tfc_decoration:block/wood/vertical_planks/white_cedar"
+    "bottom": "tfc:block/wood/planks/white_cedar",
+    "side": "tfc:block/wood/planks/white_cedar",
+    "top": "tfc:block/wood/planks/white_cedar"
   }
 }

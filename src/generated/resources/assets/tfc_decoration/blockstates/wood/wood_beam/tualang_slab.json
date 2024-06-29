@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/wood_beam/tualang_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/wood_beam/tualang"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/wood_beam/tualang_slab_top"
+    }
+  }
+}

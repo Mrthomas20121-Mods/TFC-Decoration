@@ -1,0 +1,9 @@
+{
+  "values": [
+    "tfc_decoration:metal/support/wrought_iron",
+    "tfc_decoration:metal/support/steel",
+    "tfc_decoration:metal/support/black_steel",
+    "tfc_decoration:metal/support/red_steel",
+    "tfc_decoration:metal/support/blue_steel"
+  ]
+}

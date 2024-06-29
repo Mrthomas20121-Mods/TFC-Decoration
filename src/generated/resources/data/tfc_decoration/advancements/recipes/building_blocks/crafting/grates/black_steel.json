@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_metal/double_sheet/black_steel": {
+    "has_metal/sheet/black_steel": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tfc:metal/double_sheet/black_steel"
+              "tfc:metal/sheet/black_steel"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_metal/double_sheet/black_steel",
+      "has_metal/sheet/black_steel",
       "has_the_recipe"
     ]
   ],

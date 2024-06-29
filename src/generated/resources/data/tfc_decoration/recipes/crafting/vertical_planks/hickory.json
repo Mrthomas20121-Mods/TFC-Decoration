@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "v": {
+      "item": "tfc:wood/lumber/hickory"
+    }
+  },
+  "pattern": [
+    " v ",
+    "v v",
+    " v "
+  ],
+  "result": {
+    "item": "tfc_decoration:wood/vertical_planks/hickory"
+  },
+  "show_notification": true
+}

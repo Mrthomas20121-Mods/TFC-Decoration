@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/slab",
   "textures": {
-    "bottom": "tfc_decoration:block/wood/vertical_planks/magenta",
-    "side": "tfc_decoration:block/wood/vertical_planks/magenta",
-    "top": "tfc_decoration:block/wood/vertical_planks/magenta"
+    "bottom": "tfc_decoration:block/wood/planks/magenta",
+    "side": "tfc_decoration:block/wood/planks/magenta",
+    "top": "tfc_decoration:block/wood/planks/magenta"
   }
 }

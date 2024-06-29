@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "tfc_decoration:wood/wood_beam/tualang"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "tfc_decoration:wood/wood_beam/tualang_slab"
+  },
+  "show_notification": true
+}

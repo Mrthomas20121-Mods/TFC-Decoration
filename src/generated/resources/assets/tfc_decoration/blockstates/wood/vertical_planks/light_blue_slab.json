@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/light_blue_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:block/wood/vertical_planks/light_blue"
+      "model": "tfc_decoration:block/wood/planks/light_blue"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/light_blue_slab_top"

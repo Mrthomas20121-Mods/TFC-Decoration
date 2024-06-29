@@ -1,22 +1,36 @@
 package mrthomas20121.tfc_decoration.datagen;
 
+import com.therighthon.afc.common.blocks.AFCBlocks;
+import com.therighthon.afc.common.blocks.AFCWood;
+import com.therighthon.afc.common.items.AFCItems;
+import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.TFCDecoItemTags;
-import mrthomas20121.tfc_decoration.api.RockBlockType;
+import mrthomas20121.tfc_decoration.api.Util;
+import mrthomas20121.tfc_decoration.api.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
 import mrthomas20121.tfc_decoration.block.DecoBlocks;
-import mrthomas20121.tfc_decoration.block.DecoWood;
+import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.datagen.recipe.ShapedDamageInputRecipeBuilder;
+import mrthomas20121.tfc_decoration.item.DecoItems;
 import net.dries007.tfc.common.TFCTags;
+import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class TFCDecoRecipeProvider extends RecipeProvider {
 
@@ -26,16 +40,57 @@ public class TFCDecoRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        for(Wood wood: Wood.VALUES) {
-            stairs(consumer, DecoBlocks.VERTICAl_TFC_WOOD_PLANKS_DECORATIONS.get(wood).stair().get(), DecoBlocks.VERTICAL_TFC_WOOD_PLANKS.get(wood).get());
-            slab(consumer, RecipeCategory.BUILDING_BLOCKS, DecoBlocks.VERTICAl_TFC_WOOD_PLANKS_DECORATIONS.get(wood).slab().get(), DecoBlocks.VERTICAL_TFC_WOOD_PLANKS.get(wood).get());
-        }
 
-        for(DecoWood wood: DecoWood.VALUES) {
-            stairs(consumer, DecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).stair().get(), DecoBlocks.WOOD_PLANKS.get(wood).get());
-            stairs(consumer, DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(wood).stair().get(), DecoBlocks.VERTICAL_WOOD_PLANKS.get(wood).get());
-            slab(consumer, RecipeCategory.BUILDING_BLOCKS, DecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).slab().get(), DecoBlocks.WOOD_PLANKS.get(wood).get());
-            slab(consumer, RecipeCategory.BUILDING_BLOCKS, DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(wood).slab().get(), DecoBlocks.VERTICAL_WOOD_PLANKS.get(wood).get());
+        for(BasicWood wood: Util.getALLWoodTypes()) {
+            Supplier<Item> lumber;
+            Supplier<Block> planks;
+
+            if(wood.modID().equals("afc")) {
+                lumber = AFCItems.LUMBER.get(AFCWood.valueOf(wood.name()));
+                planks = AFCBlocks.WOODS.get(AFCWood.valueOf(wood.name())).get(Wood.BlockType.PLANKS);
+            }
+            else if(wood.modID().equals("tfc")) {
+                lumber = TFCItems.LUMBER.get(Wood.valueOf(wood.name()));
+                planks = TFCBlocks.WOODS.get(Wood.valueOf(wood.name())).get(Wood.BlockType.PLANKS);
+            }
+            else {
+                lumber = DecoItems.WOOD_LUMBERS.get(wood);
+                planks = DecoBlocks.WOOD_PLANKS.get((TFCDecoWood) wood);
+            }
+
+            if(wood.isExtended()) {
+                if(wood.modID().equals("afc")) {
+                    conditionalWalls(consumer, RecipeCategory.BUILDING_BLOCKS, DecoBlocks.LOG_WALLS.get((ExtendedWood) wood).get(), AFCBlocks.WOODS.get(AFCWood.valueOf(wood.name())).get(Wood.BlockType.PLANKS).get(), wood.modID());
+                }
+                else {
+                    walls(consumer, RecipeCategory.BUILDING_BLOCKS, DecoBlocks.LOG_WALLS.get((ExtendedWood) wood).get(), TFCBlocks.WOODS.get(Wood.valueOf(wood.name())).get(Wood.BlockType.PLANKS).get());
+                }
+            }
+
+            for(WoodBlockType blockType: WoodBlockType.VALUES) {
+
+                if(blockType.equals(WoodBlockType.WOOD_BEAM)) {
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DecoBlocks.WOODS.get(wood).get(blockType).get())
+                            .define('l', lumber.get())
+                            .pattern("l l")
+                            .pattern(" l ")
+                            .pattern("l l")
+                            .unlockedBy(getHasName(lumber.get()), has(lumber.get()))
+                            .save(consumer, "tfc_decoration:crafting/wood_beam/"+wood.getSerializedName());
+                }
+                else if(blockType.equals(WoodBlockType.VERTICAL_PLANKS)) {
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, DecoBlocks.WOODS.get(wood).get(blockType).get())
+                            .define('v', lumber.get())
+                            .pattern(" v ")
+                            .pattern("v v")
+                            .pattern(" v ")
+                            .unlockedBy("uncolored_planks", has(TFCDecoItemTags.UNCOLORED_PLANKS))
+                            .save(consumer, "tfc_decoration:crafting/vertical_planks/"+wood.getSerializedName());
+                }
+
+                stairs(consumer, DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get(), DecoBlocks.WOODS.get(wood).get(blockType).get());
+                slab(consumer, RecipeCategory.BUILDING_BLOCKS, DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get(), DecoBlocks.WOODS.get(wood).get(blockType).get());
+            }
         }
 
         for(Rock rock: Rock.VALUES) {
@@ -82,6 +137,10 @@ public class TFCDecoRecipeProvider extends RecipeProvider {
 
     protected static void walls(Consumer<FinishedRecipe> p_248880_, RecipeCategory p_251848_, ItemLike output, ItemLike input) {
         wallBuilder(p_251848_, output, Ingredient.of(input)).unlockedBy(getHasName(input), has(input)).save(p_248880_, "tfc_decoration:crafting/wall/"+ RecipeBuilder.getDefaultRecipeId(input).getPath());
+    }
+
+    protected static void conditionalWalls(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike output, ItemLike input, String name) {
+        ConditionalRecipe.builder().addCondition(new ModLoadedCondition(name)).addRecipe(c -> wallBuilder(recipeCategory, output, Ingredient.of(input)).unlockedBy(getHasName(input), has(input)).save(c)).build(consumer, new ResourceLocation("tfc_decoration:crafting/wall/"+ RecipeBuilder.getDefaultRecipeId(input).getPath()));
     }
 
     protected static void stairs(Consumer<FinishedRecipe> p_248880_, ItemLike output, ItemLike input) {

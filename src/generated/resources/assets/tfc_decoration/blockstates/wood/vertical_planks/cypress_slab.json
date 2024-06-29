@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/vertical_planks/cypress_slab"
+    },
+    "type=double": {
+      "model": "afc:block/wood/planks/cypress"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/vertical_planks/cypress_slab_top"
+    }
+  }
+}

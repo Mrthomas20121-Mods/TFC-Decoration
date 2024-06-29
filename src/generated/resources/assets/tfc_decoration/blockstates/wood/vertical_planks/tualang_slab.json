@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/vertical_planks/tualang_slab"
+    },
+    "type=double": {
+      "model": "afc:block/wood/planks/tualang"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/vertical_planks/tualang_slab_top"
+    }
+  }
+}

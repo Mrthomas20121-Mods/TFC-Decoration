@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "tfc_decoration:block/wood/vertical_planks/black_terracotta",
-    "side": "tfc_decoration:block/wood/vertical_planks/black_terracotta",
-    "top": "tfc_decoration:block/wood/vertical_planks/black_terracotta"
-  }
-}

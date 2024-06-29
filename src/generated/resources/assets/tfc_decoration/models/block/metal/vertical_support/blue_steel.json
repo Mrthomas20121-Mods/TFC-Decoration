@@ -1,3 +1,8 @@
 {
-  "parent": "tfc_decoration:block/metal/vertical_support/blue_steel_inventory"
+  "parent": "tfc:block/wood/support/vertical",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "tfc:block/metal/block/blue_steel",
+    "texture": "tfc:block/metal/block/blue_steel"
+  }
 }

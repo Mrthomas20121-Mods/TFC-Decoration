@@ -1,12 +1,18 @@
 package mrthomas20121.tfc_decoration.datagen;
 
+import com.therighthon.afc.common.blocks.AFCWood;
 import mrthomas20121.tfc_decoration.TFCDecoration;
+import mrthomas20121.tfc_decoration.api.SupportMetal;
 import mrthomas20121.tfc_decoration.api.TFCDecoItemTags;
 import mrthomas20121.tfc_decoration.block.DecoBlocks;
+import mrthomas20121.tfc_decoration.item.DecoItems;
+import net.dries007.tfc.common.blocks.TFCBlocks;
+import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
@@ -26,6 +32,18 @@ public class TFCDecoItemTagProvider extends ItemTagsProvider {
             if(metal.hasParts()) {
                 tag(TFCDecoItemTags.GRATES).add(DecoBlocks.GRATES.get(metal).get().asItem());
             }
+        }
+
+        for(SupportMetal metal :SupportMetal.VALUES) {
+            tag(TFCDecoItemTags.METAL_SUPPORTS).add(DecoItems.SUPPORTS.get(metal).get());
+        }
+
+        for(Wood wood: Wood.VALUES) {
+            tag(TFCDecoItemTags.UNCOLORED_PLANKS).add(TFCBlocks.WOODS.get(wood).get(Wood.BlockType.PLANKS).get().asItem());
+        }
+
+        for(AFCWood wood: AFCWood.VALUES) {
+            tag(TFCDecoItemTags.UNCOLORED_PLANKS).addOptional(new ResourceLocation("afc:wood/planks/"+wood.getSerializedName()));
         }
     }
 }

@@ -1,0 +1,64 @@
+{
+  "values": [
+    "tfc:wood/planks/acacia",
+    "tfc:wood/planks/ash",
+    "tfc:wood/planks/aspen",
+    "tfc:wood/planks/birch",
+    "tfc:wood/planks/blackwood",
+    "tfc:wood/planks/chestnut",
+    "tfc:wood/planks/douglas_fir",
+    "tfc:wood/planks/hickory",
+    "tfc:wood/planks/kapok",
+    "tfc:wood/planks/mangrove",
+    "tfc:wood/planks/maple",
+    "tfc:wood/planks/oak",
+    "tfc:wood/planks/palm",
+    "tfc:wood/planks/pine",
+    "tfc:wood/planks/rosewood",
+    "tfc:wood/planks/sequoia",
+    "tfc:wood/planks/spruce",
+    "tfc:wood/planks/sycamore",
+    "tfc:wood/planks/white_cedar",
+    "tfc:wood/planks/willow",
+    {
+      "id": "afc:wood/planks/baobab",
+      "required": false
+    },
+    {
+      "id": "afc:wood/planks/eucalyptus",
+      "required": false
+    },
+    {
+      "id": "afc:wood/planks/mahogany",
+      "required": false
+    },
+    {
+      "id": "afc:wood/planks/hevea",
+      "required": false
+    },
+    {
+      "id": "afc:wood/planks/tualang",
+      "required": false
+    },
+    {
+      "id": "afc:wood/planks/teak",
+      "required": false
+    },
+    {
+      "id": "afc:wood/planks/cypress",
+      "required": false
+    },
+    {
+      "id": "afc:wood/planks/fig",
+      "required": false
+    },
+    {
+      "id": "afc:wood/planks/ironwood",
+      "required": false
+    },
+    {
+      "id": "afc:wood/planks/ipe",
+      "required": false
+    }
+  ]
+}

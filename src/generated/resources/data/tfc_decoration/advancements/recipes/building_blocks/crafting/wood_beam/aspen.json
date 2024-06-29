@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/wood_beam/aspen"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wood/lumber/aspen": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc:wood/lumber/aspen"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wood/lumber/aspen",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/wood_beam/aspen"
+    ]
+  },
+  "sends_telemetry_event": false
+}

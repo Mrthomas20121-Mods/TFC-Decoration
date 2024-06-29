@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/wood/planks/orange_terracotta",
-    "side": "tfc_decoration:block/wood/planks/orange_terracotta",
-    "top": "tfc_decoration:block/wood/planks/orange_terracotta"
-  }
-}

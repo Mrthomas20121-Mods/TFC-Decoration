@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "v": {
+      "item": "tfc_decoration:wood/pink_lumber"
+    }
+  },
+  "pattern": [
+    " v ",
+    "v v",
+    " v "
+  ],
+  "result": {
+    "item": "tfc_decoration:wood/vertical_planks/pink"
+  },
+  "show_notification": true
+}

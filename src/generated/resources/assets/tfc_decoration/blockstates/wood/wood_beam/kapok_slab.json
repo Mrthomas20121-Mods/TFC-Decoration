@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/wood_beam/kapok_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/wood_beam/kapok"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/wood_beam/kapok_slab_top"
+    }
+  }
+}

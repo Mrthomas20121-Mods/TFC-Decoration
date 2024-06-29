@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "l": {
+      "item": "tfc:wood/lumber/aspen"
+    }
+  },
+  "pattern": [
+    "l l",
+    " l ",
+    "l l"
+  ],
+  "result": {
+    "item": "tfc_decoration:wood/wood_beam/aspen"
+  },
+  "show_notification": true
+}

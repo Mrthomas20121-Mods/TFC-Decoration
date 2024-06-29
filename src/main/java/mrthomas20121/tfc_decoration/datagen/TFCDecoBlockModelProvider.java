@@ -26,6 +26,9 @@ public class TFCDecoBlockModelProvider extends BlockModelProvider {
     }
 
     private ResourceLocation extendWithFolder(ResourceLocation rl) {
+        if(rl.getPath().contains("block/")) {
+            return rl;
+        }
         return new ResourceLocation(rl.getNamespace(), folder + "/" + rl.getPath());
     }
 }

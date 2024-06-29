@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "tfc_decoration:block/wood/wood_beam/top/terracotta_purple",
+    "side": "tfc_decoration:block/wood/wood_beam/side/terracotta_purple"
+  }
+}

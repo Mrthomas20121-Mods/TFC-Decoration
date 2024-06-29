@@ -1,8 +1,15 @@
 package mrthomas20121.tfc_decoration.block;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.RockBlockType;
+import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.blockType.DyeBlockType;
+import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
+import mrthomas20121.tfc_decoration.api.Util;
+import mrthomas20121.tfc_decoration.api.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
+import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.item.DecoItems;
 import net.dries007.tfc.common.blocks.DecorationBlockRegistryObject;
 import net.dries007.tfc.common.blocks.ExtendedBlock;
@@ -30,6 +37,20 @@ public class DecoBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TFCDecoration.mod_id);
 
+    public static final Map<DecoDyeColor, RegistryObject<Block>> RAW_ALABASTER = Helpers.mapOfKeys(DecoDyeColor.class, color ->
+            register(("alabaster/raw/" + color.getSerializedName()), () -> new Block(BlockBehaviour.Properties.of().mapColor(color.getMapColor()).requiresCorrectToolForDrops().strength(1.0F, 6.0F)))
+    );
+    public static final Map<DecoDyeColor, RegistryObject<Block>> ALABASTER_BRICKS = Helpers.mapOfKeys(DecoDyeColor.class, color ->
+            register(("alabaster/bricks/" + color.getSerializedName()), () -> new Block(BlockBehaviour.Properties.of().mapColor(color.getMapColor()).requiresCorrectToolForDrops().strength(1.5F, 6.0F)))
+    );
+    public static final Map<DecoDyeColor, RegistryObject<Block>> POLISHED_ALABASTER = Helpers.mapOfKeys(DecoDyeColor.class, color ->
+            register(("alabaster/polished/" + color.getSerializedName()), () -> new Block(BlockBehaviour.Properties.of().mapColor(color.getMapColor()).requiresCorrectToolForDrops().strength(1.5F, 6.0F)))
+    );
+
+    public static final Map<DecoDyeColor, RegistryObject<Block>> WOOLS = Helpers.mapOfKeys(DecoDyeColor.class, dyeColor -> register("wool/%s".formatted(dyeColor.name()), () -> new ExtendedBlock(ExtendedProperties.of(Blocks.WHITE_WOOL).mapColor(dyeColor.getMapColor()).flammableLikeWool())));
+    public static final Map<DecoDyeColor, RegistryObject<Block>> WOOL_CARPETS = Helpers.mapOfKeys(DecoDyeColor.class, dyeColor -> register("wool_carpet/%s".formatted(dyeColor.name()), () -> new TFCCarpetBlock(ExtendedProperties.of(Blocks.WHITE_CARPET).mapColor(dyeColor.getMapColor()).flammableLikeWool())));
+
+
     public static final Map<Rock, Map<RockBlockType, RegistryObject<Block>>> ROCK_BLOCKS = Helpers.mapOfKeys(Rock.class, rock -> Helpers.mapOfKeys(RockBlockType.class, type -> register("rock/"+ type.getSerializedName() + "/" + rock.name(), type.getBlock(rock))));
 
     public static final Map<Rock, Map<RockBlockType, DecorationBlockRegistryObject>> ROCK_DECORATION_BLOCKS = Helpers.mapOfKeys(Rock.class, rock -> Helpers.mapOfKeys(RockBlockType.class, type -> new DecorationBlockRegistryObject(
@@ -38,31 +59,30 @@ public class DecoBlocks {
             register(("rock/"+ type.getSerializedName() + "/" + rock.name() + "_wall"), () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(2.5f)))
     )));
 
-    public static final Map<DecoWood, RegistryObject<Block>> WOOD_PLANKS = Helpers.mapOfKeys(DecoWood.class, decoWood -> register("wood/planks/%s".formatted(decoWood), () -> new ExtendedBlock(ExtendedProperties.of().mapColor(decoWood.getColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f))));
-    public static final Map<DecoWood, RegistryObject<Block>> VERTICAL_WOOD_PLANKS = Helpers.mapOfKeys(DecoWood.class, decoWood -> register("wood/vertical_planks/%s".formatted(decoWood), () -> new ExtendedBlock(ExtendedProperties.of().mapColor(decoWood.getColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f))));
-    public static final Map<Wood, RegistryObject<Block>> VERTICAL_TFC_WOOD_PLANKS = Helpers.mapOfKeys(Wood.class, wood -> register("wood/vertical_planks/%s".formatted(wood), () -> new ExtendedBlock(ExtendedProperties.of().mapColor(wood.woodColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f))));
+    public static final Map<TFCDecoWood, RegistryObject<Block>> WOOD_PLANKS = Helpers.mapOfKeys(TFCDecoWood.class, decoWood -> register("wood/planks/%s".formatted(decoWood), () -> new ExtendedBlock(ExtendedProperties.of().mapColor(decoWood.woodColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f))));
 
-    public static final Map<Wood, RegistryObject<TFCWallBlock>> LOG_WALLS = Helpers.mapOfKeys(Wood.class, decoWood -> register("wood/%s_log_wall".formatted(decoWood), () -> new TFCWallBlock(ExtendedProperties.of().mapColor(decoWood.barkColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f))));
-
-    public static final Map<DecoWood, WoodBlockRegistryObject> WOOD_PLANKS_DECORATIONS = Helpers.mapOfKeys(DecoWood.class, wood -> new WoodBlockRegistryObject(
-            register(("wood/planks/" + wood.name() + "_slab"), () -> new TFCSlabBlock(ExtendedProperties.of().mapColor(wood.getColor()).flammableLikePlanks().sound(SoundType.WOOD).strength(1.5f, 3.0f))),
-            register(("wood/planks/" + wood.name() + "_stairs"), () -> new TFCStairBlock(() -> WOOD_PLANKS.get(wood).get().defaultBlockState(), ExtendedProperties.of().mapColor(wood.getColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f)))
+    public static final Map<BasicWood, Map<WoodBlockType, RegistryObject<Block>>> WOODS = Util.mapOfKeys(Util.getALLWoodTypes(), wood -> Helpers.mapOfKeys(WoodBlockType.class, blockType ->
+        register("wood/%s/%s".formatted(blockType.getSerializedName(), wood.getSerializedName()), () -> blockType.getBlock(wood))
     ));
 
-    public static final Map<DecoWood, WoodBlockRegistryObject> VERTICAl_WOOD_PLANKS_DECORATIONS = Helpers.mapOfKeys(DecoWood.class, wood -> new WoodBlockRegistryObject(
-            register(("wood/vertical_planks/" + wood.name() + "_slab"), () -> new TFCSlabBlock(ExtendedProperties.of().mapColor(wood.getColor()).flammableLikePlanks().sound(SoundType.WOOD).strength(1.5f, 3.0f))),
-            register(("wood/vertical_planks/" + wood.name() + "_stairs"), () -> new TFCStairBlock(() -> VERTICAL_WOOD_PLANKS.get(wood).get().defaultBlockState(), ExtendedProperties.of().mapColor(wood.getColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f)))
+    public static final Map<BasicWood, Map<WoodBlockType, WoodBlockRegistryObject>> WOODS_DECORATION = Util.mapOfKeys(Util.getALLWoodTypes(), wood -> Helpers.mapOfKeys(WoodBlockType.class, blockType ->
+            new WoodBlockRegistryObject(
+                    register(("wood/"+blockType.getSerializedName()+"/" + wood.getSerializedName() + "_slab"), () -> new TFCSlabBlock(ExtendedProperties.of().mapColor(wood.woodColor()).flammableLikePlanks().sound(SoundType.WOOD).strength(1.5f, 3.0f))),
+                    register(("wood/"+blockType.getSerializedName()+"/" + wood.getSerializedName() + "_stairs"), () -> new TFCStairBlock(() -> WOODS.get(wood).get(blockType).get().defaultBlockState(), ExtendedProperties.of().mapColor(wood.woodColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f)))
+            )
     ));
 
-    public static final Map<Wood, WoodBlockRegistryObject> VERTICAl_TFC_WOOD_PLANKS_DECORATIONS = Helpers.mapOfKeys(Wood.class, wood -> new WoodBlockRegistryObject(
-            register(("wood/vertical_planks/" + wood.name() + "_slab"), () -> new TFCSlabBlock(ExtendedProperties.of().mapColor(wood.woodColor()).flammableLikePlanks().sound(SoundType.WOOD).strength(1.5f, 3.0f))),
-            register(("wood/vertical_planks/" + wood.name() + "_stairs"), () -> new TFCStairBlock(() -> VERTICAL_TFC_WOOD_PLANKS.get(wood).get().defaultBlockState(), ExtendedProperties.of().mapColor(wood.woodColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f)))
+    public static final Map<ExtendedWood, RegistryObject<TFCWallBlock>> LOG_WALLS = Util.mapOfKeys(Util.getExtendedWoodTypes(), decoWood -> register("wood/%s_log_wall".formatted(decoWood), () -> new TFCWallBlock(ExtendedProperties.of().mapColor(decoWood.barkColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f))));
+
+    public static final Map<TFCDecoWood, WoodBlockRegistryObject> WOOD_PLANKS_DECORATIONS = Helpers.mapOfKeys(TFCDecoWood.class, wood -> new WoodBlockRegistryObject(
+            register(("wood/planks/" + wood.name() + "_slab"), () -> new TFCSlabBlock(ExtendedProperties.of().mapColor(wood.woodColor()).flammableLikePlanks().sound(SoundType.WOOD).strength(1.5f, 3.0f))),
+            register(("wood/planks/" + wood.name() + "_stairs"), () -> new TFCStairBlock(() -> WOOD_PLANKS.get(wood).get().defaultBlockState(), ExtendedProperties.of().mapColor(wood.woodColor()).sound(SoundType.WOOD).flammableLikePlanks().strength(1.5f, 3.0f)))
     ));
 
     public static final Map<Metal.Default, RegistryObject<GrateBlock>> GRATES = Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasParts, metal -> register("metal/grate/" + metal.getSerializedName(), () -> new GrateBlock(BlockBehaviour.Properties.of().noOcclusion().mapColor(metal.mapColor()).strength(2.0f, 1.0f).sound(SoundType.METAL))));
 
-    public static final Map<SupportMetal, RegistryObject<VerticalSupportBlock>> VERTICAL_SUPPORT = Helpers.mapOfKeys(SupportMetal.class, metal -> register("metal/vertical_support/"+metal.getSerializedName(), () -> new VerticalSupportBlock(ExtendedProperties.of().mapColor(metal.color).strength(2.0f, 4.0f).sound(SoundType.METAL))));
-    public static final Map<SupportMetal, RegistryObject<HorizontalSupportBlock>> HORIZONTAL_SUPPORT = Helpers.mapOfKeys(SupportMetal.class, metal -> register("metal/horizontal_support/"+metal.getSerializedName(), () -> new HorizontalSupportBlock(ExtendedProperties.of().mapColor(metal.color).strength(2.0f, 4.0f).sound(SoundType.METAL))));
+    public static final Map<SupportMetal, RegistryObject<VerticalSupportBlock>> VERTICAL_SUPPORT = Helpers.mapOfKeys(SupportMetal.class, metal -> registerNoItem("metal/vertical_support/"+metal.getSerializedName(), () -> new VerticalSupportBlock(ExtendedProperties.of().mapColor(metal.color).strength(2.0f, 4.0f).sound(SoundType.METAL))));
+    public static final Map<SupportMetal, RegistryObject<HorizontalSupportBlock>> HORIZONTAL_SUPPORT = Helpers.mapOfKeys(SupportMetal.class, metal -> registerNoItem("metal/horizontal_support/"+metal.getSerializedName(), () -> new HorizontalSupportBlock(ExtendedProperties.of().mapColor(metal.color).strength(2.0f, 4.0f).sound(SoundType.METAL))));
 
     private static RegistryObject<Block> register(String name, float strength)
     {

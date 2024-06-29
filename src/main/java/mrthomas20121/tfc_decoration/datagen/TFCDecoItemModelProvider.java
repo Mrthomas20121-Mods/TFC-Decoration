@@ -1,11 +1,17 @@
 package mrthomas20121.tfc_decoration.datagen;
 
 import com.google.common.base.Preconditions;
+import com.therighthon.afc.common.blocks.AFCBlocks;
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.RockBlockType;
+import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
+import mrthomas20121.tfc_decoration.api.Util;
+import mrthomas20121.tfc_decoration.api.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
 import mrthomas20121.tfc_decoration.block.DecoBlocks;
-import mrthomas20121.tfc_decoration.block.DecoWood;
+import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.block.TFCWallBlock;
 import mrthomas20121.tfc_decoration.item.DecoItems;
 import net.dries007.tfc.common.blocks.TFCBlocks;
@@ -46,26 +52,39 @@ public class TFCDecoItemModelProvider extends ItemModelProvider {
             }
         }
 
-        for(Wood wood: Wood.VALUES) {
+        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+            item(DecoItems.DYES.get(dyeColor).get());
 
-            // wall blocks
-            TFCWallBlock block = DecoBlocks.LOG_WALLS.get(wood).get();
-            Block log = TFCBlocks.WOODS.get(wood).get(Wood.BlockType.LOG).get();
-            itemWallBlock(block, log);
-            itemBlock(DecoBlocks.VERTICAL_TFC_WOOD_PLANKS.get(wood).get());
-            itemBlock(DecoBlocks.VERTICAl_TFC_WOOD_PLANKS_DECORATIONS.get(wood).slab().get());
-            itemBlock(DecoBlocks.VERTICAl_TFC_WOOD_PLANKS_DECORATIONS.get(wood).stair().get());
-
+            itemBlock(DecoBlocks.WOOLS.get(dyeColor).get());
+            itemBlock(DecoBlocks.WOOL_CARPETS.get(dyeColor).get());
+            itemBlock(DecoBlocks.RAW_ALABASTER.get(dyeColor).get());
+            itemBlock(DecoBlocks.POLISHED_ALABASTER.get(dyeColor).get());
+            itemBlock(DecoBlocks.ALABASTER_BRICKS.get(dyeColor).get());
         }
 
-        for(DecoWood wood: DecoWood.VALUES) {
-            item(DecoItems.WOOD_LUMBERS.get(wood).get());
-            itemBlock(DecoBlocks.WOOD_PLANKS.get(wood).get());
-            itemBlock(DecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).slab().get());
-            itemBlock(DecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).stair().get());
-            itemBlock(DecoBlocks.VERTICAL_WOOD_PLANKS.get(wood).get());
-            itemBlock(DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(wood).slab().get());
-            itemBlock(DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(wood).stair().get());
+        for(BasicWood wood: Util.getALLWoodTypes()) {
+
+            if(wood.shouldGetPlanks()) {
+                itemBlock(DecoBlocks.WOOD_PLANKS.get((TFCDecoWood) wood).get());
+                item(DecoItems.WOOD_LUMBERS.get((TFCDecoWood) wood).get());
+            }
+
+            if(wood.isExtended()) {
+                TFCWallBlock block = DecoBlocks.LOG_WALLS.get((ExtendedWood) wood).get();
+                Block log = wood.modID().equals("afc") ? AFCBlocks.WOODS.get(com.therighthon.afc.common.blocks.AFCWood.valueOf(wood.name())).get(Wood.BlockType.LOG).get() : TFCBlocks.WOODS.get(Wood.valueOf(wood.name())).get(Wood.BlockType.LOG).get();
+                if(wood.modID().equals("afc")) {
+                    itemWallBlockAFC(block, log);
+                }
+                else {
+                    itemWallBlock(block, log);
+                }
+            }
+
+            for(WoodBlockType type: WoodBlockType.VALUES) {
+                itemBlock(DecoBlocks.WOODS.get(wood).get(type).get());
+                itemBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(type).slab().get());
+                itemBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(type).stair().get());
+            }
         }
 
         for(SupportMetal metal: SupportMetal.VALUES) {
@@ -76,6 +95,7 @@ public class TFCDecoItemModelProvider extends ItemModelProvider {
         for(Metal.Default metal: Metal.Default.values()) {
             if(metal.hasParts()) {
                 itemBlock(DecoBlocks.GRATES.get(metal).get());
+
             }
         }
     }
@@ -95,6 +115,10 @@ public class TFCDecoItemModelProvider extends ItemModelProvider {
 
     public void itemWallBlock(Block block, Block baseBlock) {
         this.wallInventory(this.blockName(block), this.textureTFC(this.blockName(baseBlock)));
+    }
+
+    public void itemWallBlockAFC(Block block, Block baseBlock) {
+        this.wallInventory(this.blockName(block), this.textureAFC(this.blockName(baseBlock)));
     }
 
     public void itemWall(Block block, Block baseBlock) {
@@ -126,6 +150,10 @@ public class TFCDecoItemModelProvider extends ItemModelProvider {
 
     protected ResourceLocation textureTFC(String name) {
         return new ResourceLocation("tfc","block/" + name);
+    }
+
+    protected ResourceLocation textureAFC(String name) {
+        return new ResourceLocation("afc","block/" + name);
     }
 
     public String blockName(Block block) {

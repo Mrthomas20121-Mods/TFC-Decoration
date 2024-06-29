@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "tfc_decoration:block/wood/wood_beam/top/chestnut",
+    "side": "tfc_decoration:block/wood/wood_beam/side/chestnut"
+  }
+}

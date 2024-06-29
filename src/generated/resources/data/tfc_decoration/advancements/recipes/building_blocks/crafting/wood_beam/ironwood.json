@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/wood_beam/ironwood"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wood/lumber/ironwood": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "afc:wood/lumber/ironwood"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wood/lumber/ironwood",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/wood_beam/ironwood"
+    ]
+  },
+  "sends_telemetry_event": false
+}

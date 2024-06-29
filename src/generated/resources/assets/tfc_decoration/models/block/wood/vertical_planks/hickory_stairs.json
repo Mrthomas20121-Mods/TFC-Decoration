@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/stairs",
   "textures": {
-    "bottom": "tfc_decoration:block/wood/vertical_planks/hickory",
-    "side": "tfc_decoration:block/wood/vertical_planks/hickory",
-    "top": "tfc_decoration:block/wood/vertical_planks/hickory"
+    "bottom": "tfc:block/wood/planks/hickory",
+    "side": "tfc:block/wood/planks/hickory",
+    "top": "tfc:block/wood/planks/hickory"
   }
 }

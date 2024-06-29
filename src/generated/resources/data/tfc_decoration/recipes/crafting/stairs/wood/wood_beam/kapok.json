@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "tfc_decoration:wood/wood_beam/kapok"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "tfc_decoration:wood/wood_beam/kapok_stairs"
+  },
+  "show_notification": true
+}

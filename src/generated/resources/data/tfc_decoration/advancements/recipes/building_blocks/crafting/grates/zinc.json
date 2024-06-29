@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_metal/double_sheet/zinc": {
+    "has_metal/sheet/zinc": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tfc:metal/double_sheet/zinc"
+              "tfc:metal/sheet/zinc"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_metal/double_sheet/zinc",
+      "has_metal/sheet/zinc",
       "has_the_recipe"
     ]
   ],

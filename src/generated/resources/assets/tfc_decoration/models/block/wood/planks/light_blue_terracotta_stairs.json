@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/wood/planks/light_blue_terracotta",
-    "side": "tfc_decoration:block/wood/planks/light_blue_terracotta",
-    "top": "tfc_decoration:block/wood/planks/light_blue_terracotta"
-  }
-}

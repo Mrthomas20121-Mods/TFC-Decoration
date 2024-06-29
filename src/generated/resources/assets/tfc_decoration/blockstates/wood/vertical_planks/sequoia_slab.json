@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/sequoia_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:block/wood/vertical_planks/sequoia"
+      "model": "tfc:block/wood/planks/sequoia"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/sequoia_slab_top"

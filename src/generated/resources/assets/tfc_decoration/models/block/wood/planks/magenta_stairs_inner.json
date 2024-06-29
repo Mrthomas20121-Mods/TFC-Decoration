@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/wood/planks/magenta",
-    "side": "tfc_decoration:block/wood/planks/magenta",
-    "top": "tfc_decoration:block/wood/planks/magenta"
-  }
-}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "l": {
+      "item": "tfc:wood/lumber/kapok"
+    }
+  },
+  "pattern": [
+    "l l",
+    " l ",
+    "l l"
+  ],
+  "result": {
+    "item": "tfc_decoration:wood/wood_beam/kapok"
+  },
+  "show_notification": true
+}

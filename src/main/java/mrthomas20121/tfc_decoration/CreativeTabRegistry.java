@@ -1,13 +1,17 @@
 package mrthomas20121.tfc_decoration;
 
-import mrthomas20121.tfc_decoration.api.RockBlockType;
+import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
-import mrthomas20121.tfc_decoration.block.DecoWood;
+import mrthomas20121.tfc_decoration.api.Util;
+import mrthomas20121.tfc_decoration.api.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
+import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.block.DecoBlocks;
 import mrthomas20121.tfc_decoration.item.DecoItems;
 import net.dries007.tfc.common.TFCCreativeTabs;
 import net.dries007.tfc.common.blocks.rock.Rock;
-import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -22,10 +26,11 @@ public class CreativeTabRegistry {
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TFCDecoration.mod_id);
 
-    public static final TFCCreativeTabs.CreativeTabHolder WOOD_DECORATIVE_BLOCKS = register("wood_decorative_blocks", () -> new ItemStack(DecoBlocks.VERTICAL_WOOD_PLANKS.get(DecoWood.blue).get()), CreativeTabRegistry::fillWoodDecorativeBlocksTab);
+    public static final TFCCreativeTabs.CreativeTabHolder DYE_DECORATIVE_BLOCKS = register("dye_decorative_blocks", () -> new ItemStack(DecoBlocks.WOODS.get(TFCDecoWood.BLUE).get(WoodBlockType.WOOD_BEAM).get()), CreativeTabRegistry::fillDyeDecorativeBlocksTab);
+    public static final TFCCreativeTabs.CreativeTabHolder WOOD_DECORATIVE_BLOCKS = register("wood_decorative_blocks", () -> new ItemStack(DecoBlocks.WOODS.get(TFCDecoWood.BLUE).get(WoodBlockType.WOOD_BEAM).get()), CreativeTabRegistry::fillWoodDecorativeBlocksTab);
     public static final TFCCreativeTabs.CreativeTabHolder ROCK_DECORATIVE_BLOCKS = register("rock_decorative_blocks", () -> new ItemStack(DecoBlocks.ROCK_BLOCKS.get(Rock.ANDESITE).get(RockBlockType.PILLAR).get()), CreativeTabRegistry::fillRockDecorativeBlocksTab);
     public static final TFCCreativeTabs.CreativeTabHolder METAL_DECORATIVE_BLOCKS = register("metal_decorative_blocks", () -> new ItemStack(DecoBlocks.GRATES.get(Metal.Default.BISMUTH_BRONZE).get()), CreativeTabRegistry::fillMetalDecorativeBlocksTab);
-    public static final TFCCreativeTabs.CreativeTabHolder DECORATIVE_ITEMS = register("decorative_items", () -> new ItemStack(DecoItems.WOOD_LUMBERS.get(DecoWood.blue).get()), CreativeTabRegistry::fillDecorativeItemsTab);
+    public static final TFCCreativeTabs.CreativeTabHolder DECORATIVE_ITEMS = register("decorative_items", () -> new ItemStack(DecoItems.WOOD_LUMBERS.get(TFCDecoWood.BLUE).get()), CreativeTabRegistry::fillDecorativeItemsTab);
 
     private static TFCCreativeTabs.CreativeTabHolder register(String name, Supplier<ItemStack> icon, CreativeModeTab.DisplayItemsGenerator displayItems)
     {
@@ -39,30 +44,42 @@ public class CreativeTabRegistry {
 
     private static void fillDecorativeItemsTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
 
-        for(DecoWood wood: DecoWood.values()) {
+        for(DecoDyeColor color: DecoDyeColor.VALUES) {
+            out.accept(DecoItems.DYES.get(color).get());
+        }
+        for(TFCDecoWood wood: TFCDecoWood.VALUES) {
             out.accept(DecoItems.WOOD_LUMBERS.get(wood).get());
         }
-        for(Rock rock: Rock.values()) {
+        for(Rock rock: Rock.VALUES) {
             out.accept(DecoItems.ROCKWOOl_BRICK.get(rock).get());
+        }
+    }
+
+    private static void fillDyeDecorativeBlocksTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
+
+        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+            out.accept(DecoBlocks.WOOLS.get(dyeColor).get());
+            out.accept(DecoBlocks.WOOL_CARPETS.get(dyeColor).get());
+        }
+
+        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+            out.accept(DecoBlocks.RAW_ALABASTER.get(dyeColor).get());
+            out.accept(DecoBlocks.POLISHED_ALABASTER.get(dyeColor).get());
+            out.accept(DecoBlocks.ALABASTER_BRICKS.get(dyeColor).get());
         }
     }
 
     private static void fillWoodDecorativeBlocksTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
 
-        for(DecoWood wood: DecoWood.VALUES) {
-            out.accept(DecoBlocks.WOOD_PLANKS.get(wood).get());
-            out.accept(DecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).slab().get());
-            out.accept(DecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).stair().get());
-            out.accept(DecoBlocks.VERTICAL_WOOD_PLANKS.get(wood).get());
-            out.accept(DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(wood).slab().get());
-            out.accept(DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(wood).stair().get());
-        }
-
-        for(Wood wood: Wood.VALUES) {
-            out.accept(DecoBlocks.VERTICAL_TFC_WOOD_PLANKS.get(wood).get());
-            out.accept(DecoBlocks.VERTICAl_TFC_WOOD_PLANKS_DECORATIONS.get(wood).slab().get());
-            out.accept(DecoBlocks.VERTICAl_TFC_WOOD_PLANKS_DECORATIONS.get(wood).stair().get());
-            out.accept(DecoBlocks.LOG_WALLS.get(wood).get());
+        for(BasicWood wood: Util.getALLWoodTypes()) {
+            for(WoodBlockType blockType: WoodBlockType.VALUES) {
+                out.accept(DecoBlocks.WOODS.get(wood).get(blockType).get());
+                out.accept(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get());
+                out.accept(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get());
+            }
+            if(wood.isExtended()) {
+                out.accept(DecoBlocks.LOG_WALLS.get((ExtendedWood) wood).get());
+            }
         }
     }
 
@@ -75,8 +92,7 @@ public class CreativeTabRegistry {
         }
 
         for(SupportMetal metal: SupportMetal.VALUES) {
-            out.accept(DecoBlocks.VERTICAL_SUPPORT.get(metal).get());
-            out.accept(DecoBlocks.HORIZONTAL_SUPPORT.get(metal).get());
+            out.accept(DecoItems.SUPPORTS.get(metal).get());
         }
     }
 

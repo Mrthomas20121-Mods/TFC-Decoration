@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/birch_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:block/wood/vertical_planks/birch"
+      "model": "tfc:block/wood/planks/birch"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/birch_slab_top"

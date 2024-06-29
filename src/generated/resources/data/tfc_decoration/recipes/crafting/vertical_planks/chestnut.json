@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "v": {
+      "item": "tfc:wood/lumber/chestnut"
+    }
+  },
+  "pattern": [
+    " v ",
+    "v v",
+    " v "
+  ],
+  "result": {
+    "item": "tfc_decoration:wood/vertical_planks/chestnut"
+  },
+  "show_notification": true
+}

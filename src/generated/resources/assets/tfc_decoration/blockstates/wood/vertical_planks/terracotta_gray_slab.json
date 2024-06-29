@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/vertical_planks/terracotta_gray_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/planks/terracotta_gray"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/vertical_planks/terracotta_gray_slab_top"
+    }
+  }
+}

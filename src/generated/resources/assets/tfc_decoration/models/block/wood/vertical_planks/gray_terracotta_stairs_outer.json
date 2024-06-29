@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "tfc_decoration:block/wood/vertical_planks/gray_terracotta",
-    "side": "tfc_decoration:block/wood/vertical_planks/gray_terracotta",
-    "top": "tfc_decoration:block/wood/vertical_planks/gray_terracotta"
-  }
-}

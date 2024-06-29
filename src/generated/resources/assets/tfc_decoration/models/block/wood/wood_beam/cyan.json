@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "tfc_decoration:block/wood/wood_beam/top/cyan",
+    "side": "tfc_decoration:block/wood/wood_beam/side/cyan"
+  }
+}

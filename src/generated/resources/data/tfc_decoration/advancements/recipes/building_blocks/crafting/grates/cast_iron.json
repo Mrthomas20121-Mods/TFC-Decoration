@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_metal/double_sheet/cast_iron": {
+    "has_metal/sheet/cast_iron": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tfc:metal/double_sheet/cast_iron"
+              "tfc:metal/sheet/cast_iron"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_metal/double_sheet/cast_iron",
+      "has_metal/sheet/cast_iron",
       "has_the_recipe"
     ]
   ],

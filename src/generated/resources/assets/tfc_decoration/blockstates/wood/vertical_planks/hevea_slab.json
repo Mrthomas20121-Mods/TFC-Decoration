@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/vertical_planks/hevea_slab"
+    },
+    "type=double": {
+      "model": "afc:block/wood/planks/hevea"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/vertical_planks/hevea_slab_top"
+    }
+  }
+}

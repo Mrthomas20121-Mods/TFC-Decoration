@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_metal/double_sheet/nickel": {
+    "has_metal/sheet/nickel": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tfc:metal/double_sheet/nickel"
+              "tfc:metal/sheet/nickel"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_metal/double_sheet/nickel",
+      "has_metal/sheet/nickel",
       "has_the_recipe"
     ]
   ],

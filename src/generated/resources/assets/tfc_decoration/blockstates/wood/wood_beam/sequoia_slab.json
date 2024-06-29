@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/wood_beam/sequoia_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/wood_beam/sequoia"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/wood_beam/sequoia_slab_top"
+    }
+  }
+}

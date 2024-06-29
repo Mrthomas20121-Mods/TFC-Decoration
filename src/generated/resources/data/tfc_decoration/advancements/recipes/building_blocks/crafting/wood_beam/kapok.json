@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/wood_beam/kapok"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wood/lumber/kapok": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc:wood/lumber/kapok"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wood/lumber/kapok",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/wood_beam/kapok"
+    ]
+  },
+  "sends_telemetry_event": false
+}

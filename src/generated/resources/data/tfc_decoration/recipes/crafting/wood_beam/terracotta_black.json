@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "l": {
+      "item": "tfc_decoration:wood/terracotta_black_lumber"
+    }
+  },
+  "pattern": [
+    "l l",
+    " l ",
+    "l l"
+  ],
+  "result": {
+    "item": "tfc_decoration:wood/wood_beam/terracotta_black"
+  },
+  "show_notification": true
+}

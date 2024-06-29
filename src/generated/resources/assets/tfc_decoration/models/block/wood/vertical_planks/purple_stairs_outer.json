@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/outer_stairs",
   "textures": {
-    "bottom": "tfc_decoration:block/wood/vertical_planks/purple",
-    "side": "tfc_decoration:block/wood/vertical_planks/purple",
-    "top": "tfc_decoration:block/wood/vertical_planks/purple"
+    "bottom": "tfc_decoration:block/wood/planks/purple",
+    "side": "tfc_decoration:block/wood/planks/purple",
+    "top": "tfc_decoration:block/wood/planks/purple"
   }
 }

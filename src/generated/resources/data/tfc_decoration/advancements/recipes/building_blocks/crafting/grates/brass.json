@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_metal/double_sheet/brass": {
+    "has_metal/sheet/brass": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tfc:metal/double_sheet/brass"
+              "tfc:metal/sheet/brass"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_metal/double_sheet/brass",
+      "has_metal/sheet/brass",
       "has_the_recipe"
     ]
   ],

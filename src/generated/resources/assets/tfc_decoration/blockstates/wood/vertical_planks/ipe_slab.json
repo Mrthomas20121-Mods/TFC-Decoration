@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/vertical_planks/ipe_slab"
+    },
+    "type=double": {
+      "model": "afc:block/wood/planks/ipe"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/vertical_planks/ipe_slab_top"
+    }
+  }
+}

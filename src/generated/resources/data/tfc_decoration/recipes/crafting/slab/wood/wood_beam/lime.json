@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "tfc_decoration:wood/wood_beam/lime"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "tfc_decoration:wood/wood_beam/lime_slab"
+  },
+  "show_notification": true
+}

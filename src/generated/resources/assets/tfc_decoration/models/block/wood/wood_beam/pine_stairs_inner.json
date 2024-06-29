@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "tfc_decoration:block/wood/wood_beam/top/pine",
+    "side": "tfc_decoration:block/wood/wood_beam/side/pine",
+    "top": "tfc_decoration:block/wood/wood_beam/top/pine"
+  }
+}

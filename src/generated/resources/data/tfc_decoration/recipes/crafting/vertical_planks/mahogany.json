@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "v": {
+      "item": "afc:wood/lumber/mahogany"
+    }
+  },
+  "pattern": [
+    " v ",
+    "v v",
+    " v "
+  ],
+  "result": {
+    "item": "tfc_decoration:wood/vertical_planks/mahogany"
+  },
+  "show_notification": true
+}

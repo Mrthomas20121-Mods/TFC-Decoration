@@ -4,18 +4,15 @@
     "type": "minecraft:crafting_shaped",
     "category": "building",
     "key": {
-      "a": {
-        "tag": "tfc:saws"
-      },
       "s": {
-        "item": "tfc:metal/double_sheet/brass"
+        "item": "tfc:metal/sheet/brass"
       },
       "t": {
         "tag": "tfc:hammers"
       }
     },
     "pattern": [
-      "tsa",
+      "ts ",
       "s s",
       " s "
     ],

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/vertical_planks/brown_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/planks/brown"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/vertical_planks/brown_slab_top"
+    }
+  }
+}

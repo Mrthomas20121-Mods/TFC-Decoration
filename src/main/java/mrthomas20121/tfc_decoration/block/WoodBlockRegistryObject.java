@@ -8,13 +8,5 @@ public record WoodBlockRegistryObject(RegistryObject<? extends SlabBlock> slab, 
         this.slab = slab;
         this.stair = stair;
     }
-
-    public RegistryObject<? extends SlabBlock> slab() {
-        return this.slab;
-    }
-
-    public RegistryObject<? extends StairBlock> stair() {
-        return this.stair;
-    }
 }
 

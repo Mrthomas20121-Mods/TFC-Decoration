@@ -1,17 +1,19 @@
 package mrthomas20121.tfc_decoration.datagen;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.RockBlockType;
+import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
+import mrthomas20121.tfc_decoration.api.Util;
+import mrthomas20121.tfc_decoration.api.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
 import mrthomas20121.tfc_decoration.block.DecoBlocks;
-import mrthomas20121.tfc_decoration.block.DecoWood;
+import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.block.TFCWallBlock;
 import net.dries007.tfc.common.blocks.HorizontalPipeBlock;
 import net.dries007.tfc.common.blocks.rock.Rock;
-import net.dries007.tfc.common.blocks.wood.VerticalSupportBlock;
-import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Metal;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -40,6 +42,14 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+            simpleBlock(DecoBlocks.WOOLS.get(dyeColor).get());
+            carpetBlock(DecoBlocks.WOOL_CARPETS.get(dyeColor).get(), DecoBlocks.WOOLS.get(dyeColor).get());
+            simpleBlock(DecoBlocks.RAW_ALABASTER.get(dyeColor).get());
+            simpleBlock(DecoBlocks.POLISHED_ALABASTER.get(dyeColor).get());
+            simpleBlock(DecoBlocks.ALABASTER_BRICKS.get(dyeColor).get());
+        }
+
         for(Rock rock: Rock.VALUES) {
             for(RockBlockType type: RockBlockType.VALUES) {
                 String typeName = type.getSerializedName();
@@ -73,30 +83,42 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
             }
         }
 
-        for(Wood wood: Wood.VALUES) {
-            TFCWallBlock block = DecoBlocks.LOG_WALLS.get(wood).get();
-            wallBlock(block, new ResourceLocation("tfc:block/wood/log/"+wood.getSerializedName()));
-            block(DecoBlocks.VERTICAL_TFC_WOOD_PLANKS.get(wood).get());
-            slabBlock(DecoBlocks.VERTICAl_TFC_WOOD_PLANKS_DECORATIONS.get(wood).slab().get(),
-                    new ResourceLocation("tfc_decoration", "block/wood/vertical_planks/" + wood.getSerializedName()),
-                    new ResourceLocation("tfc_decoration", "block/wood/vertical_planks/" + wood.getSerializedName()));
-            stairsBlock(DecoBlocks.VERTICAl_TFC_WOOD_PLANKS_DECORATIONS.get(wood).stair().get(),
-                    new ResourceLocation("tfc_decoration", "block/wood/vertical_planks/" + wood.getSerializedName()));
-        }
+        for(BasicWood wood: Util.getALLWoodTypes()) {
+            String woodName = wood.getSerializedName();
+            if(wood.shouldGetPlanks()) {
+                block(DecoBlocks.WOOD_PLANKS.get((TFCDecoWood) wood).get());
+            }
 
-        for(DecoWood wood: DecoWood.VALUES) {
-            block(DecoBlocks.WOOD_PLANKS.get(wood).get());
-            slabBlock(DecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).slab().get(),
-                    new ResourceLocation("tfc_decoration", "block/wood/planks/" + wood.getSerializedName()),
-                    new ResourceLocation("tfc_decoration", "block/wood/planks/" + wood.getSerializedName()));
-            stairsBlock(DecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).stair().get(),
-                    new ResourceLocation("tfc_decoration", "block/wood/planks/" + wood.getSerializedName()));
-            block(DecoBlocks.VERTICAL_WOOD_PLANKS.get(wood).get());
-            slabBlock(DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(wood).slab().get(),
-                    new ResourceLocation("tfc_decoration", "block/wood/vertical_planks/" + wood.getSerializedName()),
-                    new ResourceLocation("tfc_decoration", "block/wood/vertical_planks/" + wood.getSerializedName()));
-            stairsBlock(DecoBlocks.VERTICAl_WOOD_PLANKS_DECORATIONS.get(wood).stair().get(),
-                    new ResourceLocation("tfc_decoration", "block/wood/vertical_planks/" + wood.getSerializedName()));
+            if(wood.isExtended()) {
+                TFCWallBlock block = DecoBlocks.LOG_WALLS.get((ExtendedWood) wood).get();
+                wallBlock(block, new ResourceLocation(wood.modID()+":block/wood/log/"+wood.getSerializedName()));
+            }
+
+            for(WoodBlockType blockType: WoodBlockType.VALUES) {
+                String typeName = blockType.getSerializedName();
+                if(blockType.equals(WoodBlockType.WOOD_BEAM)) {
+                    axisBlock((RotatedPillarBlock) DecoBlocks.WOODS.get(wood).get(blockType).get(),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/side/" + woodName),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName));
+                    slabBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get(),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/" + woodName),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/side/" + woodName),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName));
+                    stairsBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get(),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/side/" + woodName),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName));
+                }
+                else {
+                    block(DecoBlocks.WOODS.get(wood).get(blockType).get());
+                    slabBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get(),
+                            new ResourceLocation(wood.modID(), "block/wood/planks/" + wood.getSerializedName()),
+                            new ResourceLocation(wood.modID(), "block/wood/planks/" + wood.getSerializedName()));
+                    stairsBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get(),
+                            new ResourceLocation(wood.modID(), "block/wood/planks/" + wood.getSerializedName()));
+                }
+            }
         }
 
         for(SupportMetal metal: SupportMetal.values()) {
@@ -109,6 +131,10 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
                 blockCutout(DecoBlocks.GRATES.get(metal).get());
             }
         }
+    }
+
+    public void carpetBlock(Block block, Block wool) {
+        simpleBlock(block, models().carpet(name(block), key(wool)));
     }
 
     private ResourceLocation key(Block block) {
@@ -141,8 +167,13 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
         }
     }
 
-    public ResourceLocation texture(String name) {
-        return this.modLoc("block/" + name);
+    public ResourceLocation getName(Block block) {
+        ResourceLocation location = ForgeRegistries.BLOCKS.getKey(block);
+        if (location != null) {
+            return location;
+        } else {
+            throw new IllegalStateException("Unknown block: " + block.toString());
+        }
     }
 
     public void wallBlock(WallBlock block, ResourceLocation texture) {
@@ -156,14 +187,15 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
     }
 
     public void horizontalSupport(Block block, SupportMetal metal) {
-        support(modLoc(name(block)).toString(), block, new ResourceLocation("tfc:block/wood/support/horizontal"), new ResourceLocation("tfc:block/wood/support/connection"), metal);
+        support(getName(block).toString(), block, new ResourceLocation("tfc:block/wood/support/horizontal"), new ResourceLocation("tfc:block/wood/support/connection"), metal);
     }
 
     public void verticalSupport(Block block, SupportMetal metal) {
-        support(modLoc(name(block)).toString(), block, new ResourceLocation("tfc:block/wood/support/vertical"), new ResourceLocation("tfc:block/wood/support/connection"), metal);
+        support(getName(block).toString(), block, new ResourceLocation("tfc:block/wood/support/vertical"), new ResourceLocation("tfc:block/wood/support/connection"), metal);
     }
 
     private void support(String name, Block block, ResourceLocation part, ResourceLocation connection, SupportMetal metal) {
+
         models().withExistingParent(name+"_inventory", new ResourceLocation("tfc:block/wood/support/inventory"))
                 .texture("texture", "tfc:block/metal/block/"+metal.getSerializedName())
                 .renderType(new ResourceLocation("cutout"));
@@ -180,13 +212,13 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
     private void support(Block block, ModelFile part, ModelFile connection) {
         MultiPartBlockStateBuilder builder = getMultipartBuilder(block);
         builder.part().modelFile(part).addModel().end();
-        builder.part().modelFile(connection).addModel()
+        builder.part().modelFile(connection).rotationY(270).addModel()
                 .condition(HorizontalPipeBlock.NORTH, true).end();
         builder.part().modelFile(connection).addModel()
                 .condition(HorizontalPipeBlock.EAST, true).end();
-        builder.part().modelFile(connection).addModel()
-                .condition(HorizontalPipeBlock.WEST, true).end();
-        builder.part().modelFile(connection).addModel()
+        builder.part().modelFile(connection).rotationY(90).addModel()
                 .condition(HorizontalPipeBlock.SOUTH, true).end();
+        builder.part().modelFile(connection).rotationY(180).addModel()
+                .condition(HorizontalPipeBlock.WEST, true).end();
     }
 }

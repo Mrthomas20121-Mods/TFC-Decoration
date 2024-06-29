@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/stairs/wood/wood_beam/terracotta_lime"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wood/wood_beam/terracotta_lime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:wood/wood_beam/terracotta_lime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wood/wood_beam/terracotta_lime",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/stairs/wood/wood_beam/terracotta_lime"
+    ]
+  },
+  "sends_telemetry_event": false
+}

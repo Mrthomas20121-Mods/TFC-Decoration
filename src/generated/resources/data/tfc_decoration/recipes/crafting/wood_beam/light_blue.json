@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "l": {
+      "item": "tfc_decoration:wood/light_blue_lumber"
+    }
+  },
+  "pattern": [
+    "l l",
+    " l ",
+    "l l"
+  ],
+  "result": {
+    "item": "tfc_decoration:wood/wood_beam/light_blue"
+  },
+  "show_notification": true
+}

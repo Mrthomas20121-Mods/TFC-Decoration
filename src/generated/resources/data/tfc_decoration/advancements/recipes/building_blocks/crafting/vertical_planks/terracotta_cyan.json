@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/vertical_planks/terracotta_cyan"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "uncolored_planks": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "tfc_decoration:uncolored_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "uncolored_planks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/vertical_planks/terracotta_cyan"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "input": {
+    "tag": "forge:double_sheets/wrought_iron"
+  },
+  "result": {
+    "item": "tfc_decoration:metal/support/wrought_iron"
+  },
+  "tier": 3,
+  "rules": [
+    "hit_last",
+    "bend_second_last",
+    "bend_third_last"
+  ]
+}

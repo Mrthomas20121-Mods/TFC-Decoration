@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/vertical_planks/teak_slab"
+    },
+    "type=double": {
+      "model": "afc:block/wood/planks/teak"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/vertical_planks/teak_slab_top"
+    }
+  }
+}

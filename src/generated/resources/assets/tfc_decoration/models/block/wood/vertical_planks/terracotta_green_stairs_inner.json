@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "tfc_decoration:block/wood/planks/terracotta_green",
+    "side": "tfc_decoration:block/wood/planks/terracotta_green",
+    "top": "tfc_decoration:block/wood/planks/terracotta_green"
+  }
+}

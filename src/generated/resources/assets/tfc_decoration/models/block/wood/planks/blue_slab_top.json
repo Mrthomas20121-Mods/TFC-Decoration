@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "tfc_decoration:block/wood/planks/blue",
-    "side": "tfc_decoration:block/wood/planks/blue",
-    "top": "tfc_decoration:block/wood/planks/blue"
-  }
-}

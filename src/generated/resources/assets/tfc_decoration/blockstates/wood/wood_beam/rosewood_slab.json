@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/wood_beam/rosewood_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/wood_beam/rosewood"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/wood_beam/rosewood_slab_top"
+    }
+  }
+}

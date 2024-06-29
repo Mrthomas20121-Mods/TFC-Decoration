@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/wood_beam/birch_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/wood_beam/birch"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/wood_beam/birch_slab_top"
+    }
+  }
+}

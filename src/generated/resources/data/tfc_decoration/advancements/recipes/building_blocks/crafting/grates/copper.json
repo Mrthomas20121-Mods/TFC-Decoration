@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_metal/double_sheet/copper": {
+    "has_metal/sheet/copper": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tfc:metal/double_sheet/copper"
+              "tfc:metal/sheet/copper"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_metal/double_sheet/copper",
+      "has_metal/sheet/copper",
       "has_the_recipe"
     ]
   ],

@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/kapok_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:block/wood/vertical_planks/kapok"
+      "model": "tfc:block/wood/planks/kapok"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/kapok_slab_top"

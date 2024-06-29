@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_metal/double_sheet/bronze": {
+    "has_metal/sheet/bronze": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tfc:metal/double_sheet/bronze"
+              "tfc:metal/sheet/bronze"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_metal/double_sheet/bronze",
+      "has_metal/sheet/bronze",
       "has_the_recipe"
     ]
   ],
