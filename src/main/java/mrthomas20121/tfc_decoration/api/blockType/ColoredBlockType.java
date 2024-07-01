@@ -11,22 +11,22 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.Locale;
 import java.util.function.Function;
 
-public enum DyeBlockType implements StringRepresentable {
+public enum ColoredBlockType implements StringRepresentable {
 
     WOOL,
     CARPET(dyeColor -> new TFCCarpetBlock(ExtendedProperties.of(Blocks.WHITE_CARPET).mapColor(dyeColor.getMapColor())));
 
-    public static DyeBlockType[] VALUES = DyeBlockType.values();
+    public static ColoredBlockType[] VALUES = ColoredBlockType.values();
     private final Function<DecoDyeColor, Block> supp;
 
     private final String serializedName;
 
-    DyeBlockType(Function<DecoDyeColor, Block> supp) {
+    ColoredBlockType(Function<DecoDyeColor, Block> supp) {
         this.supp = supp;
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
     }
 
-    DyeBlockType() {
+    ColoredBlockType() {
         this((dyeColor) -> new ExtendedBlock(ExtendedProperties.of(Blocks.WHITE_WOOL).mapColor(dyeColor.getMapColor()).flammableLikeWool()));
     }
 

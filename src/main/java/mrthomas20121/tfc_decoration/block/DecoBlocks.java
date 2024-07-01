@@ -2,7 +2,6 @@ package mrthomas20121.tfc_decoration.block;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
 import mrthomas20121.tfc_decoration.api.DecoDyeColor;
-import mrthomas20121.tfc_decoration.api.blockType.DyeBlockType;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
 import mrthomas20121.tfc_decoration.api.Util;
@@ -19,10 +18,13 @@ import net.dries007.tfc.common.blocks.wood.*;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -113,5 +115,11 @@ public class DecoBlocks {
             DecoItems.ITEMS.register(actualName, () -> blockItemFactory.apply(block.get()));
         }
         return block;
+    }
+
+    private static BedBlock bed(DyeColor p_50765_) {
+        return new BedBlock(p_50765_, BlockBehaviour.Properties.of()
+                .mapColor((p_284863_) -> p_284863_.getValue(BedBlock.PART) == BedPart.FOOT ? p_50765_.getMapColor() : MapColor.WOOL)
+                .sound(SoundType.WOOD).strength(0.2F).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY));
     }
 }
