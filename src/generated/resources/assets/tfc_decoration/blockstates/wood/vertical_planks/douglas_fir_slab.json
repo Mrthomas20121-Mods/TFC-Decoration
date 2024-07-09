@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/douglas_fir_slab"
     },
     "type=double": {
-      "model": "tfc:block/wood/planks/douglas_fir"
+      "model": "tfc_decoration:block/wood/vertical_planks/douglas_fir"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/douglas_fir_slab_top"

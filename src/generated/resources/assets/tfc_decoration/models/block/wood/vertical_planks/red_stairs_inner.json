@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/inner_stairs",
   "textures": {
-    "bottom": "tfc_decoration:block/wood/planks/red",
-    "side": "tfc_decoration:block/wood/planks/red",
-    "top": "tfc_decoration:block/wood/planks/red"
+    "bottom": "tfc_decoration:block/wood/vertical_planks/red",
+    "side": "tfc_decoration:block/wood/vertical_planks/red",
+    "top": "tfc_decoration:block/wood/vertical_planks/red"
   }
 }

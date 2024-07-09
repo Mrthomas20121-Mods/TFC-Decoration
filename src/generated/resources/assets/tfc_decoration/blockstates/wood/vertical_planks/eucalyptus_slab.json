@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/eucalyptus_slab"
     },
     "type=double": {
-      "model": "afc:block/wood/planks/eucalyptus"
+      "model": "tfc_decoration:block/wood/vertical_planks/eucalyptus"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/eucalyptus_slab_top"

@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/chestnut_slab"
     },
     "type=double": {
-      "model": "tfc:block/wood/planks/chestnut"
+      "model": "tfc_decoration:block/wood/vertical_planks/chestnut"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/chestnut_slab_top"

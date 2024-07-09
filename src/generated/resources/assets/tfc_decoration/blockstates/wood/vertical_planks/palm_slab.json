@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/palm_slab"
     },
     "type=double": {
-      "model": "tfc:block/wood/planks/palm"
+      "model": "tfc_decoration:block/wood/vertical_planks/palm"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/palm_slab_top"

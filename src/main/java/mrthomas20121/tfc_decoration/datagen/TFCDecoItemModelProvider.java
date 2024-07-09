@@ -10,10 +10,11 @@ import mrthomas20121.tfc_decoration.api.Util;
 import mrthomas20121.tfc_decoration.api.wood.BasicWood;
 import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
-import mrthomas20121.tfc_decoration.block.DecoBlocks;
+import mrthomas20121.tfc_decoration.block.TFCDecoBedBlock;
+import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
 import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.block.TFCWallBlock;
-import mrthomas20121.tfc_decoration.item.DecoItems;
+import mrthomas20121.tfc_decoration.item.TFCDecoItems;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.common.blocks.wood.Wood;
@@ -37,40 +38,45 @@ public class TFCDecoItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         for(Rock rock: Rock.VALUES) {
 
-            item(DecoItems.ROCKWOOl_BRICK.get(rock).get());
+            item(TFCDecoItems.ROCKWOOl_BRICK.get(rock).get());
 
             for(RockBlockType type: RockBlockType.VALUES) {
-                itemBlock(DecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
-                itemBlock(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair().get());
-                itemBlock(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab().get());
+                itemBlock(TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
+                itemBlock(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair().get());
+                itemBlock(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab().get());
                 if(type.equals(RockBlockType.PILLAR)) {
-                    itemWall(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get(), "rock/pillar/side/"+rock.getSerializedName());
+                    itemWall(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get(), "rock/pillar/side/"+rock.getSerializedName());
                 }
                 else {
-                    itemWall(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get(), DecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
+                    itemWall(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
                 }
             }
         }
 
         for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
-            item(DecoItems.DYES.get(dyeColor).get());
+            item(TFCDecoItems.DYES.get(dyeColor).get());
 
-            itemBlock(DecoBlocks.WOOLS.get(dyeColor).get());
-            itemBlock(DecoBlocks.WOOL_CARPETS.get(dyeColor).get());
-            itemBlock(DecoBlocks.RAW_ALABASTER.get(dyeColor).get());
-            itemBlock(DecoBlocks.POLISHED_ALABASTER.get(dyeColor).get());
-            itemBlock(DecoBlocks.ALABASTER_BRICKS.get(dyeColor).get());
+            bedItem(TFCDecoBlocks.BEDS.get(dyeColor).get(), TFCDecoBlocks.WOOLS.get(dyeColor).get());
+            itemBlock(TFCDecoBlocks.WOOLS.get(dyeColor).get());
+            itemBlock(TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get());
+            itemBlock(TFCDecoBlocks.RAW_ALABASTER.get(dyeColor).get());
+            itemBlock(TFCDecoBlocks.POLISHED_ALABASTER.get(dyeColor).get());
+            itemBlock(TFCDecoBlocks.ALABASTER_BRICKS.get(dyeColor).get());
+            itemBlock(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor).get());
         }
 
         for(BasicWood wood: Util.getALLWoodTypes()) {
 
             if(wood.shouldGetPlanks()) {
-                itemBlock(DecoBlocks.WOOD_PLANKS.get((TFCDecoWood) wood).get());
-                item(DecoItems.WOOD_LUMBERS.get((TFCDecoWood) wood).get());
+                itemBlock(TFCDecoBlocks.WOOD_PLANKS_DECORATIONS.get((TFCDecoWood) wood).slab().get());
+                itemBlock(TFCDecoBlocks.WOOD_PLANKS_DECORATIONS.get((TFCDecoWood) wood).stair().get());
+                itemBlock(TFCDecoBlocks.WOOD_PLANKS.get((TFCDecoWood) wood).get());
+                item(TFCDecoItems.WOOD_LUMBERS.get((TFCDecoWood) wood).get());
+
             }
 
             if(wood.isExtended()) {
-                TFCWallBlock block = DecoBlocks.LOG_WALLS.get((ExtendedWood) wood).get();
+                TFCWallBlock block = TFCDecoBlocks.LOG_WALLS.get((ExtendedWood) wood).get();
                 Block log = wood.modID().equals("afc") ? AFCBlocks.WOODS.get(com.therighthon.afc.common.blocks.AFCWood.valueOf(wood.name())).get(Wood.BlockType.LOG).get() : TFCBlocks.WOODS.get(Wood.valueOf(wood.name())).get(Wood.BlockType.LOG).get();
                 if(wood.modID().equals("afc")) {
                     itemWallBlockAFC(block, log);
@@ -81,20 +87,19 @@ public class TFCDecoItemModelProvider extends ItemModelProvider {
             }
 
             for(WoodBlockType type: WoodBlockType.VALUES) {
-                itemBlock(DecoBlocks.WOODS.get(wood).get(type).get());
-                itemBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(type).slab().get());
-                itemBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(type).stair().get());
+                itemBlock(TFCDecoBlocks.WOODS.get(wood).get(type).get());
+                itemBlock(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(type).slab().get());
+                itemBlock(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(type).stair().get());
             }
         }
 
         for(SupportMetal metal: SupportMetal.VALUES) {
-            verticalSupport(metal);
-            horizontalSupport(metal);
+            support(metal);
         }
 
         for(Metal.Default metal: Metal.Default.values()) {
             if(metal.hasParts()) {
-                itemBlock(DecoBlocks.GRATES.get(metal).get());
+                itemBlock(TFCDecoBlocks.GRATES.get(metal).get());
 
             }
         }
@@ -105,12 +110,13 @@ public class TFCDecoItemModelProvider extends ItemModelProvider {
                 .texture("layer0", modLoc("item/" + this.itemName(item)));
     }
 
-    public void verticalSupport(SupportMetal metal) {
-        this.withExistingParent("metal/vertical_support/"+metal.getSerializedName(), "tfc_decoration:block/metal/vertical_support/"+metal.getSerializedName()+"_inventory");
+    public void bedItem(TFCDecoBedBlock bed, Block wool) {
+        this.withExistingParent(this.blockName(bed), mcLoc("item/template_bed"))
+                .texture("particle", modLoc("block/" + this.blockName(wool)));
     }
 
-    public void horizontalSupport(SupportMetal metal) {
-        this.withExistingParent("metal/horizontal_support/"+metal.getSerializedName(), "tfc_decoration:block/metal/horizontal_support/"+metal.getSerializedName()+"_inventory");
+    public void support(SupportMetal metal) {
+        this.withExistingParent("metal/support/"+metal.getSerializedName(), "tfc_decoration:block/metal/horizontal_support/"+metal.getSerializedName()+"_inventory");
     }
 
     public void itemWallBlock(Block block, Block baseBlock) {

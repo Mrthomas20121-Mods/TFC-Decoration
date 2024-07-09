@@ -1,5 +1,6 @@
 package mrthomas20121.tfc_decoration.datagen;
 
+import com.google.gson.JsonElement;
 import mrthomas20121.tfc_decoration.TFCDecoration;
 import mrthomas20121.tfc_decoration.api.DecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
@@ -8,13 +9,17 @@ import mrthomas20121.tfc_decoration.api.Util;
 import mrthomas20121.tfc_decoration.api.wood.BasicWood;
 import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
-import mrthomas20121.tfc_decoration.block.DecoBlocks;
+import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
 import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.block.TFCWallBlock;
 import net.dries007.tfc.common.blocks.HorizontalPipeBlock;
+import net.dries007.tfc.common.blocks.StainedWattleBlock;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.models.model.ModelLocationUtils;
+import net.minecraft.data.models.model.ModelTemplates;
+import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -25,6 +30,9 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.function.BiConsumer;
+import java.util.function.Supplier;
 
 public class TFCDecoBlockStateProvider extends BlockStateProvider {
 
@@ -43,11 +51,13 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
-            simpleBlock(DecoBlocks.WOOLS.get(dyeColor).get());
-            carpetBlock(DecoBlocks.WOOL_CARPETS.get(dyeColor).get(), DecoBlocks.WOOLS.get(dyeColor).get());
-            simpleBlock(DecoBlocks.RAW_ALABASTER.get(dyeColor).get());
-            simpleBlock(DecoBlocks.POLISHED_ALABASTER.get(dyeColor).get());
-            simpleBlock(DecoBlocks.ALABASTER_BRICKS.get(dyeColor).get());
+            simpleBlock(TFCDecoBlocks.BEDS.get(dyeColor).get(), models().getExistingFile(new ResourceLocation("minecraft:block/bed")));
+            simpleBlock(TFCDecoBlocks.WOOLS.get(dyeColor).get());
+            carpetBlock(TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get(), TFCDecoBlocks.WOOLS.get(dyeColor).get());
+            simpleBlock(TFCDecoBlocks.RAW_ALABASTER.get(dyeColor).get());
+            simpleBlock(TFCDecoBlocks.POLISHED_ALABASTER.get(dyeColor).get());
+            simpleBlock(TFCDecoBlocks.ALABASTER_BRICKS.get(dyeColor).get());
+            wattle(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor).get(), dyeColor);
         }
 
         for(Rock rock: Rock.VALUES) {
@@ -55,29 +65,29 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
                 String typeName = type.getSerializedName();
                 String rockName = rock.getSerializedName();
                 if(type.equals(RockBlockType.PILLAR)) {
-                    axisBlock((RotatedPillarBlock) DecoBlocks.ROCK_BLOCKS.get(rock).get(type).get(),
+                    axisBlock((RotatedPillarBlock) TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get(),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/side/" + rockName),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/top/" + rockName));
-                    slabBlock(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab().get(),
+                    slabBlock(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab().get(),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/" + rockName),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/side/" + rockName),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/top/" + rockName),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/top/" + rockName));
-                    stairsBlock(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair().get(),
+                    stairsBlock(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair().get(),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/side/" + rockName),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/top/" + rockName),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/top/" + rockName));
-                    wallBlock(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get(),
+                    wallBlock(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get(),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/side/" + rockName));
                 }
                 else {
-                    block(DecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
-                    slabBlock(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab().get(),
+                    block(TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
+                    slabBlock(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab().get(),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/" + rockName),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/" + rockName));
-                    stairsBlock(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair().get(),
+                    stairsBlock(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair().get(),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/" + rockName));
-                    wallBlock(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get(),
+                    wallBlock(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get(),
                             new ResourceLocation("tfc_decoration", "block/rock/"+ typeName + "/" + rockName));
                 }
             }
@@ -86,49 +96,54 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
         for(BasicWood wood: Util.getALLWoodTypes()) {
             String woodName = wood.getSerializedName();
             if(wood.shouldGetPlanks()) {
-                block(DecoBlocks.WOOD_PLANKS.get((TFCDecoWood) wood).get());
+                block(TFCDecoBlocks.WOOD_PLANKS.get((TFCDecoWood) wood).get());
+                slabBlock(TFCDecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).slab().get(),
+                        new ResourceLocation(wood.modID(), "block/wood/planks/" + wood.getSerializedName()),
+                        new ResourceLocation(wood.modID(), "block/wood/planks/" + wood.getSerializedName()));
+                stairsBlock(TFCDecoBlocks.WOOD_PLANKS_DECORATIONS.get(wood).stair().get(),
+                        new ResourceLocation(wood.modID(), "block/wood/planks/" + wood.getSerializedName()));
             }
 
             if(wood.isExtended()) {
-                TFCWallBlock block = DecoBlocks.LOG_WALLS.get((ExtendedWood) wood).get();
+                TFCWallBlock block = TFCDecoBlocks.LOG_WALLS.get((ExtendedWood) wood).get();
                 wallBlock(block, new ResourceLocation(wood.modID()+":block/wood/log/"+wood.getSerializedName()));
             }
 
             for(WoodBlockType blockType: WoodBlockType.VALUES) {
                 String typeName = blockType.getSerializedName();
                 if(blockType.equals(WoodBlockType.WOOD_BEAM)) {
-                    axisBlock((RotatedPillarBlock) DecoBlocks.WOODS.get(wood).get(blockType).get(),
+                    axisBlock((RotatedPillarBlock) TFCDecoBlocks.WOODS.get(wood).get(blockType).get(),
                             new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/side/" + woodName),
                             new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName));
-                    slabBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get(),
+                    slabBlock(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get(),
                             new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/" + woodName),
                             new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/side/" + woodName),
                             new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName),
                             new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName));
-                    stairsBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get(),
+                    stairsBlock(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get(),
                             new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/side/" + woodName),
                             new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName),
                             new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName));
                 }
                 else {
-                    block(DecoBlocks.WOODS.get(wood).get(blockType).get());
-                    slabBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get(),
-                            new ResourceLocation(wood.modID(), "block/wood/planks/" + wood.getSerializedName()),
-                            new ResourceLocation(wood.modID(), "block/wood/planks/" + wood.getSerializedName()));
-                    stairsBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get(),
-                            new ResourceLocation(wood.modID(), "block/wood/planks/" + wood.getSerializedName()));
+                    block(TFCDecoBlocks.WOODS.get(wood).get(blockType).get());
+                    slabBlock(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get(),
+                            new ResourceLocation(TFCDecoration.mod_id, "block/wood/"+ typeName +"/" + wood.getSerializedName()),
+                            new ResourceLocation(TFCDecoration.mod_id, "block/wood/"+ typeName +"/" + wood.getSerializedName()));
+                    stairsBlock(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get(),
+                            new ResourceLocation(TFCDecoration.mod_id, "block/wood/"+ typeName +"/" + wood.getSerializedName()));
                 }
             }
         }
 
         for(SupportMetal metal: SupportMetal.values()) {
-            horizontalSupport(DecoBlocks.HORIZONTAL_SUPPORT.get(metal).get(), metal);
-            verticalSupport(DecoBlocks.VERTICAL_SUPPORT.get(metal).get(), metal);
+            horizontalSupport(TFCDecoBlocks.HORIZONTAL_SUPPORT.get(metal).get(), metal);
+            verticalSupport(TFCDecoBlocks.VERTICAL_SUPPORT.get(metal).get(), metal);
         }
 
         for(Metal.Default metal: Metal.Default.values()) {
             if(metal.hasParts()) {
-                blockCutout(DecoBlocks.GRATES.get(metal).get());
+                blockCutout(TFCDecoBlocks.GRATES.get(metal).get());
             }
         }
     }
@@ -220,5 +235,31 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
                 .condition(HorizontalPipeBlock.SOUTH, true).end();
         builder.part().modelFile(connection).rotationY(180).addModel()
                 .condition(HorizontalPipeBlock.WEST, true).end();
+    }
+
+    private void wattle(StainedWattleBlock wattle, DecoDyeColor dye) {
+        String wattleName = getName(wattle).toString();
+        String dyeName = dye.getSerializedName();
+        this.wattle(wattle, models()
+                .withExistingParent(wattleName, new ResourceLocation("tfc:block/cube_column_overlay"))
+                .texture("all", "tfc_decoration:block/wattle/stained/"+ dyeName)
+                .texture("particle", "tfc:block/wattle/wattle_sides")
+                .texture("overlay", "tfc:block/wattle/wattle_sides")
+                .texture("overlay_end", "tfc:block/wattle/end"),
+                models().getExistingFile(new ResourceLocation("tfc:block/wattle/top")),
+                models().getExistingFile(new ResourceLocation("tfc:block/wattle/bottom")),
+                models().getExistingFile(new ResourceLocation("tfc:block/wattle/left")),
+                models().getExistingFile(new ResourceLocation("tfc:block/wattle/right"))
+        );
+    }
+
+    private void wattle(StainedWattleBlock wattle, ModelFile part, ModelFile top, ModelFile bottom, ModelFile left, ModelFile right) {
+        MultiPartBlockStateBuilder builder = getMultipartBuilder(wattle);
+
+        builder.part().modelFile(part).addModel().end();
+        builder.part().modelFile(top).addModel().condition(StainedWattleBlock.TOP, true).end();
+        builder.part().modelFile(bottom).addModel().condition(StainedWattleBlock.BOTTOM, true).end();
+        builder.part().modelFile(left).addModel().condition(StainedWattleBlock.LEFT, true).end();
+        builder.part().modelFile(right).addModel().condition(StainedWattleBlock.RIGHT, true).end();
     }
 }

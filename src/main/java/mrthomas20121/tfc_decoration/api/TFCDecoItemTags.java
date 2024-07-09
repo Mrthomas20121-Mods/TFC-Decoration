@@ -12,4 +12,8 @@ public class TFCDecoItemTags {
     public static final TagKey<Item> METAL_SUPPORTS = ItemTags.create(new ResourceLocation("tfc_decoration:metal_supports"));
 
     public static final TagKey<Item> UNCOLORED_PLANKS = ItemTags.create(new ResourceLocation("tfc_decoration:uncolored_planks"));
+
+    public static final TagKey<Item> COLORED_RAW_ALABASTER = ItemTags.create(new ResourceLocation("tfc:colored_raw_alabaster"));
+    public static final TagKey<Item> COLORED_BRICKS_ALABASTER = ItemTags.create(new ResourceLocation("tfc:colored_bricks_alabaster"));
+    public static final TagKey<Item> COLORED_POLISHED_ALABASTER = ItemTags.create(new ResourceLocation("tfc:colored_polished_alabaster"));
 }

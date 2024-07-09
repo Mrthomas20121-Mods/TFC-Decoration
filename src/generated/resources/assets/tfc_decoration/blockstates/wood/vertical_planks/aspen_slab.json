@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/aspen_slab"
     },
     "type=double": {
-      "model": "tfc:block/wood/planks/aspen"
+      "model": "tfc_decoration:block/wood/vertical_planks/aspen"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/aspen_slab_top"

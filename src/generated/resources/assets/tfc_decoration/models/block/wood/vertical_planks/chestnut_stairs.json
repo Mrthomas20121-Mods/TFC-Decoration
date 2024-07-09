@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/stairs",
   "textures": {
-    "bottom": "tfc:block/wood/planks/chestnut",
-    "side": "tfc:block/wood/planks/chestnut",
-    "top": "tfc:block/wood/planks/chestnut"
+    "bottom": "tfc_decoration:block/wood/vertical_planks/chestnut",
+    "side": "tfc_decoration:block/wood/vertical_planks/chestnut",
+    "top": "tfc_decoration:block/wood/vertical_planks/chestnut"
   }
 }

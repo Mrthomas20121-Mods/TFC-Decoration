@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/rosewood_slab"
     },
     "type=double": {
-      "model": "tfc:block/wood/planks/rosewood"
+      "model": "tfc_decoration:block/wood/vertical_planks/rosewood"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/rosewood_slab_top"

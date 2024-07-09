@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/cyan_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:block/wood/planks/cyan"
+      "model": "tfc_decoration:block/wood/vertical_planks/cyan"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/cyan_slab_top"

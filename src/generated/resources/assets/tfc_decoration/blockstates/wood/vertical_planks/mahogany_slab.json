@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/mahogany_slab"
     },
     "type=double": {
-      "model": "afc:block/wood/planks/mahogany"
+      "model": "tfc_decoration:block/wood/vertical_planks/mahogany"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/mahogany_slab_top"

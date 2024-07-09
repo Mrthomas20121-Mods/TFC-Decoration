@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/magenta_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:block/wood/planks/magenta"
+      "model": "tfc_decoration:block/wood/vertical_planks/magenta"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/magenta_slab_top"

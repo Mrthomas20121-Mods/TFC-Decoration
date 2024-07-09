@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/orange_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:block/wood/planks/orange"
+      "model": "tfc_decoration:block/wood/vertical_planks/orange"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/orange_slab_top"

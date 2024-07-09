@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/mangrove_slab"
     },
     "type=double": {
-      "model": "tfc:block/wood/planks/mangrove"
+      "model": "tfc_decoration:block/wood/vertical_planks/mangrove"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/mangrove_slab_top"

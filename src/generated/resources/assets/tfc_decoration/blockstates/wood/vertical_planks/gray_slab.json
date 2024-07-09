@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/gray_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:block/wood/planks/gray"
+      "model": "tfc_decoration:block/wood/vertical_planks/gray"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/gray_slab_top"

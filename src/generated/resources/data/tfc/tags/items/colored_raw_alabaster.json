@@ -1,0 +1,21 @@
+{
+  "values": [
+    "tfc_decoration:alabaster/raw/terracotta",
+    "tfc_decoration:alabaster/raw/terracotta_white",
+    "tfc_decoration:alabaster/raw/terracotta_orange",
+    "tfc_decoration:alabaster/raw/terracotta_magenta",
+    "tfc_decoration:alabaster/raw/terracotta_light_blue",
+    "tfc_decoration:alabaster/raw/terracotta_yellow",
+    "tfc_decoration:alabaster/raw/terracotta_lime",
+    "tfc_decoration:alabaster/raw/terracotta_pink",
+    "tfc_decoration:alabaster/raw/terracotta_gray",
+    "tfc_decoration:alabaster/raw/terracotta_light_gray",
+    "tfc_decoration:alabaster/raw/terracotta_cyan",
+    "tfc_decoration:alabaster/raw/terracotta_purple",
+    "tfc_decoration:alabaster/raw/terracotta_blue",
+    "tfc_decoration:alabaster/raw/terracotta_brown",
+    "tfc_decoration:alabaster/raw/terracotta_green",
+    "tfc_decoration:alabaster/raw/terracotta_red",
+    "tfc_decoration:alabaster/raw/terracotta_black"
+  ]
+}

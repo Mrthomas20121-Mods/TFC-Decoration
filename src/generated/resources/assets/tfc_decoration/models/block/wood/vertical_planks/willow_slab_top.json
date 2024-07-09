@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/slab_top",
   "textures": {
-    "bottom": "tfc:block/wood/planks/willow",
-    "side": "tfc:block/wood/planks/willow",
-    "top": "tfc:block/wood/planks/willow"
+    "bottom": "tfc_decoration:block/wood/vertical_planks/willow",
+    "side": "tfc_decoration:block/wood/vertical_planks/willow",
+    "top": "tfc_decoration:block/wood/vertical_planks/willow"
   }
 }

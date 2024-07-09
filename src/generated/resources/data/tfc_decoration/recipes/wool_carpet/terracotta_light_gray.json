@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "carpet",
+  "key": {
+    "#": {
+      "item": "tfc_decoration:wool/terracotta_light_gray"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "item": "tfc_decoration:wool_carpet/terracotta_light_gray"
+  },
+  "show_notification": true
+}

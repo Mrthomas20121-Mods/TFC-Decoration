@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/outer_stairs",
   "textures": {
-    "bottom": "afc:block/wood/planks/mahogany",
-    "side": "afc:block/wood/planks/mahogany",
-    "top": "afc:block/wood/planks/mahogany"
+    "bottom": "tfc_decoration:block/wood/vertical_planks/mahogany",
+    "side": "tfc_decoration:block/wood/vertical_planks/mahogany",
+    "top": "tfc_decoration:block/wood/vertical_planks/mahogany"
   }
 }

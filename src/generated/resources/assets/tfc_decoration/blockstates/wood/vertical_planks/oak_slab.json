@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/oak_slab"
     },
     "type=double": {
-      "model": "tfc:block/wood/planks/oak"
+      "model": "tfc_decoration:block/wood/vertical_planks/oak"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/oak_slab_top"

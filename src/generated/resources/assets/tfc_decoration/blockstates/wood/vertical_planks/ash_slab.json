@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/ash_slab"
     },
     "type=double": {
-      "model": "tfc:block/wood/planks/ash"
+      "model": "tfc_decoration:block/wood/vertical_planks/ash"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/ash_slab_top"

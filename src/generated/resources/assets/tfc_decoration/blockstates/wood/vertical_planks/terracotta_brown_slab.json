@@ -4,7 +4,7 @@
       "model": "tfc_decoration:block/wood/vertical_planks/terracotta_brown_slab"
     },
     "type=double": {
-      "model": "tfc_decoration:block/wood/planks/terracotta_brown"
+      "model": "tfc_decoration:block/wood/vertical_planks/terracotta_brown"
     },
     "type=top": {
       "model": "tfc_decoration:block/wood/vertical_planks/terracotta_brown_slab_top"

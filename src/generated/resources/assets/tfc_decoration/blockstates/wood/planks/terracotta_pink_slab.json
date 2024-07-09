@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/planks/terracotta_pink_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/planks/terracotta_pink"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/planks/terracotta_pink_slab_top"
+    }
+  }
+}

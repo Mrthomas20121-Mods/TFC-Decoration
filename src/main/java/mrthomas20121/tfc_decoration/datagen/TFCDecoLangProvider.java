@@ -8,8 +8,9 @@ import mrthomas20121.tfc_decoration.api.Util;
 import mrthomas20121.tfc_decoration.api.wood.BasicWood;
 import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
-import mrthomas20121.tfc_decoration.block.DecoBlocks;
-import mrthomas20121.tfc_decoration.item.DecoItems;
+import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
+import mrthomas20121.tfc_decoration.fluid.DecoFluidId;
+import mrthomas20121.tfc_decoration.item.TFCDecoItems;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.data.PackOutput;
@@ -31,29 +32,36 @@ public class TFCDecoLangProvider extends LanguageProvider {
         add("creative_tab.tfc_decoration.decorative_items", "TFC Decoration: Decorative Items");
 
         for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+            add("fluid_type.tfc_decoration."+dyeColor.getSerializedName()+"_dye", capitalize(dyeColor.getSerializedName())+" Dye");
+        }
+
+        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
             String s = capitalize(dyeColor.getSerializedName());
-            addBlock(DecoBlocks.WOOLS.get(dyeColor), s +" Wool");
-            addBlock(DecoBlocks.WOOL_CARPETS.get(dyeColor), s +" Carpet");
-            addBlock(DecoBlocks.RAW_ALABASTER.get(dyeColor), s + " Raw Alabaster");
-            addBlock(DecoBlocks.POLISHED_ALABASTER.get(dyeColor), s + " Polished Alabaster");
-            addBlock(DecoBlocks.ALABASTER_BRICKS.get(dyeColor), s + " Alabaster Bricks");
-            addItem(DecoItems.DYES.get(dyeColor), s + " Dye");
+            addBlock(TFCDecoBlocks.BEDS.get(dyeColor), s +" Bed");
+            addBlock(TFCDecoBlocks.WOOLS.get(dyeColor), s +" Wool");
+            addBlock(TFCDecoBlocks.WOOL_CARPETS.get(dyeColor), s +" Carpet");
+            addBlock(TFCDecoBlocks.RAW_ALABASTER.get(dyeColor), s + " Raw Alabaster");
+            addBlock(TFCDecoBlocks.POLISHED_ALABASTER.get(dyeColor), s + " Polished Alabaster");
+            addBlock(TFCDecoBlocks.ALABASTER_BRICKS.get(dyeColor), s + " Alabaster Bricks");
+            addBlock(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor), s + " Wattle");
+            addItem(TFCDecoItems.DYES.get(dyeColor), s + " Dye");
+            addItem(TFCDecoItems.FLUID_BUCKETS.get(DecoFluidId.asType(dyeColor)), s+" Dye");
         }
 
         for(BasicWood wood: Util.getALLWoodTypes()) {
             String serializedName = wood.getSerializedName();
             if(wood.shouldGetPlanks()) {
-                addItem(DecoItems.WOOD_LUMBERS.get(wood), capitalize(serializedName +" Lumber"));
+                addItem(TFCDecoItems.WOOD_LUMBERS.get(wood), capitalize(serializedName +" Lumber"));
             }
             if(wood.isExtended()) {
-                addBlock(DecoBlocks.LOG_WALLS.get((ExtendedWood) wood), capitalize(serializedName +" Log Wall"));
+                addBlock(TFCDecoBlocks.LOG_WALLS.get((ExtendedWood) wood), capitalize(serializedName +" Log Wall"));
             }
 
             for(WoodBlockType blockType: WoodBlockType.VALUES) {
                 String blockName = blockType.getSerializedName();
-                addBlock(DecoBlocks.WOODS.get(wood).get(blockType), "%s %s".formatted(capitalize(serializedName), capitalize(blockName)));
-                addBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab(), "%s %s Slab".formatted(capitalize(serializedName), capitalize(blockName)));
-                addBlock(DecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair(), "%s %s Stairs".formatted(capitalize(serializedName), capitalize(blockName)));
+                addBlock(TFCDecoBlocks.WOODS.get(wood).get(blockType), "%s %s".formatted(capitalize(serializedName), capitalize(blockName)));
+                addBlock(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab(), "%s %s Slab".formatted(capitalize(serializedName), capitalize(blockName)));
+                addBlock(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair(), "%s %s Stairs".formatted(capitalize(serializedName), capitalize(blockName)));
             }
         }
 
@@ -61,25 +69,25 @@ public class TFCDecoLangProvider extends LanguageProvider {
             for(RockBlockType type: RockBlockType.VALUES) {
                 String rockName = capitalize(rock.getSerializedName());
                 String typeName = capitalize(type.getSerializedName());
-                addBlock(DecoBlocks.ROCK_BLOCKS.get(rock).get(type), capitalize(rockName + " " + typeName));
-                addBlock(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab(), capitalize(rockName + " " + typeName + " Slab"));
-                addBlock(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair(), capitalize(rockName + " " + typeName + " Stairs"));
-                addBlock(DecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall(), capitalize(rockName + " " + typeName + " Wall"));
+                addBlock(TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type), capitalize(rockName + " " + typeName));
+                addBlock(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab(), capitalize(rockName + " " + typeName + " Slab"));
+                addBlock(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair(), capitalize(rockName + " " + typeName + " Stairs"));
+                addBlock(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall(), capitalize(rockName + " " + typeName + " Wall"));
             }
         }
 
         for(Rock rock: Rock.VALUES) {
-            addItem(DecoItems.ROCKWOOl_BRICK.get(rock), capitalize(capitalize(rock.getSerializedName())+" Brick"));
+            addItem(TFCDecoItems.ROCKWOOl_BRICK.get(rock), capitalize(capitalize(rock.getSerializedName())+" Brick"));
         }
 
         for(SupportMetal metal: SupportMetal.VALUES) {
-            addBlock(DecoBlocks.HORIZONTAL_SUPPORT.get(metal), capitalize(metal.getSerializedName()+" Horizontal Support"));
-            addBlock(DecoBlocks.VERTICAL_SUPPORT.get(metal), capitalize(metal.getSerializedName()+" Vertical Support"));
+            addBlock(TFCDecoBlocks.HORIZONTAL_SUPPORT.get(metal), capitalize(metal.getSerializedName()+" Horizontal Support"));
+            addBlock(TFCDecoBlocks.VERTICAL_SUPPORT.get(metal), capitalize(metal.getSerializedName()+" Vertical Support"));
         }
 
         for(Metal.Default metal: Metal.Default.values()) {
             if(metal.hasParts()) {
-                addBlock(DecoBlocks.GRATES.get(metal), capitalize(metal.getSerializedName()+" Grate"));
+                addBlock(TFCDecoBlocks.GRATES.get(metal), capitalize(metal.getSerializedName()+" Grate"));
             }
         }
     }

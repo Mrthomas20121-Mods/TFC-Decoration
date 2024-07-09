@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:wool_carpet/terracotta_purple"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wool/terracotta_purple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:wool/terracotta_purple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wool/terracotta_purple",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:wool_carpet/terracotta_purple"
+    ]
+  },
+  "sends_telemetry_event": false
+}
