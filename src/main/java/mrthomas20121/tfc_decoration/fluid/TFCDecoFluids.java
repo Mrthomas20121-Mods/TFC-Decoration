@@ -1,7 +1,7 @@
 package mrthomas20121.tfc_decoration.fluid;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
 import mrthomas20121.tfc_decoration.item.TFCDecoItems;
 import net.dries007.tfc.common.fluids.*;
@@ -36,7 +36,7 @@ public class TFCDecoFluids {
     public static final ResourceLocation WATER_FLOW = Helpers.identifierMC("block/water_flow");
     public static final ResourceLocation WATER_OVERLAY = Helpers.identifierMC("block/water_overlay");
 
-    public static final Map<DecoDyeColor, FluidRegistryObject<ForgeFlowingFluid>> COLORED_FLUIDS = Helpers.mapOfKeys(DecoDyeColor.class, color -> register(
+    public static final Map<TFCDecoDyeColor, FluidRegistryObject<ForgeFlowingFluid>> COLORED_FLUIDS = Helpers.mapOfKeys(TFCDecoDyeColor.class, color -> register(
             color.getSerializedName() + "_dye",
             properties -> properties
                     .block(TFCDecoBlocks.COLORED_FLUIDS.get(color))
@@ -49,7 +49,7 @@ public class TFCDecoFluids {
             MixingFluid.Flowing::new
     ));
 
-    public static int dyeColorToInt(DecoDyeColor dye)
+    public static int dyeColorToInt(TFCDecoDyeColor dye)
     {
         float[] colors = dye.getTextureDiffuseColors();
         return new Color(colors[0], colors[1], colors[2]).getRGB();

@@ -1,7 +1,7 @@
 package mrthomas20121.tfc_decoration.datagen;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
 import mrthomas20121.tfc_decoration.api.Util;
@@ -31,11 +31,11 @@ public class TFCDecoLangProvider extends LanguageProvider {
         add("creative_tab.tfc_decoration.dye_decorative_blocks", "TFC Decoration: Colored Blocks");
         add("creative_tab.tfc_decoration.decorative_items", "TFC Decoration: Decorative Items");
 
-        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             add("fluid_type.tfc_decoration."+dyeColor.getSerializedName()+"_dye", capitalize(dyeColor.getSerializedName())+" Dye");
         }
 
-        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             String s = capitalize(dyeColor.getSerializedName());
             addBlock(TFCDecoBlocks.BEDS.get(dyeColor), s +" Bed");
             addBlock(TFCDecoBlocks.WOOLS.get(dyeColor), s +" Wool");

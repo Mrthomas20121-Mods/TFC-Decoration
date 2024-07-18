@@ -1,6 +1,6 @@
 package mrthomas20121.tfc_decoration;
 
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
 import mrthomas20121.tfc_decoration.api.Util;
@@ -44,7 +44,7 @@ public class CreativeTabRegistry {
 
     private static void fillDecorativeItemsTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
 
-        for(DecoDyeColor color: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor color: TFCDecoDyeColor.VALUES) {
             out.accept(TFCDecoItems.DYES.get(color).get());
         }
         for(TFCDecoWood wood: TFCDecoWood.VALUES) {
@@ -57,19 +57,19 @@ public class CreativeTabRegistry {
 
     private static void fillDyeDecorativeBlocksTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
 
-        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             out.accept(TFCDecoBlocks.BEDS.get(dyeColor).get());
             out.accept(TFCDecoBlocks.WOOLS.get(dyeColor).get());
             out.accept(TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get());
         }
 
-        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             out.accept(TFCDecoBlocks.RAW_ALABASTER.get(dyeColor).get());
             out.accept(TFCDecoBlocks.POLISHED_ALABASTER.get(dyeColor).get());
             out.accept(TFCDecoBlocks.ALABASTER_BRICKS.get(dyeColor).get());
         }
 
-        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             out.accept(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor).get());
         }
     }

@@ -1,6 +1,6 @@
 package mrthomas20121.tfc_decoration.block.entity;
 
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.block.TFCDecoBedBlock;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlockEntities;
 import net.minecraft.core.BlockPos;
@@ -9,13 +9,13 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class TFCDecoBedBlockEntity extends BlockEntity {
-    private DecoDyeColor color;
+    private TFCDecoDyeColor color;
 
     public TFCDecoBedBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(TFCDecoBlockEntities.BED.get(), blockPos, blockState);
     }
 
-    public TFCDecoBedBlockEntity(DecoDyeColor colorIn, BlockPos blockPos, BlockState blockState) {
+    public TFCDecoBedBlockEntity(TFCDecoDyeColor colorIn, BlockPos blockPos, BlockState blockState) {
         this(blockPos, blockState);
         this.setColor(colorIn);
     }
@@ -25,7 +25,7 @@ public class TFCDecoBedBlockEntity extends BlockEntity {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    public DecoDyeColor getColor() {
+    public TFCDecoDyeColor getColor() {
         if (this.color == null) {
             this.color = ((TFCDecoBedBlock) this.getBlockState().getBlock()).getDecoDyeColor();
         }
@@ -33,7 +33,7 @@ public class TFCDecoBedBlockEntity extends BlockEntity {
         return this.color;
     }
 
-    public void setColor(DecoDyeColor color) {
+    public void setColor(TFCDecoDyeColor color) {
         this.color = color;
     }
 }

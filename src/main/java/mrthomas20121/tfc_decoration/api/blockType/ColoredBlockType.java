@@ -1,6 +1,6 @@
 package mrthomas20121.tfc_decoration.api.blockType;
 
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.block.TFCCarpetBlock;
 import net.dries007.tfc.common.blocks.ExtendedBlock;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
@@ -17,11 +17,11 @@ public enum ColoredBlockType implements StringRepresentable {
     CARPET(dyeColor -> new TFCCarpetBlock(ExtendedProperties.of(Blocks.WHITE_CARPET).mapColor(dyeColor.getMapColor())));
 
     public static ColoredBlockType[] VALUES = ColoredBlockType.values();
-    private final Function<DecoDyeColor, Block> supp;
+    private final Function<TFCDecoDyeColor, Block> supp;
 
     private final String serializedName;
 
-    ColoredBlockType(Function<DecoDyeColor, Block> supp) {
+    ColoredBlockType(Function<TFCDecoDyeColor, Block> supp) {
         this.supp = supp;
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
     }
@@ -35,7 +35,7 @@ public enum ColoredBlockType implements StringRepresentable {
         return serializedName;
     }
 
-    public Block getBlock(DecoDyeColor dyeColor) {
+    public Block getBlock(TFCDecoDyeColor dyeColor) {
         return this.supp.apply(dyeColor);
     }
 }

@@ -1,0 +1,9 @@
+{
+    "sources": [
+        {
+            "type": "directory",
+            "source": "tfc_decoration:entity/bed",
+            "prefix": "tfc_decoration:entity/bed/"
+        }
+    ]
+}

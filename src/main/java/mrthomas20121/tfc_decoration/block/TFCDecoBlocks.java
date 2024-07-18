@@ -1,7 +1,7 @@
 package mrthomas20121.tfc_decoration.block;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
 import mrthomas20121.tfc_decoration.api.Util;
@@ -10,6 +10,7 @@ import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
 import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.fluid.TFCDecoFluids;
+import mrthomas20121.tfc_decoration.item.TFCDecoBedBlockItem;
 import mrthomas20121.tfc_decoration.item.TFCDecoItems;
 import net.dries007.tfc.common.blocks.*;
 import net.dries007.tfc.common.blocks.rock.Rock;
@@ -38,23 +39,24 @@ public class TFCDecoBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TFCDecoration.mod_id);
 
-    public static final Map<DecoDyeColor, RegistryObject<Block>> RAW_ALABASTER = Helpers.mapOfKeys(DecoDyeColor.class, color ->
+    public static final Map<TFCDecoDyeColor, RegistryObject<Block>> RAW_ALABASTER = Helpers.mapOfKeys(TFCDecoDyeColor.class, color ->
             register(("alabaster/raw/" + color.getSerializedName()), () -> new Block(BlockBehaviour.Properties.of().mapColor(color.getMapColor()).requiresCorrectToolForDrops().strength(1.0F, 6.0F)))
     );
-    public static final Map<DecoDyeColor, RegistryObject<Block>> ALABASTER_BRICKS = Helpers.mapOfKeys(DecoDyeColor.class, color ->
+    public static final Map<TFCDecoDyeColor, RegistryObject<Block>> ALABASTER_BRICKS = Helpers.mapOfKeys(TFCDecoDyeColor.class, color ->
             register(("alabaster/bricks/" + color.getSerializedName()), () -> new Block(BlockBehaviour.Properties.of().mapColor(color.getMapColor()).requiresCorrectToolForDrops().strength(1.5F, 6.0F)))
     );
-    public static final Map<DecoDyeColor, RegistryObject<Block>> POLISHED_ALABASTER = Helpers.mapOfKeys(DecoDyeColor.class, color ->
+    public static final Map<TFCDecoDyeColor, RegistryObject<Block>> POLISHED_ALABASTER = Helpers.mapOfKeys(TFCDecoDyeColor.class, color ->
             register(("alabaster/polished/" + color.getSerializedName()), () -> new Block(BlockBehaviour.Properties.of().mapColor(color.getMapColor()).requiresCorrectToolForDrops().strength(1.5F, 6.0F)))
     );
 
-    public static final Map<DecoDyeColor, RegistryObject<TFCDecoBedBlock>> BEDS = Helpers.mapOfKeys(DecoDyeColor.class, color ->
-            register(color.getSerializedName()+"_bed", () -> new TFCDecoBedBlock(color, BlockBehaviour.Properties.of().mapColor((state) -> state.getValue(BedBlock.PART) == BedPart.FOOT ? color.getMapColor() : MapColor.WOOL).sound(SoundType.WOOD).strength(0.2F).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY))));
+    public static final Map<TFCDecoDyeColor, RegistryObject<TFCDecoBedBlock>> BEDS = Helpers.mapOfKeys(TFCDecoDyeColor.class, color ->
+            register(color.getSerializedName()+"_bed", () -> new TFCDecoBedBlock(color, BlockBehaviour.Properties.of().mapColor((state) -> state.getValue(BedBlock.PART) == BedPart.FOOT ? color.getMapColor() : MapColor.WOOL).sound(SoundType.WOOD).strength(0.2F).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY)),
+                    block -> new TFCDecoBedBlockItem(block, new Item.Properties().stacksTo(1))));
 
-    public static final Map<DecoDyeColor, RegistryObject<Block>> WOOLS = Helpers.mapOfKeys(DecoDyeColor.class, dyeColor -> register("wool/%s".formatted(dyeColor.name()), () -> new ExtendedBlock(ExtendedProperties.of(Blocks.WHITE_WOOL).mapColor(dyeColor.getMapColor()).flammableLikeWool())));
-    public static final Map<DecoDyeColor, RegistryObject<Block>> WOOL_CARPETS = Helpers.mapOfKeys(DecoDyeColor.class, dyeColor -> register("wool_carpet/%s".formatted(dyeColor.name()), () -> new TFCCarpetBlock(ExtendedProperties.of(Blocks.WHITE_CARPET).mapColor(dyeColor.getMapColor()).flammableLikeWool())));
+    public static final Map<TFCDecoDyeColor, RegistryObject<Block>> WOOLS = Helpers.mapOfKeys(TFCDecoDyeColor.class, dyeColor -> register("wool/%s".formatted(dyeColor.name()), () -> new ExtendedBlock(ExtendedProperties.of(Blocks.WHITE_WOOL).mapColor(dyeColor.getMapColor()).flammableLikeWool())));
+    public static final Map<TFCDecoDyeColor, RegistryObject<Block>> WOOL_CARPETS = Helpers.mapOfKeys(TFCDecoDyeColor.class, dyeColor -> register("wool_carpet/%s".formatted(dyeColor.name()), () -> new TFCCarpetBlock(ExtendedProperties.of(Blocks.WHITE_CARPET).mapColor(dyeColor.getMapColor()).flammableLikeWool())));
 
-    public static final Map<DecoDyeColor, RegistryObject<StainedWattleBlock>> STAINED_WATTLE = Helpers.mapOfKeys(DecoDyeColor.class, dyeColor -> register("wattle/%s".formatted(dyeColor.name()), () -> new StainedWattleBlock(ExtendedProperties.of(MapColor.WOOD).strength(0.3F).sound(SoundType.SCAFFOLDING).flammable(60, 30))));
+    public static final Map<TFCDecoDyeColor, RegistryObject<StainedWattleBlock>> STAINED_WATTLE = Helpers.mapOfKeys(TFCDecoDyeColor.class, dyeColor -> register("wattle/%s".formatted(dyeColor.name()), () -> new StainedWattleBlock(ExtendedProperties.of(MapColor.WOOD).strength(0.3F).sound(SoundType.SCAFFOLDING).flammable(60, 30))));
 
     public static final Map<Rock, Map<RockBlockType, RegistryObject<Block>>> ROCK_BLOCKS = Helpers.mapOfKeys(Rock.class, rock -> Helpers.mapOfKeys(RockBlockType.class, type -> register("rock/"+ type.getSerializedName() + "/" + rock.name(), type.getBlock(rock))));
 
@@ -89,7 +91,7 @@ public class TFCDecoBlocks {
     public static final Map<SupportMetal, RegistryObject<VerticalSupportBlock>> VERTICAL_SUPPORT = Helpers.mapOfKeys(SupportMetal.class, metal -> registerNoItem("metal/vertical_support/"+metal.getSerializedName(), () -> new VerticalSupportBlock(ExtendedProperties.of().mapColor(metal.color).strength(2.0f, 4.0f).sound(SoundType.METAL))));
     public static final Map<SupportMetal, RegistryObject<HorizontalSupportBlock>> HORIZONTAL_SUPPORT = Helpers.mapOfKeys(SupportMetal.class, metal -> registerNoItem("metal/horizontal_support/"+metal.getSerializedName(), () -> new HorizontalSupportBlock(ExtendedProperties.of().mapColor(metal.color).strength(2.0f, 4.0f).sound(SoundType.METAL))));
 
-    public static final Map<DecoDyeColor, RegistryObject<LiquidBlock>> COLORED_FLUIDS = Helpers.mapOfKeys(DecoDyeColor.class, fluid ->
+    public static final Map<TFCDecoDyeColor, RegistryObject<LiquidBlock>> COLORED_FLUIDS = Helpers.mapOfKeys(TFCDecoDyeColor.class, fluid ->
             registerNoItem("fluid/" + fluid.getSerializedName() + "_dye", () -> new LiquidBlock(TFCDecoFluids.COLORED_FLUIDS.get(fluid).source(), BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()))
     );
 

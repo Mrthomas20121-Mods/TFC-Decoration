@@ -3,7 +3,7 @@ package mrthomas20121.tfc_decoration.datagen;
 import com.google.common.base.Preconditions;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
 import mrthomas20121.tfc_decoration.api.Util;
@@ -53,7 +53,7 @@ public class TFCDecoItemModelProvider extends ItemModelProvider {
             }
         }
 
-        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             item(TFCDecoItems.DYES.get(dyeColor).get());
 
             bedItem(TFCDecoBlocks.BEDS.get(dyeColor).get(), TFCDecoBlocks.WOOLS.get(dyeColor).get());

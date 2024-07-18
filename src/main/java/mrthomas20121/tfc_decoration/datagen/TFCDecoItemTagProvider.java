@@ -2,12 +2,11 @@ package mrthomas20121.tfc_decoration.datagen;
 
 import com.therighthon.afc.common.blocks.AFCWood;
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
 import mrthomas20121.tfc_decoration.api.TFCDecoItemTags;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
 import mrthomas20121.tfc_decoration.item.TFCDecoItems;
-import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Metal;
@@ -15,7 +14,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +30,7 @@ public class TFCDecoItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
 
-        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             tag(TFCDecoItemTags.COLORED_RAW_ALABASTER).add(TFCDecoBlocks.RAW_ALABASTER.get(dyeColor).get().asItem());
             tag(TFCDecoItemTags.COLORED_BRICKS_ALABASTER).add(TFCDecoBlocks.ALABASTER_BRICKS.get(dyeColor).get().asItem());
             tag(TFCDecoItemTags.COLORED_POLISHED_ALABASTER).add(TFCDecoBlocks.POLISHED_ALABASTER.get(dyeColor).get().asItem());

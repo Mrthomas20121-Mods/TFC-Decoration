@@ -3,7 +3,7 @@ package mrthomas20121.tfc_decoration.datagen;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.items.AFCItems;
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.TFCDecoItemTags;
 import mrthomas20121.tfc_decoration.api.Util;
@@ -42,7 +42,7 @@ public class TFCDecoRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
 
-        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             carpet(consumer, TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get(), TFCDecoBlocks.WOOLS.get(dyeColor).get());
         }
 

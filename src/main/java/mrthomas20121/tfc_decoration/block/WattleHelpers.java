@@ -1,7 +1,7 @@
 package mrthomas20121.tfc_decoration.block;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.item.TFCDecoItems;
 import net.dries007.tfc.client.TFCSounds;
 import net.dries007.tfc.common.blocks.StainedWattleBlock;
@@ -30,7 +30,7 @@ public class WattleHelpers {
     @Nullable
     private static BlockState getPossibleDyedState(ItemStack item, BlockState current)
     {
-        BlockState found = Arrays.stream(DecoDyeColor.VALUES)
+        BlockState found = Arrays.stream(TFCDecoDyeColor.VALUES)
                 .filter(color -> Helpers.isItem(item, TFCDecoItems.DYES.get(color).get()))
                 .map(color -> TFCDecoBlocks.STAINED_WATTLE.get(color).get().defaultBlockState())
                 .findFirst().orElse(null);

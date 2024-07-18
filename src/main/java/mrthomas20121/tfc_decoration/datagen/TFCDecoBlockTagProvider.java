@@ -1,7 +1,7 @@
 package mrthomas20121.tfc_decoration.datagen;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
 import mrthomas20121.tfc_decoration.api.Util;
@@ -35,7 +35,7 @@ public class TFCDecoBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
-        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             tag(BlockTags.WOOL).add(TFCDecoBlocks.WOOLS.get(dyeColor).get());
             tag(BlockTags.WOOL_CARPETS).add(TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get());
             tag(TFCTags.Blocks.PET_SITS_ON).add(TFCDecoBlocks.WOOLS.get(dyeColor).get(), TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get());

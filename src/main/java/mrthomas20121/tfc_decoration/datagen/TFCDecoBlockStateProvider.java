@@ -1,8 +1,7 @@
 package mrthomas20121.tfc_decoration.datagen;
 
-import com.google.gson.JsonElement;
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
 import mrthomas20121.tfc_decoration.api.Util;
@@ -17,9 +16,6 @@ import net.dries007.tfc.common.blocks.StainedWattleBlock;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.models.model.ModelLocationUtils;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -30,9 +26,6 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.function.BiConsumer;
-import java.util.function.Supplier;
 
 public class TFCDecoBlockStateProvider extends BlockStateProvider {
 
@@ -50,7 +43,7 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             simpleBlock(TFCDecoBlocks.BEDS.get(dyeColor).get(), models().getExistingFile(new ResourceLocation("minecraft:block/bed")));
             simpleBlock(TFCDecoBlocks.WOOLS.get(dyeColor).get());
             carpetBlock(TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get(), TFCDecoBlocks.WOOLS.get(dyeColor).get());
@@ -237,7 +230,7 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
                 .condition(HorizontalPipeBlock.WEST, true).end();
     }
 
-    private void wattle(StainedWattleBlock wattle, DecoDyeColor dye) {
+    private void wattle(StainedWattleBlock wattle, TFCDecoDyeColor dye) {
         String wattleName = getName(wattle).toString();
         String dyeName = dye.getSerializedName();
         this.wattle(wattle, models()

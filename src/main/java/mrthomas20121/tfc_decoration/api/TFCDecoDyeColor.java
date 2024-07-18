@@ -7,7 +7,7 @@ import net.minecraft.world.level.material.MapColor;
 import java.util.Locale;
 import java.util.function.IntFunction;
 
-public enum DecoDyeColor implements StringRepresentable {
+public enum TFCDecoDyeColor implements StringRepresentable {
     TERRACOTTA(0, MapColor.COLOR_ORANGE, 13010787),
     TERRACOTTA_WHITE(1, MapColor.TERRACOTTA_WHITE, 14006180),
     TERRACOTTA_ORANGE(2, MapColor.TERRACOTTA_ORANGE, 10967081),
@@ -26,20 +26,20 @@ public enum DecoDyeColor implements StringRepresentable {
     TERRACOTTA_RED(15, MapColor.TERRACOTTA_RED, 9781298),
     TERRACOTTA_BLACK(16, MapColor.TERRACOTTA_BLACK, 8017213);
 
-    public static DecoDyeColor[] VALUES = values();
+    public static TFCDecoDyeColor[] VALUES = values();
 
-    public static DecoDyeColor byId(int id) {
+    public static TFCDecoDyeColor byId(int id) {
         return BY_ID.apply(id);
     }
 
-    private static final IntFunction<DecoDyeColor> BY_ID = ByIdMap.continuous(DecoDyeColor::getId, VALUES, ByIdMap.OutOfBoundsStrategy.ZERO);
+    private static final IntFunction<TFCDecoDyeColor> BY_ID = ByIdMap.continuous(TFCDecoDyeColor::getId, VALUES, ByIdMap.OutOfBoundsStrategy.ZERO);
 
     private final int id;
     private final MapColor mapColor;
     private final String serializedName;
     private final float[] textureDiffuseColors;
 
-    DecoDyeColor(int id, MapColor mapColor, int color) {
+    TFCDecoDyeColor(int id, MapColor mapColor, int color) {
         this.id = id;
         this.mapColor = mapColor;
         this.serializedName = this.name().toLowerCase(Locale.ROOT);

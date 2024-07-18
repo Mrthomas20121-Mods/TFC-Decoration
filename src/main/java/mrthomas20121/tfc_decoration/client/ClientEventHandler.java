@@ -1,7 +1,7 @@
 package mrthomas20121.tfc_decoration.client;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
-import mrthomas20121.tfc_decoration.api.DecoDyeColor;
+import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlockEntities;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
 import mrthomas20121.tfc_decoration.client.renderer.TFCDecoBedRenderer;
@@ -12,11 +12,9 @@ import net.minecraft.client.resources.model.Material;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import java.util.function.Predicate;
 
@@ -35,7 +33,7 @@ public class ClientEventHandler {
     @SuppressWarnings("deprecated")
     public static void clientSetup(FMLClientSetupEvent event) {
 
-        for(DecoDyeColor color: DecoDyeColor.VALUES) {
+        for(TFCDecoDyeColor color: TFCDecoDyeColor.VALUES) {
             BED_MATERIAL_MAP.put(color.getSerializedName(), new Material(Sheets.BED_SHEET, new ResourceLocation(TFCDecoration.mod_id, "entity/bed/" + color.getSerializedName())));
         }
 
@@ -46,8 +44,9 @@ public class ClientEventHandler {
             final RenderType translucent = RenderType.translucent();
             final Predicate<RenderType> ghostBlock = rt -> rt == cutoutMipped || rt == Sheets.translucentCullBlockSheet();
 
-            for(DecoDyeColor dyeColor: DecoDyeColor.VALUES) {
+            for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
                 ItemBlockRenderTypes.setRenderLayer(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor).get(), ghostBlock);
+                ItemBlockRenderTypes.setRenderLayer(TFCDecoBlocks.BEDS.get(dyeColor).get(), Sheets.bedSheet());
             }
         });
     }
