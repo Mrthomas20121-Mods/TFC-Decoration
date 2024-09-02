@@ -1,0 +1,18 @@
+{
+  "type": "tfc:pot",
+  "duration": 2000,
+  "fluid_ingredient": {
+    "amount": 1000,
+    "ingredient": {
+      "fluid": "minecraft:water"
+    }
+  },
+  "ingredients": {
+    "item": "tfc_decoration:dye/terracotta_light_gray"
+  },
+  "output_fluid": {
+    "amount": 1000,
+    "fluid": "tfc_decoration:terracotta_light_gray_dye"
+  },
+  "temperature": 600
+}

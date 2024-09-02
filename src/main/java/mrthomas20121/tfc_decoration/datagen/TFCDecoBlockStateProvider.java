@@ -51,6 +51,11 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
             simpleBlock(TFCDecoBlocks.POLISHED_ALABASTER.get(dyeColor).get());
             simpleBlock(TFCDecoBlocks.ALABASTER_BRICKS.get(dyeColor).get());
             wattle(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor).get(), dyeColor);
+
+            simpleBlock(TFCDecoBlocks.CONCRETES.get(dyeColor).get());
+            simpleBlock(TFCDecoBlocks.CONCRETE_POWDERS.get(dyeColor).get());
+
+            simpleBlock(TFCDecoBlocks.BANNERS.get(dyeColor).get(), models().getExistingFile(new ResourceLocation("minecraft:block/banner")));
         }
 
         for(Rock rock: Rock.VALUES) {
@@ -118,6 +123,20 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
                             new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName),
                             new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/top/" + woodName));
                 }
+                else if(blockType.equals(WoodBlockType.DECORATIVE_BOOKSHELF)) {
+                    bookshelf(TFCDecoBlocks.WOODS.get(wood).get(blockType).get(),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/" + woodName),
+                            new ResourceLocation(wood.modID(), "block/wood/planks/" + woodName));
+                    slabBlock(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get(),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/" + woodName),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/" + woodName),
+                            new ResourceLocation(wood.modID(), "block/wood/planks/" + woodName),
+                            new ResourceLocation(wood.modID(), "block/wood/planks/" + woodName));
+                    stairsBlock(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get(),
+                            new ResourceLocation("tfc_decoration", "block/wood/"+ typeName + "/" + woodName),
+                            new ResourceLocation(wood.modID(), "block/wood/planks/" + woodName),
+                            new ResourceLocation(wood.modID(), "block/wood/planks/" + woodName));
+                }
                 else {
                     block(TFCDecoBlocks.WOODS.get(wood).get(blockType).get());
                     slabBlock(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get(),
@@ -153,12 +172,21 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
     public void block(Block block) {
         this.simpleBlock(block, this.cubeAll(block));
     }
+
+    public void bookshelf(Block block, ResourceLocation side, ResourceLocation end) {
+        this.simpleBlock(block, this.cubeColumb(block, side, end));
+    }
+
     public void blockCutout(Block block) {
         this.simpleBlock(block, this.cubeAllWithCutout(block));
     }
 
     public ModelFile cubeAll(Block block) {
         return this.models().cubeAll(this.name(block), this.key(block));
+    }
+
+    public ModelFile cubeColumb(Block block, ResourceLocation side, ResourceLocation end) {
+        return this.models().cubeColumn(this.name(block), side, end);
     }
 
     public ModelFile cubeAllWithCutout(Block block) {

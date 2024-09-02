@@ -19,6 +19,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -36,9 +37,13 @@ public class TFCDecoBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
 
         for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
+            tag(BlockTags.BEDS).add(TFCDecoBlocks.BEDS.get(dyeColor).get());
             tag(BlockTags.WOOL).add(TFCDecoBlocks.WOOLS.get(dyeColor).get());
             tag(BlockTags.WOOL_CARPETS).add(TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get());
             tag(TFCTags.Blocks.PET_SITS_ON).add(TFCDecoBlocks.WOOLS.get(dyeColor).get(), TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get());
+
+            tag(BlockTags.MINEABLE_WITH_SHOVEL).add(TFCDecoBlocks.CONCRETE_POWDERS.get(dyeColor).get());
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TFCDecoBlocks.CONCRETES.get(dyeColor).get());
         }
 
         for(Rock rock: Rock.VALUES) {
@@ -103,6 +108,14 @@ public class TFCDecoBlockTagProvider extends BlockTagsProvider {
                             TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get(),
                             TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get()
                     );
+
+                    if(blockType.equals(WoodBlockType.DECORATIVE_BOOKSHELF)) {
+                        tag(Tags.Blocks.BOOKSHELVES)
+                                .add(TFCDecoBlocks.WOODS.get(wood).get(blockType).get())
+                                .add(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get())
+                                .add(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get());
+                    }
+
                     tag(BlockTags.STAIRS).add(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).stair().get());
                     tag(BlockTags.SLABS).add(TFCDecoBlocks.WOODS_DECORATION.get(wood).get(blockType).slab().get());
                 }

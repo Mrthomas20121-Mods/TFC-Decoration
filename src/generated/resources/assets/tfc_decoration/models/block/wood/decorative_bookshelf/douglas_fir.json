@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "tfc:block/wood/planks/douglas_fir",
+    "side": "tfc_decoration:block/wood/decorative_bookshelf/douglas_fir"
+  }
+}

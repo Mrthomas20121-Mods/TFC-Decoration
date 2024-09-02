@@ -1,9 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "ingredient": [
-    "tfc_decoration:metal/horizontal_support/black_steel"
-  ],
-  "support_up": 3,
-  "support_down": 3,
-  "support_horizontal": 8
-}

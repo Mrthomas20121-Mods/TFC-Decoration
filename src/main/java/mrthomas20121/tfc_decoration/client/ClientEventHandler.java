@@ -4,6 +4,7 @@ import mrthomas20121.tfc_decoration.TFCDecoration;
 import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlockEntities;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
+import mrthomas20121.tfc_decoration.client.renderer.TFCDecoBannerRenderer;
 import mrthomas20121.tfc_decoration.client.renderer.TFCDecoBedRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -21,12 +22,13 @@ import java.util.function.Predicate;
 import static mrthomas20121.tfc_decoration.TFCDecoration.BED_MATERIAL_MAP;
 import static mrthomas20121.tfc_decoration.TFCDecoration.mod_id;
 
-@Mod.EventBusSubscriber(modid = mod_id, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = mod_id, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientEventHandler {
 
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(TFCDecoBlockEntities.BED.get(), TFCDecoBedRenderer::new);
+        event.registerBlockEntityRenderer(TFCDecoBlockEntities.BANNER.get(), TFCDecoBannerRenderer::new);
     }
 
     @SubscribeEvent
@@ -46,7 +48,7 @@ public class ClientEventHandler {
 
             for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
                 ItemBlockRenderTypes.setRenderLayer(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor).get(), ghostBlock);
-                ItemBlockRenderTypes.setRenderLayer(TFCDecoBlocks.BEDS.get(dyeColor).get(), Sheets.bedSheet());
+                //ItemBlockRenderTypes.setRenderLayer(TFCDecoBlocks.BEDS.get(dyeColor).get(), Sheets.bedSheet());
             }
         });
     }

@@ -1,19 +1,32 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "#": {
-      "item": "tfc_decoration:wood/vertical_planks/hevea"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "afc"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "#": {
+            "item": "tfc_decoration:wood/vertical_planks/hevea"
+          }
+        },
+        "pattern": [
+          "#  ",
+          "## ",
+          "###"
+        ],
+        "result": {
+          "count": 4,
+          "item": "tfc_decoration:wood/vertical_planks/hevea_stairs"
+        },
+        "show_notification": true
+      }
     }
-  },
-  "pattern": [
-    "#  ",
-    "## ",
-    "###"
-  ],
-  "result": {
-    "count": 4,
-    "item": "tfc_decoration:wood/vertical_planks/hevea_stairs"
-  },
-  "show_notification": true
+  ]
 }

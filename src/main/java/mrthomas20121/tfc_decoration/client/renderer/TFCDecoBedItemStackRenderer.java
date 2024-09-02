@@ -24,7 +24,7 @@ public class TFCDecoBedItemStackRenderer extends BlockEntityWithoutLevelRenderer
     }
 
     @Override
-    public void renderByItem(ItemStack stack, ItemDisplayContext transformType, PoseStack poseStack, MultiBufferSource buffer, int pPackedLight, int pPackedOverlay) {
+    public void renderByItem(ItemStack stack, ItemDisplayContext context, PoseStack poseStack, MultiBufferSource buffer, int pPackedLight, int pPackedOverlay) {
         if (blockEntity == null) {
             blockEntity = new TFCDecoBedBlockEntity(BlockPos.ZERO, TFCDecoBlocks.BEDS.get(TFCDecoDyeColor.TERRACOTTA).get().defaultBlockState());
         }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/chestnut_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/chestnut"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/chestnut_slab_top"
+    }
+  }
+}

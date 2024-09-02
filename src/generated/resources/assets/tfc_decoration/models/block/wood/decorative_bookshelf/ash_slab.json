@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "tfc:block/wood/planks/ash",
+    "side": "tfc_decoration:block/wood/decorative_bookshelf/ash",
+    "top": "tfc:block/wood/planks/ash"
+  }
+}

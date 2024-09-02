@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "tfc:block/wood/planks/sycamore",
+    "side": "tfc_decoration:block/wood/decorative_bookshelf/sycamore"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/ash_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/ash"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/ash_slab_top"
+    }
+  }
+}

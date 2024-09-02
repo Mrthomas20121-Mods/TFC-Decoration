@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/sycamore_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/sycamore"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/sycamore_slab_top"
+    }
+  }
+}

@@ -1,11 +1,14 @@
 package mrthomas20121.tfc_decoration.api;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import mrthomas20121.tfc_decoration.api.mod_compat.DFCUtil;
+import mrthomas20121.tfc_decoration.api.mod_compat.ModCompat;
 import mrthomas20121.tfc_decoration.api.wood.BasicWood;
 import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
-import mrthomas20121.tfc_decoration.api.wood.type.AFCWood;
 import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.api.wood.type.TFCWood;
+import net.dries007.tfc.common.blocks.rock.Rock;
+import net.dries007.tfc.util.registry.RegistryRock;
 import net.minecraftforge.fml.ModList;
 
 import java.util.HashMap;
@@ -18,31 +21,44 @@ public class Util {
 
     static List<BasicWood> WOOD_TYPES = new ObjectArrayList<>();
 
-    static {
-        registerALL(TFCDecoWood.VALUES);
-        registerALL(TFCWood.VALUES);
+    static List<RegistryRock> ROCK_TYPES = new ObjectArrayList<>();
 
-        // add AFC wood only if the mod is loaded,
-        // prevent JEI/creative tab from being filled with blocks that can't be crafted
-        if(ModList.get().isLoaded("afc")) {
-            registerALL(AFCWood.VALUES);
-        }
+    static {
+        registerALLWoodTypes(TFCDecoWood.VALUES);
+        // add tfc wood types
+        registerALLWoodTypes(TFCWood.VALUES);
+
+        // add tfc rock types
+        registerALLRockTypes(Rock.VALUES);
+
+        ModCompat.init();
     }
 
     public static List<BasicWood> getALLWoodTypes() {
         return WOOD_TYPES;
+    }
+    public static List<RegistryRock> getALLRockTypes() {
+        return ROCK_TYPES;
     }
 
     public static List<ExtendedWood> getExtendedWoodTypes() {
         return getALLWoodTypes().stream().filter(wood -> wood instanceof ExtendedWood).map(wood -> (ExtendedWood) wood).toList();
     }
 
-    public static void register(BasicWood wood) {
+    public static void registerRockType(RegistryRock rock) {
+        ROCK_TYPES.add(rock);
+    }
+
+    public static void registerALLRockTypes(RegistryRock[] rocks) {
+        ROCK_TYPES.addAll(List.of(rocks));
+    }
+
+    public static void registerWoodType(BasicWood wood) {
         WOOD_TYPES.add(wood);
     }
 
-    public static void registerALL(BasicWood[] wood) {
-        WOOD_TYPES.addAll(List.of(wood));
+    public static void registerALLWoodTypes(BasicWood[] woods) {
+        WOOD_TYPES.addAll(List.of(woods));
     }
 
     public static <A, B> Map<A, B> mapOfKeys(List<A> list, Predicate<A> keyPredicate, Function<A, B> func) {

@@ -3,145 +3,201 @@
     "tfc_decoration:wood/planks/white_slab",
     "tfc_decoration:wood/vertical_planks/white_slab",
     "tfc_decoration:wood/wood_beam/white_slab",
+    "tfc_decoration:wood/decorative_bookshelf/white_slab",
     "tfc_decoration:wood/planks/orange_slab",
     "tfc_decoration:wood/vertical_planks/orange_slab",
     "tfc_decoration:wood/wood_beam/orange_slab",
+    "tfc_decoration:wood/decorative_bookshelf/orange_slab",
     "tfc_decoration:wood/planks/magenta_slab",
     "tfc_decoration:wood/vertical_planks/magenta_slab",
     "tfc_decoration:wood/wood_beam/magenta_slab",
+    "tfc_decoration:wood/decorative_bookshelf/magenta_slab",
     "tfc_decoration:wood/planks/light_blue_slab",
     "tfc_decoration:wood/vertical_planks/light_blue_slab",
     "tfc_decoration:wood/wood_beam/light_blue_slab",
+    "tfc_decoration:wood/decorative_bookshelf/light_blue_slab",
     "tfc_decoration:wood/planks/yellow_slab",
     "tfc_decoration:wood/vertical_planks/yellow_slab",
     "tfc_decoration:wood/wood_beam/yellow_slab",
+    "tfc_decoration:wood/decorative_bookshelf/yellow_slab",
     "tfc_decoration:wood/planks/lime_slab",
     "tfc_decoration:wood/vertical_planks/lime_slab",
     "tfc_decoration:wood/wood_beam/lime_slab",
+    "tfc_decoration:wood/decorative_bookshelf/lime_slab",
     "tfc_decoration:wood/planks/pink_slab",
     "tfc_decoration:wood/vertical_planks/pink_slab",
     "tfc_decoration:wood/wood_beam/pink_slab",
+    "tfc_decoration:wood/decorative_bookshelf/pink_slab",
     "tfc_decoration:wood/planks/gray_slab",
     "tfc_decoration:wood/vertical_planks/gray_slab",
     "tfc_decoration:wood/wood_beam/gray_slab",
+    "tfc_decoration:wood/decorative_bookshelf/gray_slab",
     "tfc_decoration:wood/planks/light_gray_slab",
     "tfc_decoration:wood/vertical_planks/light_gray_slab",
     "tfc_decoration:wood/wood_beam/light_gray_slab",
+    "tfc_decoration:wood/decorative_bookshelf/light_gray_slab",
     "tfc_decoration:wood/planks/cyan_slab",
     "tfc_decoration:wood/vertical_planks/cyan_slab",
     "tfc_decoration:wood/wood_beam/cyan_slab",
+    "tfc_decoration:wood/decorative_bookshelf/cyan_slab",
     "tfc_decoration:wood/planks/purple_slab",
     "tfc_decoration:wood/vertical_planks/purple_slab",
     "tfc_decoration:wood/wood_beam/purple_slab",
+    "tfc_decoration:wood/decorative_bookshelf/purple_slab",
     "tfc_decoration:wood/planks/blue_slab",
     "tfc_decoration:wood/vertical_planks/blue_slab",
     "tfc_decoration:wood/wood_beam/blue_slab",
+    "tfc_decoration:wood/decorative_bookshelf/blue_slab",
     "tfc_decoration:wood/planks/brown_slab",
     "tfc_decoration:wood/vertical_planks/brown_slab",
     "tfc_decoration:wood/wood_beam/brown_slab",
+    "tfc_decoration:wood/decorative_bookshelf/brown_slab",
     "tfc_decoration:wood/planks/green_slab",
     "tfc_decoration:wood/vertical_planks/green_slab",
     "tfc_decoration:wood/wood_beam/green_slab",
+    "tfc_decoration:wood/decorative_bookshelf/green_slab",
     "tfc_decoration:wood/planks/red_slab",
     "tfc_decoration:wood/vertical_planks/red_slab",
     "tfc_decoration:wood/wood_beam/red_slab",
+    "tfc_decoration:wood/decorative_bookshelf/red_slab",
     "tfc_decoration:wood/planks/black_slab",
     "tfc_decoration:wood/vertical_planks/black_slab",
     "tfc_decoration:wood/wood_beam/black_slab",
+    "tfc_decoration:wood/decorative_bookshelf/black_slab",
     "tfc_decoration:wood/planks/terracotta_white_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_white_slab",
     "tfc_decoration:wood/wood_beam/terracotta_white_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_white_slab",
     "tfc_decoration:wood/planks/terracotta_orange_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_orange_slab",
     "tfc_decoration:wood/wood_beam/terracotta_orange_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_orange_slab",
     "tfc_decoration:wood/planks/terracotta_magenta_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_magenta_slab",
     "tfc_decoration:wood/wood_beam/terracotta_magenta_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_magenta_slab",
     "tfc_decoration:wood/planks/terracotta_light_blue_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_light_blue_slab",
     "tfc_decoration:wood/wood_beam/terracotta_light_blue_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_light_blue_slab",
     "tfc_decoration:wood/planks/terracotta_yellow_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_yellow_slab",
     "tfc_decoration:wood/wood_beam/terracotta_yellow_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_yellow_slab",
     "tfc_decoration:wood/planks/terracotta_lime_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_lime_slab",
     "tfc_decoration:wood/wood_beam/terracotta_lime_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_lime_slab",
     "tfc_decoration:wood/planks/terracotta_pink_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_pink_slab",
     "tfc_decoration:wood/wood_beam/terracotta_pink_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_pink_slab",
     "tfc_decoration:wood/planks/terracotta_gray_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_gray_slab",
     "tfc_decoration:wood/wood_beam/terracotta_gray_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_gray_slab",
     "tfc_decoration:wood/planks/terracotta_light_gray_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_light_gray_slab",
     "tfc_decoration:wood/wood_beam/terracotta_light_gray_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_light_gray_slab",
     "tfc_decoration:wood/planks/terracotta_cyan_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_cyan_slab",
     "tfc_decoration:wood/wood_beam/terracotta_cyan_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_cyan_slab",
     "tfc_decoration:wood/planks/terracotta_purple_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_purple_slab",
     "tfc_decoration:wood/wood_beam/terracotta_purple_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_purple_slab",
     "tfc_decoration:wood/planks/terracotta_blue_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_blue_slab",
     "tfc_decoration:wood/wood_beam/terracotta_blue_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_blue_slab",
     "tfc_decoration:wood/planks/terracotta_brown_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_brown_slab",
     "tfc_decoration:wood/wood_beam/terracotta_brown_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_brown_slab",
     "tfc_decoration:wood/planks/terracotta_green_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_green_slab",
     "tfc_decoration:wood/wood_beam/terracotta_green_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_green_slab",
     "tfc_decoration:wood/planks/terracotta_red_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_red_slab",
     "tfc_decoration:wood/wood_beam/terracotta_red_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_red_slab",
     "tfc_decoration:wood/planks/terracotta_black_slab",
     "tfc_decoration:wood/vertical_planks/terracotta_black_slab",
     "tfc_decoration:wood/wood_beam/terracotta_black_slab",
+    "tfc_decoration:wood/decorative_bookshelf/terracotta_black_slab",
     "tfc_decoration:wood/vertical_planks/acacia_slab",
     "tfc_decoration:wood/wood_beam/acacia_slab",
+    "tfc_decoration:wood/decorative_bookshelf/acacia_slab",
     "tfc_decoration:wood/vertical_planks/ash_slab",
     "tfc_decoration:wood/wood_beam/ash_slab",
+    "tfc_decoration:wood/decorative_bookshelf/ash_slab",
     "tfc_decoration:wood/vertical_planks/aspen_slab",
     "tfc_decoration:wood/wood_beam/aspen_slab",
+    "tfc_decoration:wood/decorative_bookshelf/aspen_slab",
     "tfc_decoration:wood/vertical_planks/birch_slab",
     "tfc_decoration:wood/wood_beam/birch_slab",
+    "tfc_decoration:wood/decorative_bookshelf/birch_slab",
     "tfc_decoration:wood/vertical_planks/blackwood_slab",
     "tfc_decoration:wood/wood_beam/blackwood_slab",
+    "tfc_decoration:wood/decorative_bookshelf/blackwood_slab",
     "tfc_decoration:wood/vertical_planks/chestnut_slab",
     "tfc_decoration:wood/wood_beam/chestnut_slab",
+    "tfc_decoration:wood/decorative_bookshelf/chestnut_slab",
     "tfc_decoration:wood/vertical_planks/douglas_fir_slab",
     "tfc_decoration:wood/wood_beam/douglas_fir_slab",
+    "tfc_decoration:wood/decorative_bookshelf/douglas_fir_slab",
     "tfc_decoration:wood/vertical_planks/hickory_slab",
     "tfc_decoration:wood/wood_beam/hickory_slab",
+    "tfc_decoration:wood/decorative_bookshelf/hickory_slab",
     "tfc_decoration:wood/vertical_planks/kapok_slab",
     "tfc_decoration:wood/wood_beam/kapok_slab",
+    "tfc_decoration:wood/decorative_bookshelf/kapok_slab",
     "tfc_decoration:wood/vertical_planks/mangrove_slab",
     "tfc_decoration:wood/wood_beam/mangrove_slab",
+    "tfc_decoration:wood/decorative_bookshelf/mangrove_slab",
     "tfc_decoration:wood/vertical_planks/maple_slab",
     "tfc_decoration:wood/wood_beam/maple_slab",
+    "tfc_decoration:wood/decorative_bookshelf/maple_slab",
     "tfc_decoration:wood/vertical_planks/oak_slab",
     "tfc_decoration:wood/wood_beam/oak_slab",
+    "tfc_decoration:wood/decorative_bookshelf/oak_slab",
     "tfc_decoration:wood/vertical_planks/palm_slab",
     "tfc_decoration:wood/wood_beam/palm_slab",
+    "tfc_decoration:wood/decorative_bookshelf/palm_slab",
     "tfc_decoration:wood/vertical_planks/pine_slab",
     "tfc_decoration:wood/wood_beam/pine_slab",
+    "tfc_decoration:wood/decorative_bookshelf/pine_slab",
     "tfc_decoration:wood/vertical_planks/rosewood_slab",
     "tfc_decoration:wood/wood_beam/rosewood_slab",
+    "tfc_decoration:wood/decorative_bookshelf/rosewood_slab",
     "tfc_decoration:wood/vertical_planks/sequoia_slab",
     "tfc_decoration:wood/wood_beam/sequoia_slab",
+    "tfc_decoration:wood/decorative_bookshelf/sequoia_slab",
     "tfc_decoration:wood/vertical_planks/spruce_slab",
     "tfc_decoration:wood/wood_beam/spruce_slab",
+    "tfc_decoration:wood/decorative_bookshelf/spruce_slab",
     "tfc_decoration:wood/vertical_planks/sycamore_slab",
     "tfc_decoration:wood/wood_beam/sycamore_slab",
+    "tfc_decoration:wood/decorative_bookshelf/sycamore_slab",
     "tfc_decoration:wood/vertical_planks/white_cedar_slab",
     "tfc_decoration:wood/wood_beam/white_cedar_slab",
+    "tfc_decoration:wood/decorative_bookshelf/white_cedar_slab",
     "tfc_decoration:wood/vertical_planks/willow_slab",
     "tfc_decoration:wood/wood_beam/willow_slab",
+    "tfc_decoration:wood/decorative_bookshelf/willow_slab",
     {
       "id": "tfc_decoration:wood/vertical_planks/baobab_slab",
       "required": false
     },
     {
       "id": "tfc_decoration:wood/wood_beam/baobab_slab",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/decorative_bookshelf/baobab_slab",
       "required": false
     },
     {
@@ -153,11 +209,19 @@
       "required": false
     },
     {
+      "id": "tfc_decoration:wood/decorative_bookshelf/eucalyptus_slab",
+      "required": false
+    },
+    {
       "id": "tfc_decoration:wood/vertical_planks/mahogany_slab",
       "required": false
     },
     {
       "id": "tfc_decoration:wood/wood_beam/mahogany_slab",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/decorative_bookshelf/mahogany_slab",
       "required": false
     },
     {
@@ -169,11 +233,19 @@
       "required": false
     },
     {
+      "id": "tfc_decoration:wood/decorative_bookshelf/hevea_slab",
+      "required": false
+    },
+    {
       "id": "tfc_decoration:wood/vertical_planks/tualang_slab",
       "required": false
     },
     {
       "id": "tfc_decoration:wood/wood_beam/tualang_slab",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/decorative_bookshelf/tualang_slab",
       "required": false
     },
     {
@@ -185,11 +257,19 @@
       "required": false
     },
     {
+      "id": "tfc_decoration:wood/decorative_bookshelf/teak_slab",
+      "required": false
+    },
+    {
       "id": "tfc_decoration:wood/vertical_planks/cypress_slab",
       "required": false
     },
     {
       "id": "tfc_decoration:wood/wood_beam/cypress_slab",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/decorative_bookshelf/cypress_slab",
       "required": false
     },
     {
@@ -201,6 +281,10 @@
       "required": false
     },
     {
+      "id": "tfc_decoration:wood/decorative_bookshelf/fig_slab",
+      "required": false
+    },
+    {
       "id": "tfc_decoration:wood/vertical_planks/ironwood_slab",
       "required": false
     },
@@ -209,11 +293,19 @@
       "required": false
     },
     {
+      "id": "tfc_decoration:wood/decorative_bookshelf/ironwood_slab",
+      "required": false
+    },
+    {
       "id": "tfc_decoration:wood/vertical_planks/ipe_slab",
       "required": false
     },
     {
       "id": "tfc_decoration:wood/wood_beam/ipe_slab",
+      "required": false
+    },
+    {
+      "id": "tfc_decoration:wood/decorative_bookshelf/ipe_slab",
       "required": false
     }
   ]

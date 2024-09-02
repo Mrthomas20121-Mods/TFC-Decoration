@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/douglas_fir_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/douglas_fir"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/douglas_fir_slab_top"
+    }
+  }
+}

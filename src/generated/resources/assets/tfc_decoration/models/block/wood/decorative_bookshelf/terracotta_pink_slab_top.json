@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "tfc_decoration:block/wood/planks/terracotta_pink",
+    "side": "tfc_decoration:block/wood/decorative_bookshelf/terracotta_pink",
+    "top": "tfc_decoration:block/wood/planks/terracotta_pink"
+  }
+}

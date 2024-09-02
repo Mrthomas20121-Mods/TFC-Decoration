@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "tfc_decoration:dye/terracotta_orange"
+    },
+    "G": {
+      "tag": "forge:gravel"
+    },
+    "S": {
+      "tag": "minecraft:sand"
+    }
+  },
+  "pattern": [
+    "DSS",
+    "SSG",
+    "GGG"
+  ],
+  "result": {
+    "item": "tfc_decoration:concrete_powder/terracotta_orange"
+  },
+  "show_notification": true
+}

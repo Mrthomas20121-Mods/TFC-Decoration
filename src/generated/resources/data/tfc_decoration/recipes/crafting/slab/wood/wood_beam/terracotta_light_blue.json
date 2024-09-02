@@ -1,17 +1,30 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "#": {
-      "item": "tfc_decoration:wood/wood_beam/terracotta_light_blue"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "tfc_decoration"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "#": {
+            "item": "tfc_decoration:wood/wood_beam/terracotta_light_blue"
+          }
+        },
+        "pattern": [
+          "###"
+        ],
+        "result": {
+          "count": 6,
+          "item": "tfc_decoration:wood/wood_beam/terracotta_light_blue_slab"
+        },
+        "show_notification": true
+      }
     }
-  },
-  "pattern": [
-    "###"
-  ],
-  "result": {
-    "count": 6,
-    "item": "tfc_decoration:wood/wood_beam/terracotta_light_blue_slab"
-  },
-  "show_notification": true
+  ]
 }

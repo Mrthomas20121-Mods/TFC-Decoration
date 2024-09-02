@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/terracotta_cyan_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/terracotta_cyan"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/terracotta_cyan_slab_top"
+    }
+  }
+}

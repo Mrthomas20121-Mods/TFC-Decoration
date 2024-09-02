@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/terracotta_pink_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/terracotta_pink"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/terracotta_pink_slab_top"
+    }
+  }
+}

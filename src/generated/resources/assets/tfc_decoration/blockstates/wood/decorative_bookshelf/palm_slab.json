@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/palm_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/palm"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/palm_slab_top"
+    }
+  }
+}

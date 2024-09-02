@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "afc:block/wood/planks/fig",
+    "side": "tfc_decoration:block/wood/decorative_bookshelf/fig"
+  }
+}

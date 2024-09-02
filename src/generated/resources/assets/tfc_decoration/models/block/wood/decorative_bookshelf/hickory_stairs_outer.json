@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "tfc:block/wood/planks/hickory",
+    "side": "tfc_decoration:block/wood/decorative_bookshelf/hickory",
+    "top": "tfc:block/wood/planks/hickory"
+  }
+}

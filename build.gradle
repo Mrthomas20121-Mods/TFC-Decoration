@@ -11,6 +11,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 minecraft {
     mappings channel: 'official', version: mc_version
 
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
     runs {
         client {
             workingDirectory project.file('run')
@@ -100,6 +102,8 @@ dependencies {
     minecraft "net.neoforged:forge:${mc_version}-${neoforge_version}"
 
     implementation fg.deobf("maven.modrinth:terrafirmacraft:${tfc_version}")
+    implementation fg.deobf("maven.modrinth:decofirmacraft:${dfc_version}")
+    implementation fg.deobf("maven.modrinth:fusion-connected-textures:${fusion_version}")
 
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))

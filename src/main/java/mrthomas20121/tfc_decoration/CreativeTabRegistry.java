@@ -59,8 +59,23 @@ public class CreativeTabRegistry {
 
         for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             out.accept(TFCDecoBlocks.BEDS.get(dyeColor).get());
+        }
+
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
+            out.accept(TFCDecoBlocks.BANNERS.get(dyeColor).get());
+        }
+
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             out.accept(TFCDecoBlocks.WOOLS.get(dyeColor).get());
+        }
+
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             out.accept(TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get());
+        }
+
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
+            out.accept(TFCDecoBlocks.CONCRETE_POWDERS.get(dyeColor).get());
+            out.accept(TFCDecoBlocks.CONCRETES.get(dyeColor).get());
         }
 
         for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {

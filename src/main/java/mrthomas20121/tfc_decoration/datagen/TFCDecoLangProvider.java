@@ -44,6 +44,8 @@ public class TFCDecoLangProvider extends LanguageProvider {
             addBlock(TFCDecoBlocks.POLISHED_ALABASTER.get(dyeColor), s + " Polished Alabaster");
             addBlock(TFCDecoBlocks.ALABASTER_BRICKS.get(dyeColor), s + " Alabaster Bricks");
             addBlock(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor), s + " Wattle");
+            addBlock(TFCDecoBlocks.CONCRETES.get(dyeColor), s+ " Concrete");
+            addBlock(TFCDecoBlocks.CONCRETE_POWDERS.get(dyeColor), s+ " Concrete Powder");
             addItem(TFCDecoItems.DYES.get(dyeColor), s + " Dye");
             addItem(TFCDecoItems.FLUID_BUCKETS.get(DecoFluidId.asType(dyeColor)), s+" Dye");
         }

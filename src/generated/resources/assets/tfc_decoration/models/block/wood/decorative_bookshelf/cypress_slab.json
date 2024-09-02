@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "afc:block/wood/planks/cypress",
+    "side": "tfc_decoration:block/wood/decorative_bookshelf/cypress",
+    "top": "afc:block/wood/planks/cypress"
+  }
+}

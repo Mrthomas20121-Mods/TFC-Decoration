@@ -25,6 +25,7 @@ public class TFCDecoData {
         dataGenerator.addProvider(event.includeServer(), new TFCDecoItemTagProvider(packOutput, event.getLookupProvider(), blockTagProvider.contentsGetter(), existingFileHelper));
         dataGenerator.addProvider(event.includeServer(), new TFCDecoRecipeProvider(packOutput));
         dataGenerator.addProvider(event.includeServer(), create(packOutput));
+        dataGenerator.addProvider(event.includeServer(), new TFCDecoUnitProvider(packOutput));
     }
 
     private static LootTableProvider create(PackOutput output) {

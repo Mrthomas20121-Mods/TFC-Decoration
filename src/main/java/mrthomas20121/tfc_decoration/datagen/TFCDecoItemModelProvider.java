@@ -63,6 +63,10 @@ public class TFCDecoItemModelProvider extends ItemModelProvider {
             itemBlock(TFCDecoBlocks.POLISHED_ALABASTER.get(dyeColor).get());
             itemBlock(TFCDecoBlocks.ALABASTER_BRICKS.get(dyeColor).get());
             itemBlock(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor).get());
+            itemBlock(TFCDecoBlocks.CONCRETES.get(dyeColor).get());
+            itemBlock(TFCDecoBlocks.CONCRETE_POWDERS.get(dyeColor).get());
+
+            this.withExistingParent(this.blockName(TFCDecoBlocks.BANNERS.get(dyeColor).get()), "minecraft:item/template_banner");
         }
 
         for(BasicWood wood: Util.getALLWoodTypes()) {

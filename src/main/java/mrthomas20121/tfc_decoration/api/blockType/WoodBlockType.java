@@ -3,6 +3,7 @@ package mrthomas20121.tfc_decoration.api.blockType;
 import mrthomas20121.tfc_decoration.api.wood.BasicWood;
 import net.dries007.tfc.common.blocks.ExtendedBlock;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
+import net.dries007.tfc.common.blocks.wood.BookshelfBlock;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -15,7 +16,8 @@ import java.util.function.Function;
 public enum WoodBlockType implements StringRepresentable {
 
     VERTICAL_PLANKS,
-    WOOD_BEAM(woodType -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).mapColor(woodType.woodColor())));
+    WOOD_BEAM(woodType -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).mapColor(woodType.woodColor()))),
+    DECORATIVE_BOOKSHELF(woodType -> new Block(BlockBehaviour.Properties.copy(Blocks.BOOKSHELF).mapColor(woodType.woodColor())));
 
     public static WoodBlockType[] VALUES = WoodBlockType.values();
     private final Function<BasicWood, Block> supp;

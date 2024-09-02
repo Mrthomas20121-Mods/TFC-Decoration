@@ -1,18 +1,31 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "l": {
-      "item": "tfc:wood/lumber/palm"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "tfc"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "l": {
+            "item": "tfc:wood/lumber/palm"
+          }
+        },
+        "pattern": [
+          "l l",
+          " l ",
+          "l l"
+        ],
+        "result": {
+          "item": "tfc_decoration:wood/wood_beam/palm"
+        },
+        "show_notification": true
+      }
     }
-  },
-  "pattern": [
-    "l l",
-    " l ",
-    "l l"
-  ],
-  "result": {
-    "item": "tfc_decoration:wood/wood_beam/palm"
-  },
-  "show_notification": true
+  ]
 }

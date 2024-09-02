@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/ipe_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/ipe"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/ipe_slab_top"
+    }
+  }
+}

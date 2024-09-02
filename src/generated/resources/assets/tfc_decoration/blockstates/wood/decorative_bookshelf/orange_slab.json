@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/orange_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/orange"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/orange_slab_top"
+    }
+  }
+}

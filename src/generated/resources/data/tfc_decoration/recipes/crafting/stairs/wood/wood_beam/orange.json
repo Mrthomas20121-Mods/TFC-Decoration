@@ -1,19 +1,32 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "#": {
-      "item": "tfc_decoration:wood/wood_beam/orange"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "tfc_decoration"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "#": {
+            "item": "tfc_decoration:wood/wood_beam/orange"
+          }
+        },
+        "pattern": [
+          "#  ",
+          "## ",
+          "###"
+        ],
+        "result": {
+          "count": 4,
+          "item": "tfc_decoration:wood/wood_beam/orange_stairs"
+        },
+        "show_notification": true
+      }
     }
-  },
-  "pattern": [
-    "#  ",
-    "## ",
-    "###"
-  ],
-  "result": {
-    "count": 4,
-    "item": "tfc_decoration:wood/wood_beam/orange_stairs"
-  },
-  "show_notification": true
+  ]
 }

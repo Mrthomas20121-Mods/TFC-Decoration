@@ -1,18 +1,31 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "l": {
-      "item": "afc:wood/lumber/fig"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "afc"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "l": {
+            "item": "afc:wood/lumber/fig"
+          }
+        },
+        "pattern": [
+          "l l",
+          " l ",
+          "l l"
+        ],
+        "result": {
+          "item": "tfc_decoration:wood/wood_beam/fig"
+        },
+        "show_notification": true
+      }
     }
-  },
-  "pattern": [
-    "l l",
-    " l ",
-    "l l"
-  ],
-  "result": {
-    "item": "tfc_decoration:wood/wood_beam/fig"
-  },
-  "show_notification": true
+  ]
 }

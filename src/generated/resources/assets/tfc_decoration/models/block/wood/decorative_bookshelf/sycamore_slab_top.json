@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "tfc:block/wood/planks/sycamore",
+    "side": "tfc_decoration:block/wood/decorative_bookshelf/sycamore",
+    "top": "tfc:block/wood/planks/sycamore"
+  }
+}

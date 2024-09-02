@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "afc:block/wood/planks/mahogany",
+    "side": "tfc_decoration:block/wood/decorative_bookshelf/mahogany"
+  }
+}

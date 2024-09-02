@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "tfc_decoration:block/wood/planks/brown",
+    "side": "tfc_decoration:block/wood/decorative_bookshelf/brown",
+    "top": "tfc_decoration:block/wood/planks/brown"
+  }
+}

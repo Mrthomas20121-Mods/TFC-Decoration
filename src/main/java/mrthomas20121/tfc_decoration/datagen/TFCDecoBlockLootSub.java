@@ -1,9 +1,11 @@
 package mrthomas20121.tfc_decoration.datagen;
 
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
+import net.dries007.tfc.common.items.TFCItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import org.jetbrains.annotations.NotNull;
 
@@ -21,7 +23,14 @@ public class TFCDecoBlockLootSub extends BlockLootSubProvider {
         TFCDecoBlocks.BLOCKS.getEntries().stream()
                 .map(Supplier::get)
                 .filter(block -> !(block instanceof LiquidBlock)) // filter to remove fluids
-                .forEach(this::dropSelf);
+                .forEach(block -> {
+                    if(block instanceof GlassBlock) {
+                        dropWhenSilkTouch(block);
+                    }
+                    else {
+                        dropSelf(block);
+                    }
+                });
     }
 
     @Override

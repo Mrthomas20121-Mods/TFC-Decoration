@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "item": "tfc_decoration:metal/support/black_steel"
+  },
+  "support_down": 3,
+  "support_horizontal": 8,
+  "support_up": 3
+}

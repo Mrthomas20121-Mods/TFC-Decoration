@@ -7,6 +7,7 @@ import mrthomas20121.tfc_decoration.fluid.TFCDecoFluids;
 import mrthomas20121.tfc_decoration.item.TFCDecoItems;
 import net.minecraft.client.resources.model.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -34,6 +35,8 @@ public class TFCDecoration {
 		TFCDecoFluids.FLUID_TYPES.register(bus);
 		CreativeTabRegistry.CREATIVE_TABS.register(bus);
 
-		bus.addListener(TFCDecoData::datagen);
+		if(ModList.get().isLoaded("afc")) {
+			bus.addListener(TFCDecoData::datagen);
+		}
 	}
 }

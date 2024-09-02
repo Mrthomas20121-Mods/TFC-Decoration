@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "afc"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "b": {
+            "tag": "minecraft:bookshelf_books"
+          },
+          "l": {
+            "item": "afc:wood/lumber/baobab"
+          }
+        },
+        "pattern": [
+          "lll",
+          "bbb",
+          "lll"
+        ],
+        "result": {
+          "item": "tfc_decoration:wood/decorative_bookshelf/baobab"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

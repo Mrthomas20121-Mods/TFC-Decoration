@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "tfc_decoration"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "b": {
+            "tag": "minecraft:bookshelf_books"
+          },
+          "l": {
+            "item": "tfc_decoration:wood/black_lumber"
+          }
+        },
+        "pattern": [
+          "lll",
+          "bbb",
+          "lll"
+        ],
+        "result": {
+          "item": "tfc_decoration:wood/decorative_bookshelf/black"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

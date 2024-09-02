@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/hickory_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/hickory"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/hickory_slab_top"
+    }
+  }
+}

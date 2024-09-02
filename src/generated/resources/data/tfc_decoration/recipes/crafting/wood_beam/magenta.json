@@ -1,18 +1,31 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "l": {
-      "item": "tfc_decoration:wood/magenta_lumber"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "tfc_decoration"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "l": {
+            "item": "tfc_decoration:wood/magenta_lumber"
+          }
+        },
+        "pattern": [
+          "l l",
+          " l ",
+          "l l"
+        ],
+        "result": {
+          "item": "tfc_decoration:wood/wood_beam/magenta"
+        },
+        "show_notification": true
+      }
     }
-  },
-  "pattern": [
-    "l l",
-    " l ",
-    "l l"
-  ],
-  "result": {
-    "item": "tfc_decoration:wood/wood_beam/magenta"
-  },
-  "show_notification": true
+  ]
 }

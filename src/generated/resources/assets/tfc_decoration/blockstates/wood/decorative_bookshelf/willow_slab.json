@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/willow_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/willow"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/willow_slab_top"
+    }
+  }
+}

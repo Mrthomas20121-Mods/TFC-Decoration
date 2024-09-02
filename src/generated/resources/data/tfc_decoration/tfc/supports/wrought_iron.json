@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "item": "tfc_decoration:metal/support/wrought_iron"
+  },
+  "support_down": 2,
+  "support_horizontal": 6,
+  "support_up": 2
+}

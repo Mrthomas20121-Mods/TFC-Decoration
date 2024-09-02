@@ -1,9 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "ingredient": [
-    "tfc_decoration:metal/horizontal_support/wrought_iron"
-  ],
-  "support_up": 2,
-  "support_down": 2,
-  "support_horizontal": 6
-}

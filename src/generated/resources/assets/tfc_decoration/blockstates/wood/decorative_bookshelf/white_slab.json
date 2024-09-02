@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/white_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/white"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/white_slab_top"
+    }
+  }
+}

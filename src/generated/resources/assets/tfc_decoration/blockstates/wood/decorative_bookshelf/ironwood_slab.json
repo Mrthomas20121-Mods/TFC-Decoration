@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/ironwood_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/ironwood"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/wood/decorative_bookshelf/ironwood_slab_top"
+    }
+  }
+}

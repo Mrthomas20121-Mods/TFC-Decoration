@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "tfc_decoration:block/wood/planks/terracotta_yellow",
+    "side": "tfc_decoration:block/wood/decorative_bookshelf/terracotta_yellow"
+  }
+}

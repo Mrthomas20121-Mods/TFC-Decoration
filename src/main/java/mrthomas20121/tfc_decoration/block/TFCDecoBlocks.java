@@ -10,6 +10,7 @@ import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
 import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.fluid.TFCDecoFluids;
+import mrthomas20121.tfc_decoration.item.TFCDecoBannerItem;
 import mrthomas20121.tfc_decoration.item.TFCDecoBedBlockItem;
 import mrthomas20121.tfc_decoration.item.TFCDecoItems;
 import net.dries007.tfc.common.blocks.*;
@@ -53,8 +54,15 @@ public class TFCDecoBlocks {
             register(color.getSerializedName()+"_bed", () -> new TFCDecoBedBlock(color, BlockBehaviour.Properties.of().mapColor((state) -> state.getValue(BedBlock.PART) == BedPart.FOOT ? color.getMapColor() : MapColor.WOOL).sound(SoundType.WOOD).strength(0.2F).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY)),
                     block -> new TFCDecoBedBlockItem(block, new Item.Properties().stacksTo(1))));
 
+    public static final Map<TFCDecoDyeColor, RegistryObject<TFCDecoWallBannerBlock>> WALL_BANNERS = Helpers.mapOfKeys(TFCDecoDyeColor.class, dyeColor -> registerNoItem("wall_banner/"+dyeColor.getSerializedName(), () -> new TFCDecoWallBannerBlock(dyeColor,  BlockBehaviour.Properties.copy(Blocks.WHITE_BANNER))));
+
+    public static final Map<TFCDecoDyeColor, RegistryObject<TFCDecoBannerBlock>> BANNERS = Helpers.mapOfKeys(TFCDecoDyeColor.class, dyeColor -> register("banner/"+dyeColor.getSerializedName(), () -> new TFCDecoBannerBlock(dyeColor,  BlockBehaviour.Properties.copy(Blocks.WHITE_BANNER)), (banner) -> new TFCDecoBannerItem(banner, WALL_BANNERS.get(dyeColor).get(), new Item.Properties().stacksTo(16))));
+
     public static final Map<TFCDecoDyeColor, RegistryObject<Block>> WOOLS = Helpers.mapOfKeys(TFCDecoDyeColor.class, dyeColor -> register("wool/%s".formatted(dyeColor.name()), () -> new ExtendedBlock(ExtendedProperties.of(Blocks.WHITE_WOOL).mapColor(dyeColor.getMapColor()).flammableLikeWool())));
     public static final Map<TFCDecoDyeColor, RegistryObject<Block>> WOOL_CARPETS = Helpers.mapOfKeys(TFCDecoDyeColor.class, dyeColor -> register("wool_carpet/%s".formatted(dyeColor.name()), () -> new TFCCarpetBlock(ExtendedProperties.of(Blocks.WHITE_CARPET).mapColor(dyeColor.getMapColor()).flammableLikeWool())));
+
+    public static final Map<TFCDecoDyeColor, RegistryObject<Block>> CONCRETES = Helpers.mapOfKeys(TFCDecoDyeColor.class, dyeColor -> register("concrete/%s".formatted(dyeColor.name()), () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE).mapColor(dyeColor.getMapColor()))));
+    public static final Map<TFCDecoDyeColor, RegistryObject<ConcretePowderBlock>> CONCRETE_POWDERS = Helpers.mapOfKeys(TFCDecoDyeColor.class, dyeColor -> register("concrete_powder/%s".formatted(dyeColor.name()), () -> new ConcretePowderBlock(CONCRETES.get(dyeColor).get(), BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE_POWDER).mapColor(dyeColor.getMapColor()))));
 
     public static final Map<TFCDecoDyeColor, RegistryObject<StainedWattleBlock>> STAINED_WATTLE = Helpers.mapOfKeys(TFCDecoDyeColor.class, dyeColor -> register("wattle/%s".formatted(dyeColor.name()), () -> new StainedWattleBlock(ExtendedProperties.of(MapColor.WOOD).strength(0.3F).sound(SoundType.SCAFFOLDING).flammable(60, 30))));
 
