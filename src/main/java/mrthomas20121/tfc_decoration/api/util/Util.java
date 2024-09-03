@@ -29,6 +29,7 @@ public class Util {
         // add tfc rock types
         registerALLRockTypes(TFCRock.VALUES);
 
+        // register AFC wood types and DFC rock types
         ModCompat.init();
     }
 
