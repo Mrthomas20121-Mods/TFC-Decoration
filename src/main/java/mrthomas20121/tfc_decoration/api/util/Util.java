@@ -1,15 +1,13 @@
-package mrthomas20121.tfc_decoration.api;
+package mrthomas20121.tfc_decoration.api.util;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import mrthomas20121.tfc_decoration.api.mod_compat.DFCUtil;
 import mrthomas20121.tfc_decoration.api.mod_compat.ModCompat;
-import mrthomas20121.tfc_decoration.api.wood.BasicWood;
-import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
-import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
-import mrthomas20121.tfc_decoration.api.wood.type.TFCWood;
-import net.dries007.tfc.common.blocks.rock.Rock;
-import net.dries007.tfc.util.registry.RegistryRock;
-import net.minecraftforge.fml.ModList;
+import mrthomas20121.tfc_decoration.api.util.rock.BasicRock;
+import mrthomas20121.tfc_decoration.api.util.rock.type.TFCRock;
+import mrthomas20121.tfc_decoration.api.util.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.util.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.util.wood.type.TFCDecoWood;
+import mrthomas20121.tfc_decoration.api.util.wood.type.TFCWood;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +19,7 @@ public class Util {
 
     static List<BasicWood> WOOD_TYPES = new ObjectArrayList<>();
 
-    static List<RegistryRock> ROCK_TYPES = new ObjectArrayList<>();
+    static List<BasicRock> ROCK_TYPES = new ObjectArrayList<>();
 
     static {
         registerALLWoodTypes(TFCDecoWood.VALUES);
@@ -29,7 +27,7 @@ public class Util {
         registerALLWoodTypes(TFCWood.VALUES);
 
         // add tfc rock types
-        registerALLRockTypes(Rock.VALUES);
+        registerALLRockTypes(TFCRock.VALUES);
 
         ModCompat.init();
     }
@@ -37,7 +35,7 @@ public class Util {
     public static List<BasicWood> getALLWoodTypes() {
         return WOOD_TYPES;
     }
-    public static List<RegistryRock> getALLRockTypes() {
+    public static List<BasicRock> getALLRockTypes() {
         return ROCK_TYPES;
     }
 
@@ -45,11 +43,11 @@ public class Util {
         return getALLWoodTypes().stream().filter(wood -> wood instanceof ExtendedWood).map(wood -> (ExtendedWood) wood).toList();
     }
 
-    public static void registerRockType(RegistryRock rock) {
+    public static void registerRockType(BasicRock rock) {
         ROCK_TYPES.add(rock);
     }
 
-    public static void registerALLRockTypes(RegistryRock[] rocks) {
+    public static void registerALLRockTypes(BasicRock[] rocks) {
         ROCK_TYPES.addAll(List.of(rocks));
     }
 

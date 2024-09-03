@@ -1,18 +1,18 @@
 package mrthomas20121.tfc_decoration.datagen;
 
 import mrthomas20121.tfc_decoration.TFCDecoration;
+import mrthomas20121.tfc_decoration.api.SupportMetal;
 import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
-import mrthomas20121.tfc_decoration.api.SupportMetal;
-import mrthomas20121.tfc_decoration.api.Util;
-import mrthomas20121.tfc_decoration.api.wood.BasicWood;
-import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
+import mrthomas20121.tfc_decoration.api.util.Util;
+import mrthomas20121.tfc_decoration.api.util.rock.BasicRock;
+import mrthomas20121.tfc_decoration.api.util.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.util.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.util.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
-import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.block.TFCWallBlock;
 import net.dries007.tfc.common.TFCTags;
-import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -46,7 +46,7 @@ public class TFCDecoBlockTagProvider extends BlockTagsProvider {
             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TFCDecoBlocks.CONCRETES.get(dyeColor).get());
         }
 
-        for(Rock rock: Rock.VALUES) {
+        for(BasicRock rock: Util.getALLRockTypes()) {
             for(RockBlockType type: RockBlockType.VALUES) {
                 tag(TFCTags.Blocks.BLAST_FURNACE_INSULATION)
                         .add(TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());

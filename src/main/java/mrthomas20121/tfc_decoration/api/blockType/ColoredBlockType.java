@@ -1,7 +1,7 @@
 package mrthomas20121.tfc_decoration.api.blockType;
 
 import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
-import mrthomas20121.tfc_decoration.block.TFCCarpetBlock;
+import mrthomas20121.tfc_decoration.block.ExtendedCarpetBlock;
 import net.dries007.tfc.common.blocks.ExtendedBlock;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.minecraft.util.StringRepresentable;
@@ -14,7 +14,7 @@ import java.util.function.Function;
 public enum ColoredBlockType implements StringRepresentable {
 
     WOOL,
-    CARPET(dyeColor -> new TFCCarpetBlock(ExtendedProperties.of(Blocks.WHITE_CARPET).mapColor(dyeColor.getMapColor())));
+    CARPET(dyeColor -> new ExtendedCarpetBlock(ExtendedProperties.of(Blocks.WHITE_CARPET).mapColor(dyeColor.getMapColor())));
 
     public static ColoredBlockType[] VALUES = ColoredBlockType.values();
     private final Function<TFCDecoDyeColor, Block> supp;

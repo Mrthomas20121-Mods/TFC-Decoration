@@ -1,15 +1,18 @@
 package mrthomas20121.tfc_decoration.datagen;
 
+import com.redstoneguy10ls.decofirmacraft.common.blocks.DFCBlocks;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.items.AFCItems;
 import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.TFCDecoItemTags;
-import mrthomas20121.tfc_decoration.api.Util;
+import mrthomas20121.tfc_decoration.api.util.Util;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
-import mrthomas20121.tfc_decoration.api.wood.BasicWood;
-import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.util.rock.type.DecoFirmaRock;
+import mrthomas20121.tfc_decoration.api.util.rock.type.TFCRock;
+import mrthomas20121.tfc_decoration.api.util.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.util.wood.ExtendedWood;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
 import mrthomas20121.tfc_decoration.datagen.custom.recipe.ShapedDamageInputRecipeBuilder;
 import mrthomas20121.tfc_decoration.datagen.custom.recipe.TFCRecipeBuilder;
@@ -27,7 +30,6 @@ import net.dries007.tfc.util.Metal;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -132,14 +134,33 @@ public class TFCDecoRecipeProvider extends RecipeProvider {
         }
 
 
-        for(Rock rock: Rock.VALUES) {
+        for(TFCRock rock: TFCRock.VALUES) {
             for(RockBlockType type: RockBlockType.VALUES) {
                 if(type.equals(RockBlockType.PILLAR)) {
                     ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get())
-                            .requires(TFCBlocks.ROCK_BLOCKS.get(rock).get(Rock.BlockType.SMOOTH).get())
-                            .requires(TFCBlocks.ROCK_BLOCKS.get(rock).get(Rock.BlockType.SMOOTH).get())
-                            .unlockedBy(getHasName(TFCBlocks.ROCK_BLOCKS.get(rock).get(Rock.BlockType.SMOOTH).get()),
-                                    has(TFCBlocks.ROCK_BLOCKS.get(rock).get(Rock.BlockType.SMOOTH).get()))
+                            .requires(TFCBlocks.ROCK_BLOCKS.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get())
+                            .requires(TFCBlocks.ROCK_BLOCKS.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get())
+                            .unlockedBy(getHasName(TFCBlocks.ROCK_BLOCKS.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get()),
+                                    has(TFCBlocks.ROCK_BLOCKS.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get()))
+                            .save(consumer, new ResourceLocation("tfc_decoration:crafting/rock/%s/%s".formatted(rock.getSerializedName(), type.getSerializedName())));
+                }
+                else if(type.equals(RockBlockType.ROCKWOOL_BRICKS)) {
+                    tfc_bricks(consumer, TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(RockBlockType.ROCKWOOL).get());
+                }
+                slabRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab().get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
+                stairs(consumer, TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair().get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
+                walls(consumer, RecipeCategory.BUILDING_BLOCKS, TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
+            }
+        }
+
+        for(DecoFirmaRock rock: DecoFirmaRock.VALUES) {
+            for(RockBlockType type: RockBlockType.VALUES) {
+                if(type.equals(RockBlockType.PILLAR)) {
+                    ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get())
+                            .requires(DFCBlocks.CUSTOM_ROCK_TYPES.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get())
+                            .requires(DFCBlocks.CUSTOM_ROCK_TYPES.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get())
+                            .unlockedBy(getHasName(DFCBlocks.CUSTOM_ROCK_TYPES.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get()),
+                                    has(DFCBlocks.CUSTOM_ROCK_TYPES.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get()))
                             .save(consumer, new ResourceLocation("tfc_decoration:crafting/rock/%s/%s".formatted(rock.getSerializedName(), type.getSerializedName())));
                 }
                 else if(type.equals(RockBlockType.ROCKWOOL_BRICKS)) {

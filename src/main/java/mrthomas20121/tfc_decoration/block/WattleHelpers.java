@@ -4,6 +4,7 @@ import mrthomas20121.tfc_decoration.TFCDecoration;
 import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.item.TFCDecoItems;
 import net.dries007.tfc.client.TFCSounds;
+import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.StainedWattleBlock;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.util.Helpers;
@@ -45,18 +46,18 @@ public class WattleHelpers {
         BlockState state = level.getBlockState(pos);
         ItemStack item = event.getItemStack();
         Player player = event.getEntity();
-        if (Helpers.isBlock(state, TFCBlocks.WATTLE.get())) {
+        if (Helpers.isBlock(state, TFCBlocks.WATTLE.get()) || !(state.getBlock() instanceof StainedWattleBlock)) {
             event.setCancellationResult(InteractionResult.PASS);
             return;
         }
 
         BlockState dyed = getPossibleDyedState(item, state);
-        if (dyed != null)
-        {
-            if (level.isClientSide)
-            {
-                for (int i = 0; i < 5; i++)
-                {
+        if (dyed == null) {
+            event.setCancellationResult(InteractionResult.PASS);
+        }
+        else {
+            if (level.isClientSide) {
+                for (int i = 0; i < 5; i++) {
                     Vec3 loc = hit.getLocation();
                     level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, item), loc.x, loc.y, loc.z, Helpers.triangle(level.random) / 3, Helpers.triangle(level.random) / 3, Helpers.triangle(level.random) / 3);
                 }

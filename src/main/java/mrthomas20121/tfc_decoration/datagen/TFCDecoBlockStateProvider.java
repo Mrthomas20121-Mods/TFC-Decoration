@@ -4,12 +4,13 @@ import mrthomas20121.tfc_decoration.TFCDecoration;
 import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
-import mrthomas20121.tfc_decoration.api.Util;
-import mrthomas20121.tfc_decoration.api.wood.BasicWood;
-import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.util.Util;
+import mrthomas20121.tfc_decoration.api.util.rock.BasicRock;
+import mrthomas20121.tfc_decoration.api.util.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.util.wood.ExtendedWood;
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
-import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
+import mrthomas20121.tfc_decoration.api.util.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.block.TFCWallBlock;
 import net.dries007.tfc.common.blocks.HorizontalPipeBlock;
 import net.dries007.tfc.common.blocks.StainedWattleBlock;
@@ -58,7 +59,7 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
             simpleBlock(TFCDecoBlocks.BANNERS.get(dyeColor).get(), models().getExistingFile(new ResourceLocation("minecraft:block/banner")));
         }
 
-        for(Rock rock: Rock.VALUES) {
+        for(BasicRock rock: Util.getALLRockTypes()) {
             for(RockBlockType type: RockBlockType.VALUES) {
                 String typeName = type.getSerializedName();
                 String rockName = rock.getSerializedName();

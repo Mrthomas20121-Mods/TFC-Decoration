@@ -1,8 +1,7 @@
 package mrthomas20121.tfc_decoration.api.mod_compat;
 
-import com.redstoneguy10ls.decofirmacraft.common.blocks.rock.DFCRock;
-import mrthomas20121.tfc_decoration.api.Util;
-import mrthomas20121.tfc_decoration.api.wood.type.AFCWood;
+import mrthomas20121.tfc_decoration.api.util.Util;
+import mrthomas20121.tfc_decoration.api.util.wood.type.AFCWood;
 import net.minecraftforge.fml.ModList;
 
 public class AFCUtil {

@@ -1,4 +1,4 @@
-package mrthomas20121.tfc_decoration.api.wood;
+package mrthomas20121.tfc_decoration.api.util.wood;
 
 import net.minecraft.world.level.material.MapColor;
 

@@ -1,6 +1,6 @@
-package mrthomas20121.tfc_decoration.api.wood.type;
+package mrthomas20121.tfc_decoration.api.util.wood.type;
 
-import mrthomas20121.tfc_decoration.api.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.util.wood.BasicWood;
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MapColor;

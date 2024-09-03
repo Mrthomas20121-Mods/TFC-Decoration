@@ -1,7 +1,5 @@
 package mrthomas20121.tfc_decoration.api.mod_compat;
 
-import mrthomas20121.tfc_decoration.api.Util;
-import mrthomas20121.tfc_decoration.api.wood.type.AFCWood;
 import net.minecraftforge.fml.ModList;
 
 public class ModCompat {

@@ -3,11 +3,13 @@ package mrthomas20121.tfc_decoration;
 import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
-import mrthomas20121.tfc_decoration.api.Util;
-import mrthomas20121.tfc_decoration.api.wood.BasicWood;
-import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.util.Util;
+import mrthomas20121.tfc_decoration.api.util.rock.BasicRock;
+import mrthomas20121.tfc_decoration.api.util.rock.type.TFCRock;
+import mrthomas20121.tfc_decoration.api.util.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.util.wood.ExtendedWood;
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
-import mrthomas20121.tfc_decoration.api.wood.type.TFCDecoWood;
+import mrthomas20121.tfc_decoration.api.util.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
 import mrthomas20121.tfc_decoration.item.TFCDecoItems;
 import net.dries007.tfc.common.TFCCreativeTabs;
@@ -28,7 +30,7 @@ public class CreativeTabRegistry {
 
     public static final TFCCreativeTabs.CreativeTabHolder DYE_DECORATIVE_BLOCKS = register("dye_decorative_blocks", () -> new ItemStack(TFCDecoBlocks.WOODS.get(TFCDecoWood.BLUE).get(WoodBlockType.WOOD_BEAM).get()), CreativeTabRegistry::fillDyeDecorativeBlocksTab);
     public static final TFCCreativeTabs.CreativeTabHolder WOOD_DECORATIVE_BLOCKS = register("wood_decorative_blocks", () -> new ItemStack(TFCDecoBlocks.WOODS.get(TFCDecoWood.BLUE).get(WoodBlockType.WOOD_BEAM).get()), CreativeTabRegistry::fillWoodDecorativeBlocksTab);
-    public static final TFCCreativeTabs.CreativeTabHolder ROCK_DECORATIVE_BLOCKS = register("rock_decorative_blocks", () -> new ItemStack(TFCDecoBlocks.ROCK_BLOCKS.get(Rock.ANDESITE).get(RockBlockType.PILLAR).get()), CreativeTabRegistry::fillRockDecorativeBlocksTab);
+    public static final TFCCreativeTabs.CreativeTabHolder ROCK_DECORATIVE_BLOCKS = register("rock_decorative_blocks", () -> new ItemStack(TFCDecoBlocks.ROCK_BLOCKS.get(TFCRock.ANDESITE).get(RockBlockType.PILLAR).get()), CreativeTabRegistry::fillRockDecorativeBlocksTab);
     public static final TFCCreativeTabs.CreativeTabHolder METAL_DECORATIVE_BLOCKS = register("metal_decorative_blocks", () -> new ItemStack(TFCDecoBlocks.GRATES.get(Metal.Default.BISMUTH_BRONZE).get()), CreativeTabRegistry::fillMetalDecorativeBlocksTab);
     public static final TFCCreativeTabs.CreativeTabHolder DECORATIVE_ITEMS = register("decorative_items", () -> new ItemStack(TFCDecoItems.WOOD_LUMBERS.get(TFCDecoWood.BLUE).get()), CreativeTabRegistry::fillDecorativeItemsTab);
 
@@ -50,7 +52,7 @@ public class CreativeTabRegistry {
         for(TFCDecoWood wood: TFCDecoWood.VALUES) {
             out.accept(TFCDecoItems.WOOD_LUMBERS.get(wood).get());
         }
-        for(Rock rock: Rock.VALUES) {
+        for(BasicRock rock: Util.getALLRockTypes()) {
             out.accept(TFCDecoItems.ROCKWOOl_BRICK.get(rock).get());
         }
     }
@@ -117,12 +119,12 @@ public class CreativeTabRegistry {
     }
 
     private static void fillRockDecorativeBlocksTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
-        for(Rock rock: Rock.VALUES) {
-            for(RockBlockType type: RockBlockType.VALUES) {
-                out.accept(TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
-                out.accept(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab().get());
-                out.accept(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair().get());
-                out.accept(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get());
+        for(BasicRock rock: Util.getALLRockTypes()) {
+            for(RockBlockType blockType: RockBlockType.VALUES) {
+                out.accept(TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(blockType).get());
+                out.accept(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(blockType).slab().get());
+                out.accept(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(blockType).stair().get());
+                out.accept(TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(blockType).wall().get());
             }
         }
     }

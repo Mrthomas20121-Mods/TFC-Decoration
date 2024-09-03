@@ -3,8 +3,9 @@ package mrthomas20121.tfc_decoration.item;
 import mrthomas20121.tfc_decoration.TFCDecoration;
 import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
-import mrthomas20121.tfc_decoration.api.Util;
-import mrthomas20121.tfc_decoration.api.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.util.Util;
+import mrthomas20121.tfc_decoration.api.util.rock.BasicRock;
+import mrthomas20121.tfc_decoration.api.util.wood.BasicWood;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
 import mrthomas20121.tfc_decoration.fluid.DecoFluidId;
 import net.dries007.tfc.common.blocks.rock.Rock;
@@ -29,7 +30,7 @@ public class TFCDecoItems {
     public static final Map<BasicWood, RegistryObject<Item>> WOOD_LUMBERS = Util.mapOfKeys(Util.getALLWoodTypes(), BasicWood::shouldGetPlanks, wood -> register("wood/%s_lumber".formatted(wood.name())));
     public static final Map<TFCDecoDyeColor, RegistryObject<Item>> DYES = Helpers.mapOfKeys(TFCDecoDyeColor.class, dye -> register("dye/%s".formatted(dye.name())));
 
-    public static final Map<Rock, RegistryObject<Item>> ROCKWOOl_BRICK = Helpers.mapOfKeys(Rock.class, rock -> register("rockwool_brick/%s".formatted(rock.getSerializedName())));
+    public static final Map<BasicRock, RegistryObject<Item>> ROCKWOOl_BRICK = Util.mapOfKeys(Util.getALLRockTypes(), rock -> register("rockwool_brick/%s".formatted(rock.getSerializedName())));
 
     public static final Map<SupportMetal, RegistryObject<Item>> SUPPORTS = Helpers.mapOfKeys(SupportMetal.class, metal ->
             register("metal/support/" + metal.name(), () -> new StandingAndWallBlockItem(TFCDecoBlocks.VERTICAL_SUPPORT.get(metal).get(), TFCDecoBlocks.HORIZONTAL_SUPPORT.get(metal).get(), new Item.Properties(), Direction.DOWN))

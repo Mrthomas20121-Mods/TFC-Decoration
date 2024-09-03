@@ -1,5 +1,6 @@
 package mrthomas20121.tfc_decoration.api.blockType;
 
+import mrthomas20121.tfc_decoration.api.util.rock.BasicRock;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.Block;
@@ -21,9 +22,9 @@ public enum RockBlockType implements StringRepresentable {
 
     public static final RockBlockType[] VALUES = RockBlockType.values();
 
-    private final Function<Rock,Supplier<Block>> block;
+    private final Function<BasicRock,Supplier<Block>> block;
 
-    RockBlockType(Function<Rock,Supplier<Block>> block) {
+    RockBlockType(Function<BasicRock,Supplier<Block>> block) {
         this.block = block;
     }
 
@@ -38,7 +39,7 @@ public enum RockBlockType implements StringRepresentable {
         return this.name().toLowerCase(Locale.ROOT);
     }
 
-    public Supplier<Block> getBlock(Rock rock) {
+    public Supplier<Block> getBlock(BasicRock rock) {
         return this.block.apply(rock);
     }
 }

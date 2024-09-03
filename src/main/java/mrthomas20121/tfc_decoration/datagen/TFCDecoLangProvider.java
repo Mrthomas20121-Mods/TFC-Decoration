@@ -4,9 +4,10 @@ import mrthomas20121.tfc_decoration.TFCDecoration;
 import mrthomas20121.tfc_decoration.api.TFCDecoDyeColor;
 import mrthomas20121.tfc_decoration.api.blockType.RockBlockType;
 import mrthomas20121.tfc_decoration.api.SupportMetal;
-import mrthomas20121.tfc_decoration.api.Util;
-import mrthomas20121.tfc_decoration.api.wood.BasicWood;
-import mrthomas20121.tfc_decoration.api.wood.ExtendedWood;
+import mrthomas20121.tfc_decoration.api.util.Util;
+import mrthomas20121.tfc_decoration.api.util.rock.BasicRock;
+import mrthomas20121.tfc_decoration.api.util.wood.BasicWood;
+import mrthomas20121.tfc_decoration.api.util.wood.ExtendedWood;
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
 import mrthomas20121.tfc_decoration.fluid.DecoFluidId;
@@ -46,6 +47,7 @@ public class TFCDecoLangProvider extends LanguageProvider {
             addBlock(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor), s + " Wattle");
             addBlock(TFCDecoBlocks.CONCRETES.get(dyeColor), s+ " Concrete");
             addBlock(TFCDecoBlocks.CONCRETE_POWDERS.get(dyeColor), s+ " Concrete Powder");
+            addBlock(TFCDecoBlocks.BANNERS.get(dyeColor), s+ " Banner");
             addItem(TFCDecoItems.DYES.get(dyeColor), s + " Dye");
             addItem(TFCDecoItems.FLUID_BUCKETS.get(DecoFluidId.asType(dyeColor)), s+" Dye");
         }
@@ -67,7 +69,7 @@ public class TFCDecoLangProvider extends LanguageProvider {
             }
         }
 
-        for(Rock rock: Rock.VALUES) {
+        for(BasicRock rock: Util.getALLRockTypes()) {
             for(RockBlockType type: RockBlockType.VALUES) {
                 String rockName = capitalize(rock.getSerializedName());
                 String typeName = capitalize(type.getSerializedName());
@@ -78,7 +80,7 @@ public class TFCDecoLangProvider extends LanguageProvider {
             }
         }
 
-        for(Rock rock: Rock.VALUES) {
+        for(BasicRock rock: Util.getALLRockTypes()) {
             addItem(TFCDecoItems.ROCKWOOl_BRICK.get(rock), capitalize(capitalize(rock.getSerializedName())+" Brick"));
         }
 

@@ -1,4 +1,4 @@
-package mrthomas20121.tfc_decoration.api.wood;
+package mrthomas20121.tfc_decoration.api.util.wood;
 
 import mrthomas20121.tfc_decoration.api.blockType.WoodBlockType;
 import net.minecraft.util.StringRepresentable;
