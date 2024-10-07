@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/rock/polished_rockwool/blueschist_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/rock/polished_rockwool/blueschist"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/rock/polished_rockwool/blueschist_slab_top"
+    }
+  }
+}

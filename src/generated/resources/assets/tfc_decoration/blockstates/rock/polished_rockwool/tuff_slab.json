@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/rock/polished_rockwool/tuff_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/rock/polished_rockwool/tuff"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/rock/polished_rockwool/tuff_slab_top"
+    }
+  }
+}

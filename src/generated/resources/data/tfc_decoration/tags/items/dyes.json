@@ -1,0 +1,21 @@
+{
+  "values": [
+    "tfc_decoration:dye/terracotta",
+    "tfc_decoration:dye/terracotta_white",
+    "tfc_decoration:dye/terracotta_orange",
+    "tfc_decoration:dye/terracotta_magenta",
+    "tfc_decoration:dye/terracotta_light_blue",
+    "tfc_decoration:dye/terracotta_yellow",
+    "tfc_decoration:dye/terracotta_lime",
+    "tfc_decoration:dye/terracotta_pink",
+    "tfc_decoration:dye/terracotta_gray",
+    "tfc_decoration:dye/terracotta_light_gray",
+    "tfc_decoration:dye/terracotta_cyan",
+    "tfc_decoration:dye/terracotta_purple",
+    "tfc_decoration:dye/terracotta_blue",
+    "tfc_decoration:dye/terracotta_brown",
+    "tfc_decoration:dye/terracotta_green",
+    "tfc_decoration:dye/terracotta_red",
+    "tfc_decoration:dye/terracotta_black"
+  ]
+}

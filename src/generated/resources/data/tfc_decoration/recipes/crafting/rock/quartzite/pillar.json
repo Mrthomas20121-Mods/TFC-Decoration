@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "tfc:rock/smooth/quartzite"
+    },
+    {
+      "item": "tfc:rock/smooth/quartzite"
+    }
+  ],
+  "result": {
+    "item": "tfc_decoration:rock/pillar/quartzite"
+  }
+}

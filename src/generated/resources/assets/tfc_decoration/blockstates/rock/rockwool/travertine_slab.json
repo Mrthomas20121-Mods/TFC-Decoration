@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/rock/rockwool/travertine_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/rock/rockwool/travertine"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/rock/rockwool/travertine_slab_top"
+    }
+  }
+}

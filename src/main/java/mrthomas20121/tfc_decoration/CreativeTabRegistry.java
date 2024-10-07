@@ -81,6 +81,14 @@ public class CreativeTabRegistry {
         }
 
         for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
+            out.accept(TFCDecoBlocks.STAINED_GLASS.get(dyeColor).get());
+        }
+
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
+            out.accept(TFCDecoBlocks.STAINED_GLASS_PANE.get(dyeColor).get());
+        }
+
+        for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             out.accept(TFCDecoBlocks.RAW_ALABASTER.get(dyeColor).get());
             out.accept(TFCDecoBlocks.POLISHED_ALABASTER.get(dyeColor).get());
             out.accept(TFCDecoBlocks.ALABASTER_BRICKS.get(dyeColor).get());

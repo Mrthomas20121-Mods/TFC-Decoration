@@ -17,7 +17,6 @@ import mrthomas20121.tfc_decoration.api.util.wood.type.TFCDecoWood;
 import mrthomas20121.tfc_decoration.block.TFCWallBlock;
 import mrthomas20121.tfc_decoration.item.TFCDecoItems;
 import net.dries007.tfc.common.blocks.TFCBlocks;
-import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.data.PackOutput;
@@ -68,6 +67,9 @@ public class TFCDecoItemModelProvider extends ItemModelProvider {
             itemBlock(TFCDecoBlocks.CONCRETE_POWDERS.get(dyeColor).get());
 
             this.withExistingParent(this.blockName(TFCDecoBlocks.BANNERS.get(dyeColor).get()), "minecraft:item/template_banner");
+
+            itemBlock(TFCDecoBlocks.STAINED_GLASS.get(dyeColor).get());
+            itemBlock(TFCDecoBlocks.STAINED_GLASS_PANE.get(dyeColor).get(), TFCDecoBlocks.STAINED_GLASS.get(dyeColor).get());
         }
 
         for(BasicWood wood: Util.getALLWoodTypes()) {
@@ -113,6 +115,11 @@ public class TFCDecoItemModelProvider extends ItemModelProvider {
     public void item(Item item) {
         this.withExistingParent(this.itemName(item), mcLoc("item/generated"))
                 .texture("layer0", modLoc("item/" + this.itemName(item)));
+    }
+
+    public void itemBlock(Block block, Block block2) {
+        this.withExistingParent(this.blockName(block), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/" + this.blockName(block2)));
     }
 
     public void bedItem(TFCDecoBedBlock bed, Block wool) {

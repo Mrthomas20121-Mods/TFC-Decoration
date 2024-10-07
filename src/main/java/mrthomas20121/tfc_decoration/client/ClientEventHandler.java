@@ -48,6 +48,8 @@ public class ClientEventHandler {
 
             for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
                 ItemBlockRenderTypes.setRenderLayer(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor).get(), ghostBlock);
+                ItemBlockRenderTypes.setRenderLayer(TFCDecoBlocks.STAINED_GLASS.get(dyeColor).get(), translucent);
+                ItemBlockRenderTypes.setRenderLayer(TFCDecoBlocks.STAINED_GLASS_PANE.get(dyeColor).get(), translucent);
                 //ItemBlockRenderTypes.setRenderLayer(TFCDecoBlocks.BEDS.get(dyeColor).get(), Sheets.bedSheet());
             }
         });

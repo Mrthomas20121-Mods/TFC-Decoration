@@ -1,0 +1,16 @@
+{
+  "type": "tfc:barrel_sealed",
+  "duration": 1000,
+  "input_fluid": {
+    "amount": 25,
+    "ingredient": "tfc_decoration:terracotta_lime_dye"
+  },
+  "input_item": {
+    "ingredient": {
+      "item": "tfc:wattle/unstained"
+    }
+  },
+  "output_item": {
+    "item": "tfc_decoration:wattle/terracotta_lime"
+  }
+}

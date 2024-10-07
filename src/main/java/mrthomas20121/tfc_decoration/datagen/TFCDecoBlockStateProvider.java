@@ -57,6 +57,11 @@ public class TFCDecoBlockStateProvider extends BlockStateProvider {
             simpleBlock(TFCDecoBlocks.CONCRETE_POWDERS.get(dyeColor).get());
 
             simpleBlock(TFCDecoBlocks.BANNERS.get(dyeColor).get(), models().getExistingFile(new ResourceLocation("minecraft:block/banner")));
+
+            simpleBlock(TFCDecoBlocks.STAINED_GLASS.get(dyeColor).get());
+            paneBlock(TFCDecoBlocks.STAINED_GLASS_PANE.get(dyeColor).get(),
+                    new ResourceLocation("tfc_decoration:block/stained_glass/"+dyeColor.getSerializedName()),
+                    new ResourceLocation("tfc_decoration:block/stained_glass_pane/"+dyeColor.getSerializedName()));
         }
 
         for(BasicRock rock: Util.getALLRockTypes()) {

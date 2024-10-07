@@ -14,6 +14,7 @@ import mrthomas20121.tfc_decoration.api.util.rock.type.TFCRock;
 import mrthomas20121.tfc_decoration.api.util.wood.BasicWood;
 import mrthomas20121.tfc_decoration.api.util.wood.ExtendedWood;
 import mrthomas20121.tfc_decoration.block.TFCDecoBlocks;
+import mrthomas20121.tfc_decoration.datagen.custom.recipe.DecoFluidStackIngredient;
 import mrthomas20121.tfc_decoration.datagen.custom.recipe.ShapedDamageInputRecipeBuilder;
 import mrthomas20121.tfc_decoration.datagen.custom.recipe.TFCRecipeBuilder;
 import mrthomas20121.tfc_decoration.fluid.TFCDecoFluids;
@@ -23,6 +24,7 @@ import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.items.TFCItems;
+import net.dries007.tfc.common.items.ToolItem;
 import net.dries007.tfc.common.recipes.ingredients.FluidIngredient;
 import net.dries007.tfc.common.recipes.ingredients.FluidStackIngredient;
 import net.dries007.tfc.common.recipes.ingredients.IngredientType;
@@ -31,15 +33,20 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.fluids.FluidStack;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -57,6 +64,7 @@ public class TFCDecoRecipeProvider extends RecipeProvider {
         for(TFCDecoDyeColor dyeColor: TFCDecoDyeColor.VALUES) {
             carpet(consumer, TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get(), TFCDecoBlocks.WOOLS.get(dyeColor).get());
 
+            String name = dyeColor.getSerializedName();
             ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, TFCDecoBlocks.CONCRETE_POWDERS.get(dyeColor).get())
                     .pattern("DSS")
                     .pattern("SSG")
@@ -66,16 +74,65 @@ public class TFCDecoRecipeProvider extends RecipeProvider {
                     .define('G', Tags.Items.GRAVEL)
                     .unlockedBy("has_sand", has(ItemTags.SAND))
                     .unlockedBy("has_gravel", has(Tags.Items.GRAVEL))
-                    .save(consumer, new ResourceLocation("tfc_decoration:crafting/color/"+ dyeColor.getSerializedName()+ "_concrete_powder"));
+                    .save(consumer, new ResourceLocation("tfc_decoration:crafting/color/"+ name + "_concrete_powder"));
 
             TFCRecipeBuilder.simplePot(
                     consumer,
-                    new ResourceLocation("tfc_decoration:pot/"+dyeColor.getSerializedName()+"_dye"),
+                    new ResourceLocation("tfc_decoration:pot/"+ name +"_dye"),
                     Ingredient.of(TFCDecoItems.DYES.get(dyeColor).get()),
-                    new FluidStackIngredient(new FluidIngredient(List.of(new IngredientType.ObjEntry<>(Fluids.WATER))), 1000),
+                    fluidstack(Fluids.WATER, 1000),
                     new FluidStack(TFCDecoFluids.COLORED_FLUIDS.get(dyeColor).getSource(), 1000),
                     2000,
                     600);
+
+            TFCRecipeBuilder.sealedBarrel(consumer,
+                    new ResourceLocation("tfc_decoration:barrel/dyes/"+ name +"/banner"),
+                    Ingredient.of(Items.WHITE_BANNER),
+                    fluidstack(TFCDecoFluids.COLORED_FLUIDS.get(dyeColor).getSource(), 25),
+                    new ItemStack(TFCDecoBlocks.BANNERS.get(dyeColor).get()),
+                    1000);
+
+            TFCRecipeBuilder.sealedBarrel(consumer,
+                    new ResourceLocation("tfc_decoration:barrel/dyes/"+ name +"/wool"),
+                    Ingredient.of(Items.WHITE_WOOL),
+                    fluidstack(TFCDecoFluids.COLORED_FLUIDS.get(dyeColor).getSource(), 25),
+                    new ItemStack(TFCDecoBlocks.WOOLS.get(dyeColor).get()),
+                    1000);
+
+            TFCRecipeBuilder.sealedBarrel(consumer,
+                    new ResourceLocation("tfc_decoration:barrel/dyes/"+ name +"/bed"),
+                    Ingredient.of(Items.WHITE_BED),
+                    fluidstack(TFCDecoFluids.COLORED_FLUIDS.get(dyeColor).getSource(), 25),
+                    new ItemStack(TFCDecoBlocks.BEDS.get(dyeColor).get()),
+                    1000);
+
+            TFCRecipeBuilder.sealedBarrel(consumer,
+                    new ResourceLocation("tfc_decoration:barrel/dyes/"+ name +"/wool_carpet"),
+                    Ingredient.of(Items.WHITE_CARPET),
+                    fluidstack(TFCDecoFluids.COLORED_FLUIDS.get(dyeColor).getSource(), 25),
+                    new ItemStack(TFCDecoBlocks.WOOL_CARPETS.get(dyeColor).get()),
+                    1000);
+
+            TFCRecipeBuilder.sealedBarrel(consumer,
+                    new ResourceLocation("tfc_decoration:barrel/dyes/"+ name +"/white_concrete"),
+                    Ingredient.of(Items.WHITE_CONCRETE),
+                    fluidstack(TFCDecoFluids.COLORED_FLUIDS.get(dyeColor).getSource(), 25),
+                    new ItemStack(TFCDecoBlocks.CONCRETES.get(dyeColor).get()),
+                    1000);
+
+            TFCRecipeBuilder.sealedBarrel(consumer,
+                    new ResourceLocation("tfc_decoration:barrel/dyes/"+ name +"/white_concrete_powder"),
+                    Ingredient.of(Items.WHITE_CONCRETE_POWDER),
+                    fluidstack(TFCDecoFluids.COLORED_FLUIDS.get(dyeColor).getSource(), 25),
+                    new ItemStack(TFCDecoBlocks.CONCRETE_POWDERS.get(dyeColor).get()),
+                    1000);
+
+            TFCRecipeBuilder.sealedBarrel(consumer,
+                    new ResourceLocation("tfc_decoration:barrel/dyes/"+ name +"/stained_wattle"),
+                    Ingredient.of(TFCBlocks.UNSTAINED_WATTLE.get()),
+                    fluidstack(TFCDecoFluids.COLORED_FLUIDS.get(dyeColor).getSource(), 25),
+                    new ItemStack(TFCDecoBlocks.STAINED_WATTLE.get(dyeColor).get()),
+                    1000);
         }
 
         for(BasicWood wood: Util.getALLWoodTypes()) {
@@ -133,7 +190,6 @@ public class TFCDecoRecipeProvider extends RecipeProvider {
             }
         }
 
-
         for(TFCRock rock: TFCRock.VALUES) {
             for(RockBlockType type: RockBlockType.VALUES) {
                 if(type.equals(RockBlockType.PILLAR)) {
@@ -156,19 +212,19 @@ public class TFCDecoRecipeProvider extends RecipeProvider {
         for(DecoFirmaRock rock: DecoFirmaRock.VALUES) {
             for(RockBlockType type: RockBlockType.VALUES) {
                 if(type.equals(RockBlockType.PILLAR)) {
-                    ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get())
+                    condition(consumer, rock.modid(), ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get())
                             .requires(DFCBlocks.CUSTOM_ROCK_TYPES.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get())
                             .requires(DFCBlocks.CUSTOM_ROCK_TYPES.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get())
                             .unlockedBy(getHasName(DFCBlocks.CUSTOM_ROCK_TYPES.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get()),
-                                    has(DFCBlocks.CUSTOM_ROCK_TYPES.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get()))
-                            .save(consumer, new ResourceLocation("tfc_decoration:crafting/rock/%s/%s".formatted(rock.getSerializedName(), type.getSerializedName())));
+                                    has(DFCBlocks.CUSTOM_ROCK_TYPES.get(rock.getBaseRock()).get(Rock.BlockType.SMOOTH).get())),
+                    new ResourceLocation("tfc_decoration:crafting/rock/%s/%s".formatted(rock.getSerializedName(), type.getSerializedName())));
                 }
                 else if(type.equals(RockBlockType.ROCKWOOL_BRICKS)) {
                     tfc_bricks(consumer, TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(RockBlockType.ROCKWOOL).get());
                 }
-                slabRecipe(consumer, RecipeCategory.BUILDING_BLOCKS, TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab().get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
-                stairs(consumer, TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair().get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
-                walls(consumer, RecipeCategory.BUILDING_BLOCKS, TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
+                slabConditional(consumer, rock.modid(), RecipeCategory.BUILDING_BLOCKS, TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).slab().get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
+                stairsConditional(consumer, rock.modid(), TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).stair().get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
+                wallsConditional(consumer, rock.modid(), RecipeCategory.BUILDING_BLOCKS, TFCDecoBlocks.ROCK_DECORATION_BLOCKS.get(rock).get(type).wall().get(), TFCDecoBlocks.ROCK_BLOCKS.get(rock).get(type).get());
             }
         }
 
@@ -188,6 +244,10 @@ public class TFCDecoRecipeProvider extends RecipeProvider {
         }
     }
 
+    public DecoFluidStackIngredient fluidstack(Fluid fluid, int value) {
+        return DecoFluidStackIngredient.of(fluid, value);
+    }
+
     protected static void tfc_bricks(Consumer<FinishedRecipe> consumer, ItemLike output, ItemLike input) {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, output)
                 .define('m', TFCItems.MORTAR.get())
@@ -205,6 +265,10 @@ public class TFCDecoRecipeProvider extends RecipeProvider {
 
     protected void walls(Consumer<FinishedRecipe> p_248880_, RecipeCategory p_251848_, ItemLike output, ItemLike input) {
         wallBuilder(p_251848_, output, Ingredient.of(input)).unlockedBy(getHasName(input), has(input)).save(p_248880_, "tfc_decoration:crafting/wall/"+ RecipeBuilder.getDefaultRecipeId(input).getPath());
+    }
+
+    protected void wallsConditional(Consumer<FinishedRecipe> consumer, String modid, RecipeCategory p_251848_, ItemLike output, ItemLike input) {
+        condition(consumer, modid, wallBuilder(p_251848_, output, Ingredient.of(input)).unlockedBy(getHasName(input), has(input)), "tfc_decoration:crafting/wall/"+ RecipeBuilder.getDefaultRecipeId(input).getPath());
     }
 
     protected void condition(Consumer<FinishedRecipe> consumer, String modid, RecipeBuilder builder, ResourceLocation loc) {

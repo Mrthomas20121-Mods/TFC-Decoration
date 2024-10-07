@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "m": {
+      "item": "tfc:mortar"
+    },
+    "r": {
+      "item": "tfc_decoration:rock/rockwool/serpentine"
+    }
+  },
+  "pattern": [
+    "mrm",
+    "rmr",
+    "mrm"
+  ],
+  "result": {
+    "item": "tfc_decoration:rock/rockwool_bricks/serpentine"
+  },
+  "show_notification": true
+}

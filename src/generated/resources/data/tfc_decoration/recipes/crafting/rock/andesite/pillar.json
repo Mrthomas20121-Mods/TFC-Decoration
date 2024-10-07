@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "tfc:rock/smooth/andesite"
+    },
+    {
+      "item": "tfc:rock/smooth/andesite"
+    }
+  ],
+  "result": {
+    "item": "tfc_decoration:rock/pillar/andesite"
+  }
+}

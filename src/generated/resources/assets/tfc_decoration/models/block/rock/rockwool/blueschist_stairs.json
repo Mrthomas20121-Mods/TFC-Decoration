@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "tfc_decoration:block/rock/rockwool/blueschist",
+    "side": "tfc_decoration:block/rock/rockwool/blueschist",
+    "top": "tfc_decoration:block/rock/rockwool/blueschist"
+  }
+}

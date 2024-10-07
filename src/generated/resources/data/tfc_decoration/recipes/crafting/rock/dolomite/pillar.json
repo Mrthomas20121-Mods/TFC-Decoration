@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "tfc:rock/smooth/dolomite"
+    },
+    {
+      "item": "tfc:rock/smooth/dolomite"
+    }
+  ],
+  "result": {
+    "item": "tfc_decoration:rock/pillar/dolomite"
+  }
+}

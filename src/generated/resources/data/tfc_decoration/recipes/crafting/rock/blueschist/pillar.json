@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "dfc"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "building",
+        "ingredients": [
+          {
+            "item": "dfc:rock/smooth/blueschist"
+          },
+          {
+            "item": "dfc:rock/smooth/blueschist"
+          }
+        ],
+        "result": {
+          "item": "tfc_decoration:rock/pillar/blueschist"
+        }
+      }
+    }
+  ]
+}

@@ -3,13 +3,13 @@
   "duration": 2000,
   "fluid_ingredient": {
     "amount": 1000,
-    "ingredient": {
-      "fluid": "minecraft:water"
+    "ingredient": "minecraft:water"
+  },
+  "ingredients": [
+    {
+      "item": "tfc_decoration:dye/terracotta_cyan"
     }
-  },
-  "ingredients": {
-    "item": "tfc_decoration:dye/terracotta_cyan"
-  },
+  ],
   "output_fluid": {
     "amount": 1000,
     "fluid": "tfc_decoration:terracotta_cyan_dye"

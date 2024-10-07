@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/rock/rockwool_bricks/arkose_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/rock/rockwool_bricks/arkose"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/rock/rockwool_bricks/arkose_slab_top"
+    }
+  }
+}

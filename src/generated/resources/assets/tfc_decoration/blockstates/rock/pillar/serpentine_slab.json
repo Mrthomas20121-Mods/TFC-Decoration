@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tfc_decoration:block/rock/pillar/serpentine_slab"
+    },
+    "type=double": {
+      "model": "tfc_decoration:block/rock/pillar/serpentine"
+    },
+    "type=top": {
+      "model": "tfc_decoration:block/rock/pillar/serpentine_slab_top"
+    }
+  }
+}

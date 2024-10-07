@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "tfc:rock/smooth/chalk"
+    },
+    {
+      "item": "tfc:rock/smooth/chalk"
+    }
+  ],
+  "result": {
+    "item": "tfc_decoration:rock/pillar/chalk"
+  }
+}

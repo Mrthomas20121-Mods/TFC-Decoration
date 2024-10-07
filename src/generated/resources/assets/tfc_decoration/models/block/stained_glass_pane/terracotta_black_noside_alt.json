@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_glass_pane_noside_alt",
+  "textures": {
+    "pane": "tfc_decoration:block/stained_glass/terracotta_black"
+  }
+}

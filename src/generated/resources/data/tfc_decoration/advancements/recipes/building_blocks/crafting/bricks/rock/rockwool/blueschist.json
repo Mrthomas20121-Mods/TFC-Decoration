@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rock/rockwool/blueschist": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tfc_decoration:rock/rockwool/blueschist"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tfc_decoration:crafting/bricks/rock/rockwool/blueschist"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rock/rockwool/blueschist",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tfc_decoration:crafting/bricks/rock/rockwool/blueschist"
+    ]
+  },
+  "sends_telemetry_event": false
+}
